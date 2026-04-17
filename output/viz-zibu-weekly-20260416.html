@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>滋补行业·优质笔记周报 · 2026年第16周</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif; background: #F5F0ED; color: #1a1a1a; }
+
+/* ─── 布局 ─── */
+#wrap { width: 860px; margin: 32px auto 60px; }
+
+/* ─── 头部 ─── */
+.header {
+  background: linear-gradient(135deg, #E05A3A 0%, #b8421f 100%);
+  border-radius: 16px;
+  padding: 32px 36px 28px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+.header-tags { display: flex; gap: 8px; margin-bottom: 12px; }
+.htag {
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+.header h1 { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 8px; }
+.header-sub { font-size: 13px; opacity: 0.85; }
+.header-date {
+  position: absolute;
+  right: 36px; top: 32px;
+  text-align: right;
+  font-size: 12px; opacity: 0.8;
+}
+.header-date strong { display: block; font-size: 20px; font-weight: 700; }
+
+/* ─── 通用板块 ─── */
+.section {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin-bottom: 18px;
+}
+.sec-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1.5px solid #F0F0F0;
+}
+.sec-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sec-num {
+  width: 28px; height: 28px;
+  background: #E05A3A;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.sec-title h2 { font-size: 17px; font-weight: 700; }
+.sec-meta { font-size: 12px; color: #999; }
+
+/* ─── 板块01 气节 ─── */
+.jieqi-box {
+  background: linear-gradient(135deg, #FFF6F1 0%, #FFF0EB 100%);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+}
+.jieqi-name { font-size: 15px; font-weight: 700; color: #E05A3A; margin-bottom: 4px; }
+.jieqi-desc { font-size: 13px; color: #555; line-height: 1.7; }
+.jieqi-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.jieqi-col {
+  background: #FFF8F6;
+  border-radius: 8px;
+  padding: 14px 16px;
+  border-left: 3px solid #E05A3A;
+}
+.jieqi-col-title { font-size: 13px; font-weight: 700; color: #E05A3A; margin-bottom: 6px; }
+.jieqi-col-content { font-size: 12px; color: #666; line-height: 1.65; }
+
+/* ─── 板块02 玩法 ─── */
+.play-group { margin-bottom: 20px; }
+.play-group:last-child { margin-bottom: 0; }
+.play-group-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+}
+.play-group-title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 700;
+}
+.play-icon {
+  width: 26px; height: 26px;
+  border-radius: 7px;
+  background: #FFF5F1;
+  color: #E05A3A;
+  font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+.play-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.play-link-tag {
+  font-size: 11px; color: #E05A3A;
+  text-decoration: none;
+}
+.play-card {
+  background: #FAFAFA;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1.5px solid transparent;
+  transition: border-color 0.2s;
+}
+.play-card:hover { border-color: #F5C4B0; }
+.play-card.highlight {
+  background: #FFF6F2;
+  border-color: #E05A3A;
+}
+.play-card-num {
+  width: 22px; height: 22px;
+  background: #E05A3A;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.play-card-body h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.play-card-body p { font-size: 12px; color: #666; line-height: 1.6; }
+.play-card-body a {
+  display: inline-block; margin-top: 6px;
+  font-size: 11px; color: #E05A3A; text-decoration: none;
+}
+.divider { height: 1px; background: #F0F0F0; margin: 18px 0; }
+
+/* ─── 板块03-04 笔记卡片 ─── */
+.nc { display: flex; gap: 18px; margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed #EBEBEB; }
+.nc:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+.nc-rank { flex-shrink: 0; padding-top: 2px; }
+.rn {
+  width: 32px; height: 32px;
+  border-radius: 10px;
+  background: #F5F5F5;
+  color: #999;
+  font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.rn.gold { background: #E05A3A; color: #fff; }
+.rn.silver { background: #E07060; color: #fff; }
+.rn.bronze { background: #F5B89A; color: #fff; }
+
+.nc-cover { flex-shrink: 0; width: 100px; }
+.nc-cover a { display: block; position: relative; border-radius: 8px; overflow: hidden; }
+.nc-cover img {
+  width: 100px; height: 133px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+.nc-cover-stats {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.65));
+  padding: 14px 5px 5px;
+  display: flex; justify-content: space-around;
+  font-size: 10px; color: #fff;
+}
+.nc-cover-ph {
+  width: 100px; height: 133px;
+  background: #F5F5F5;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+}
+
+.nc-body { flex: 1; min-width: 0; }
+.nc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 7px; }
+.nc-tag {
+  font-size: 10px; padding: 2px 7px;
+  border-radius: 4px;
+  background: #F5F5F5; color: #666;
+}
+.nc-tag.red { background: #FFF5F1; color: #E05A3A; }
+.nc-title {
+  font-size: 14px; font-weight: 700;
+  line-height: 1.5; margin-bottom: 8px; color: #1a1a1a;
+}
+.nc-insight {
+  font-size: 12px; color: #555; line-height: 1.7;
+  background: #F9F9F9; border-radius: 7px;
+  padding: 9px 12px; margin-bottom: 10px;
+  border-left: 3px solid #E05A3A;
+}
+.nc-insight::before { content: '💡 '; }
+.nc-metrics { display: flex; gap: 16px; flex-wrap: wrap; }
+.nc-metric { text-align: center; }
+.nc-metric-val { font-size: 15px; font-weight: 700; color: #E05A3A; }
+.nc-metric-label { font-size: 10px; color: #999; margin-top: 1px; }
+.nc-link {
+  display: inline-block; margin-top: 8px;
+  font-size: 11px; color: #E05A3A; text-decoration: none;
+}
+
+/* ─── 下载按钮 ─── */
+#dl-btn {
+  position: fixed; right: 28px; top: 50%;
+  transform: translateY(-50%);
+  background: #E05A3A; color: #fff;
+  border: none; border-radius: 10px;
+  padding: 10px 14px; cursor: pointer;
+  font-size: 12px; font-weight: 700;
+  writing-mode: vertical-lr;
+  letter-spacing: 2px; z-index: 99;
+  box-shadow: 0 4px 16px rgba(255,36,66,0.35);
+}
+
+/* ─── 板块05 往期优质笔记 ─── */
+.archive-section {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin-bottom: 18px;
+}
+.archive-intro {
+  font-size: 12px; color: #888;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.archive-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: #FFF6F2;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #F5D8C8;
+  transition: background 0.2s, border-color 0.2s;
+  min-width: 0;
+}
+.archive-link:hover {
+  background: #FDEEE6;
+  border-color: #E05A3A;
+}
+.archive-link-num {
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  background: #E05A3A;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.archive-link-text {
+  font-size: 11px; color: #E05A3A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.archive-divider {
+  height: 1px; background: #F5F5F5;
+  margin: 16px 0;
+}
+.archive-week-label {
+  font-size: 11px; font-weight: 700; color: #999;
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+.archive-week-label::before {
+  content: '';
+  width: 3px; height: 14px;
+  background: #E05A3A;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* ─── footer ─── */
+.footer {
+  text-align: center;
+  font-size: 11px; color: #bbb;
+  padding: 24px 0 0;
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <div class="header-tags">
+    <span class="htag">美食滋补行业</span>
+    <span class="htag">每周运营参考</span>
+  </div>
+  <div class="header-date">
+    2026 第 16 周<br>
+    <strong>Apr 9–15</strong>
+  </div>
+  <h1>滋补行业<br>优质笔记周报</h1>
+  <div class="header-sub">运营方法参考</div>
+</div>
+
+<button id="dl-btn" onclick="window.print()">↓ 下载页面</button>
+
+<!-- ══ 01 气节健康指南 ══ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-title">
+      <div class="sec-num">01</div>
+      <h2>当月节气健康指南</h2>
+    </div>
+    <div class="sec-meta">4月 · 谷雨</div>
+  </div>
+
+  <div class="jieqi-box">
+    <div class="jieqi-name">谷雨 · 4月20日前后</div>
+    <div class="jieqi-desc">谷雨是春季最后一个节气，雨水增多，湿气渐重。此时养生重点在于祛湿健脾、养肝护胃，饮食宜清淡，适当进补以备夏日能量消耗，避免过食寒凉。</div>
+  </div>
+
+  <div class="jieqi-cols">
+    <div class="jieqi-col">
+      <div class="jieqi-col-title">💊 健脾祛湿</div>
+      <div class="jieqi-col-content">薏苡仁、茯苓、芡实健脾利湿，适合煮粥或代茶饮；五指毛桃煲汤既补气又祛湿，是岭南经典谷雨食补方。<br>食材：薏米、茯苓、五指毛桃、山药</div>
+    </div>
+    <div class="jieqi-col">
+      <div class="jieqi-col-title">🫁 养血柔肝</div>
+      <div class="jieqi-col-content">春季肝气旺，谷雨前后宜养血柔肝，阿胶、红枣、桑葚、枸杞是应季首选；蜂蜜滋润解春燥，搭配花粉效果更佳。<br>食材：阿胶、红枣、蜂蜜、枸杞</div>
+    </div>
+    <div class="jieqi-col">
+      <div class="jieqi-col-title">🍵 应季茶饮</div>
+      <div class="jieqi-col-content">谷雨新茶是饮茶最佳时节，茶中氨基酸丰富、苦味淡。油柑茶、玫瑰茶、柠檬草茶顺应春生之气，清肝解郁、助消化。<br>食材：谷雨绿茶、油柑、玫瑰花、陈皮</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 02 小红书点上核心玩法 ══ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-title">
+      <div class="sec-num">02</div>
+      <h2>小红书经营核心玩法</h2>
+    </div>
+    <div class="sec-meta">运营干货</div>
+  </div>
+
+  <!-- 笔记运营 -->
+  <div class="play-group">
+    <div class="play-group-head">
+      <div class="play-group-title">
+        <div class="play-icon">📝</div>
+        笔记运营
+      </div>
+      <div class="play-links">
+        <a class="play-link-tag" href="https://school.xiaohongshu.com/lesson/normal/7722204512f5438b9ba75b566f5757e5?fullscreen=true&shareFrom=redapp&jumpFrom=school" target="_blank">商品笔记三步通关 →</a>
+      </div>
+    </div>
+    <div class="play-card">
+      <div class="play-card-num">1</div>
+      <div class="play-card-body">
+        <h4>爆款笔记三步通关法</h4>
+        <p>封面抓眼球 → 标题锁用户 → 内容促转化。掌握小红书笔记三步法，让每一条笔记都成为有效转化入口。</p>
+        <a href="https://school.xiaohongshu.com/lesson/normal/7722204512f5438b9ba75b566f5757e5?fullscreen=true&shareFrom=redapp&jumpFrom=school" target="_blank">▶ 商品笔记三步通关 →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 直播运营 -->
+  <div class="play-group">
+    <div class="play-group-head">
+      <div class="play-group-title">
+        <div class="play-icon">📺</div>
+        直播运营
+      </div>
+      <div class="play-links">
+        <a class="play-link-tag" href="https://doc.weixin.qq.com/doc/w3_AfgArAaXAOsCNGCmyFLg0Roy6NB6N?scode=ANAAyQcbAAgE0WptKcAS4AnwY8ALY" target="_blank">店播限时激励 →</a>
+      </div>
+    </div>
+    <div class="play-card highlight">
+      <div class="play-card-num">1</div>
+      <div class="play-card-body">
+        <h4>店播限时激励，最高可得1.1万流量激励</h4>
+        <p>掌握小红书店铺直播限时激励的核心玩法，了解平台激励政策和运营技巧，快速提升直播间流量和GMV转化。</p>
+        <a href="https://doc.weixin.qq.com/doc/w3_AfgArAaXAOsCNGCmyFLg0Roy6NB6N?scode=ANAAyQcbAAgE0WptKcAS4AnwY8ALY" target="_blank">▶ 店播限时激励玩法操作手册 →</a>
+      </div>
+    </div>
+    <div class="play-card">
+      <div class="play-card-num">2</div>
+      <div class="play-card-body">
+        <h4>店铺直播 3+3 公式</h4>
+        <p>掌握直播间3大留人话术+3大转化节点，系统提升店播 GMV 效率。</p>
+        <a href="https://school.xiaohongshu.com/lesson/normal/bf04ac4430ab48ad8a9382bb5a7ba7aa?jumpFrom=school" target="_blank">▶ 店铺直播3+3公式 →</a>
+      </div>
+    </div>
+    <div class="play-card">
+      <div class="play-card-num">3</div>
+      <div class="play-card-body">
+        <h4>小红书店铺直播怎么玩</h4>
+        <p>全面了解小红书店播的运营方法，从选品到话术，从场景到节奏，帮助商家快速起播。</p>
+        <a href="https://school.xiaohongshu.com/lesson/normal/b4bf5d869f6c40889c9ef77630e32368?jumpFrom=school" target="_blank">▶ 小红书店铺直播怎么玩 →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 私域运营 -->
+  <div class="play-group">
+    <div class="play-group-head">
+      <div class="play-group-title">
+        <div class="play-icon">👥</div>
+        私域运营
+      </div>
+      <div class="play-links">
+        <a class="play-link-tag" href="https://school.xiaohongshu.com/lesson/normal/17204912ca924279a1d9715256bd28d6?jumpFrom=school" target="_blank">群运营爆单课 →</a>
+      </div>
+    </div>
+    <div class="play-card">
+      <div class="play-card-num">1</div>
+      <div class="play-card-body">
+        <h4>商家群运营爆单实战</h4>
+        <p>利用小红书社群运营技巧，打造高活跃买家群，通过分层运营、专属福利、互动内容，实现私域持续复购转化。</p>
+        <a href="https://school.xiaohongshu.com/lesson/normal/17204912ca924279a1d9715256bd28d6?jumpFrom=school" target="_blank">▶ 小红书商家群运营爆单 →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 03 本周优质笔记 TOP 5（滋补/茶叶） ══ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-title">
+      <div class="sec-num">03</div>
+      <h2>本周优质笔记 TOP 5</h2>
+    </div>
+    <div class="sec-meta">滋补·中药材·茶叶类目 / Apr 9–15</div>
+  </div>
+
+  <!-- 笔记01 -->
+  <div class="nc">
+    <div class="nc-rank"><div class="rn gold">01</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/69ddac130000000022026242" target="_blank">
+        <img src="https://ci.xiaohongshu.com/1040g00831uthqoflia0g46odjtt35asiatvngbo" alt="封面" onerror="this.parentElement.innerHTML='<div class=nc-cover-ph>🍯</div>'">
+        <div class="nc-cover-stats"><span>❤️215</span><span>⭐53</span><span>💬23</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags">
+        <span class="nc-tag red">传统滋补营养品</span>
+        <span class="nc-tag">蜂蜜及制品</span>
+        <span class="nc-tag">阿飞的甜蜜的店</span>
+      </div>
+      <div class="nc-title">来自云南深山里的花青素💣，和时间做朋友</div>
+      <div class="nc-insight">以「云南深山花青素」稀缺产地背书建立信任，情感化叙事配合「和时间做朋友」慢养心智，高GPM印证价值感定价策略有效。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/69ddac130000000022026242" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+
+  <!-- 笔记02 -->
+  <div class="nc">
+    <div class="nc-rank"><div class="rn silver">02</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/69dc64e7000000001a02fca0" target="_blank">
+        <img src="https://ci.xiaohongshu.com/spectrum/1040g34o31ustgnnjj4105p3gkp04mkcij3rmssg" alt="封面" onerror="this.parentElement.innerHTML='<div class=nc-cover-ph>🌿</div>'">
+        <div class="nc-cover-stats"><span>❤️232</span><span>⭐181</span><span>💬44</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags">
+        <span class="nc-tag red">传统滋补营养品</span>
+        <span class="nc-tag">滋补养生</span>
+        <span class="nc-tag">顺时男孩的店</span>
+      </div>
+      <div class="nc-title">1斤复购·应季滋补超划算</div>
+      <div class="nc-insight">「复购」行为前置于标题，直接锚定忠实用户心智；气节养生场景切入，契合应季滋补需求；高收藏率（181）说明内容具备强收藏转化力。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/69dc64e7000000001a02fca0" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+
+  <!-- 笔记03 -->
+  <div class="nc">
+    <div class="nc-rank"><div class="rn bronze">03</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/69d77d47000000002003846b" target="_blank">
+        <img src="https://ci.xiaohongshu.com/notes_pre_post/1040g3k831uo26nni3qc05o84sipgbrtqmklv4n0" alt="封面" onerror="this.parentElement.innerHTML='<div class=nc-cover-ph>🫒</div>'">
+        <div class="nc-cover-stats"><span>❤️632</span><span>⭐327</span><span>💬76</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags">
+        <span class="nc-tag red">传统滋补营养品</span>
+        <span class="nc-tag">油柑饮品</span>
+        <span class="nc-tag">悦元气的店</span>
+      </div>
+      <div class="nc-title">油柑+话梅！！稳定🍚欲…真的太🐮了！！</div>
+      <div class="nc-insight">口语化「稳定食欲」痛点直击减脂人群，感叹号+emoji制造强冲动；高赞藏量（632赞/327藏）带来持续自然流，高转化佐证内容电商转化效率。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/69d77d47000000002003846b" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+
+  <!-- 笔记04 -->
+  <div class="nc">
+    <div class="nc-rank"><div class="rn">04</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/69dda21e000000001d018750" target="_blank">
+        <img src="https://ci.xiaohongshu.com/1040g00831uu435vjhm005ptujnmji6u7c1q7sog" alt="封面" onerror="this.parentElement.innerHTML='<div class=nc-cover-ph>🍵</div>'">
+        <div class="nc-cover-stats"><span>❤️664</span><span>⭐405</span><span>💬32</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags">
+        <span class="nc-tag red">茶·养生茶</span>
+        <span class="nc-tag">食欲管理</span>
+        <span class="nc-tag">易周食养的店</span>
+      </div>
+      <div class="nc-title">每天2000ml💦食欲真的管住了！</div>
+      <div class="nc-insight">「喝水=管住食欲」公式化表达降低行动门槛，水量具体化（2000ml）增强可信度；收藏量高（405）说明用户认可作为每日打卡提醒收藏。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/69dda21e000000001d018750" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+
+  <!-- 笔记05 -->
+  <div class="nc">
+    <div class="nc-rank"><div class="rn">05</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/69d83555000000002301407d" target="_blank">
+        <img src="https://ci.xiaohongshu.com/notes_pre_post/1040g3k031uoqjpdoig1g5nu0d0ag89lj72rtl1g?imageView2/2/w/300/format/jpg" alt="封面" onerror="this.parentElement.innerHTML='<div class=nc-cover-ph>🌿</div>'">
+        <div class="nc-cover-stats"><span>❤️303</span><span>⭐100</span><span>💬133</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags">
+        <span class="nc-tag red">粮油调味·滋补养生原料</span>
+        <span class="nc-tag">五指毛桃</span>
+        <span class="nc-tag">山野农民的店</span>
+      </div>
+      <div class="nc-title">跟老爸去深山挖的五指毛桃，又晒好一批啦！</div>
+      <div class="nc-insight">真实父子采挖场景强化原产地溯源信任，「又晒好一批」制造季节稀缺感；高阅读转化率+133条评论说明内容共鸣度极强，私域引流效率高。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/69d83555000000002301407d" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 04 近期其他类目优质笔记参考（休食） ══ -->
+<div class="section">
+  <div class="sec-head">
+    <div class="sec-title">
+      <div class="sec-num">04</div>
+      <h2>近期其他类目优质笔记参考</h2>
+    </div>
+    <div class="sec-meta">休食类目 / Apr 9–15</div>
+  </div>
+
+  <!-- 笔记01 -->
+  <div class="nc">
+    <div class="nc-rank"><div class="rn gold">01</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/69d71057000000001a0350d9" target="_blank">
+        <img src="https://ci.xiaohongshu.com/spectrum/1040g0k031unmub0s3m005q433upnao6cb1baoag" alt="封面" onerror="this.parentElement.innerHTML='<div class=nc-cover-ph>🥜</div>'">
+        <div class="nc-cover-stats"><span>❤️104</span><span>⭐47</span><span>💬14</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags">
+        <span class="nc-tag red">零食坚果·烤花生</span>
+        <span class="nc-tag">仓鼠行动专卖店</span>
+      </div>
+      <div class="nc-title">一口对比就懂！追剧解馋还得是这种清爽花生</div>
+      <div class="nc-insight">「一口对比」直接挑战认知，高GPM+极高阅读转化说明封面+标题双钩效率惊人；追剧场景绑定日常高频行为，产品植入极自然。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/69d71057000000001a0350d9" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+
+  <!-- 笔记02 -->
+  <div class="nc">
+    <div class="nc-rank"><div class="rn silver">02</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/69d72c4600000000230123b9" target="_blank">
+        <img src="https://ci.xiaohongshu.com/notes_pre_post/1040g3k031unq26is34105p325okk4lp2on50qn8" alt="封面" onerror="this.parentElement.innerHTML='<div class=nc-cover-ph>🍫</div>'">
+        <div class="nc-cover-stats"><span>❤️583</span><span>⭐65</span><span>💬50</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags">
+        <span class="nc-tag red">零食坚果·糖果巧克力</span>
+        <span class="nc-tag">玛氏箭牌旗舰店</span>
+      </div>
+      <div class="nc-title">M豆喊你查收这份箱中逗趣啦</div>
+      <div class="nc-insight">高GPM为本期最高，品牌IP「M豆」拟人化开场制造趣味感；高赞（583）+礼盒场景契合节日送礼消费，品牌旗舰店内容电商转化范本。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/69d72c4600000000230123b9" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+
+  <!-- 笔记03 -->
+  <div class="nc">
+    <div class="nc-rank"><div class="rn bronze">03</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/69d75dcf0000000021010881" target="_blank">
+        <img src="https://ci.xiaohongshu.com/spectrum/1040g0k031uo09vm9hm0049cfv8sslsf7n03l160" alt="封面" onerror="this.parentElement.innerHTML='<div class=nc-cover-ph>🍜</div>'">
+        <div class="nc-cover-stats"><span>❤️361</span><span>⭐97</span><span>💬41</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags">
+        <span class="nc-tag red">粮油调味·速食·米线</span>
+        <span class="nc-tag">米曰MIYUE旗舰店</span>
+      </div>
+      <div class="nc-title">感谢小红书🙏上线半个月卖出2000条！</div>
+      <div class="nc-insight">「2000条」销量背书作为社会证明前置标题，具体数字替代形容词；感谢小红书情绪引发平台用户共鸣，自然带动二次传播与信任背书。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/69d75dcf0000000021010881" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+
+  <!-- 笔记04 -->
+  <div class="nc">
+    <div class="nc-rank"><div class="rn">04</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/69d8d069000000001a036888" target="_blank">
+        <img src="https://ci.xiaohongshu.com/notes_pre_post/1040g3k031upc7ie8ia405q8tcf2tudrt7r8quo8?imageView2/2/w/300/format/jpg" alt="封面" onerror="this.parentElement.innerHTML='<div class=nc-cover-ph>🥗</div>'">
+        <div class="nc-cover-stats"><span>❤️7879</span><span>⭐1629</span><span>💬385</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags">
+        <span class="nc-tag red">零食坚果·调味品·沙拉酱</span>
+        <span class="nc-tag">Niceday的店</span>
+      </div>
+      <div class="nc-title">我爸：就卖6.9r一袋，总比倒闭了强！</div>
+      <div class="nc-insight">本期互动王：7879赞/1629藏/385评。父亲口吻+「宁可低价不倒闭」的朴实语气引爆情感共鸣；极低单价（6.9元）消除决策成本，冲动购买转化率高。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/69d8d069000000001a036888" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+
+  <!-- 笔记05 -->
+  <div class="nc">
+    <div class="nc-rank"><div class="rn">05</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/69d7c98800000000210109bb" target="_blank">
+        <img src="https://ci.xiaohongshu.com/notes_pre_post/1040g3k031uodeshn2il05p11hepkcbven7ott0g?imageView2/2/w/300/format/jpg" alt="封面" onerror="this.parentElement.innerHTML='<div class=nc-cover-ph>🥩</div>'">
+        <div class="nc-cover-stats"><span>❤️301</span><span>⭐99</span><span>💬31</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags">
+        <span class="nc-tag red">零食坚果·牛肉干·卤味</span>
+        <span class="nc-tag">内蒙小沃奶沃的店</span>
+      </div>
+      <div class="nc-title">牛胸口脆过段时间下架</div>
+      <div class="nc-insight">「过段时间下架」制造紧迫感与稀缺性，触发即时购买冲动；内蒙牛肉产地信任+牛胸口脆独特部位卖点构成差异化，评论区转化询单活跃。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/69d7c98800000000210109bb" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 05 往期优质笔记内容 ══ -->
+<div class="archive-section">
+  <div class="sec-head">
+    <div class="sec-title">
+      <div class="sec-num">05</div>
+      <h2>往期优质笔记内容</h2>
+    </div>
+    <div class="sec-meta">61 篇参考笔记</div>
+  </div>
+  <div class="archive-intro">📚 汇总往期运营团队精选笔记，点击编号直达原文，可作为选题灵感与内容参考。</div>
+
+  <div class="archive-week-label">精选收录 · 共 61 篇</div>
+  <div class="archive-grid">
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNalIosJaCSp6vlvtF?scode=ANAAyQcbAAgLKiQ5XsAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">01</span><span class="archive-link-text">优质笔记 #01</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCN0Q1oSfBwTOal1xXI?scode=ANAAyQcbAAg78eBwjWAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">02</span><span class="archive-link-text">优质笔记 #02</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNPoRFXHypS2CW8TWx?scode=ANAAyQcbAAgjxu6hKCAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">03</span><span class="archive-link-text">优质笔记 #03</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNgnX44uKJRnSUwu9u?scode=ANAAyQcbAAg5gal3ppAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">04</span><span class="archive-link-text">优质笔记 #04</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNaTUmFhfkRY69PgXB?scode=ANAAyQcbAAgJbLMxDKAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">05</span><span class="archive-link-text">优质笔记 #05</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNQ7hmWz1UTU2mWLXG?scode=ANAAyQcbAAgUok0zW1AS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">06</span><span class="archive-link-text">优质笔记 #06</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCN1bdTn4LfRUmjheH7?scode=ANAAyQcbAAgV4gV1SyAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">07</span><span class="archive-link-text">优质笔记 #07</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNvhgjnNP5Rauvf1ph?scode=ANAAyQcbAAgU3yYyy3AS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">08</span><span class="archive-link-text">优质笔记 #08</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCN2dIC6Xd9TbiC1kFe?scode=ANAAyQcbAAgc2qteOeAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">09</span><span class="archive-link-text">优质笔记 #09</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNI074XoReQn0T0rjT?scode=ANAAyQcbAAgssk1ZOLAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">10</span><span class="archive-link-text">优质笔记 #10</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCN7pCZlKGvRlKmmU8w?scode=ANAAyQcbAAgxQiBCeYAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">11</span><span class="archive-link-text">优质笔记 #11</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNVHQypR1QT1W9eDD1?scode=ANAAyQcbAAgqBvc6KqAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">12</span><span class="archive-link-text">优质笔记 #12</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNfUg9T6JtSqW8qjCt?scode=ANAAyQcbAAgBuWmqzVAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">13</span><span class="archive-link-text">优质笔记 #13</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNpItYokfdTqGeSftY?scode=ANAAyQcbAAgMQNGmrTAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">14</span><span class="archive-link-text">优质笔记 #14</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNf4ME4xOkQxm5KS5u?scode=ANAAyQcbAAg7T6aCyrAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">15</span><span class="archive-link-text">优质笔记 #15</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCN1jM5xT3wSTOEiJ9e?scode=ANAAyQcbAAgnFQZcq3AS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">16</span><span class="archive-link-text">优质笔记 #16</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNQvXl6jWzSqWvJKx0?scode=ANAAyQcbAAgrqNIzZKAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">17</span><span class="archive-link-text">优质笔记 #17</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNPh4r9EyxSOmsV00v?scode=ANAAyQcbAAgY0rK4yDAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">18</span><span class="archive-link-text">优质笔记 #18</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNdXrf9Y72TgKv6yrJ?scode=ANAAyQcbAAgm8ijfKRAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">19</span><span class="archive-link-text">优质笔记 #19</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCN24Rn1h0XQnGdysCw?scode=ANAAyQcbAAgGCbVqkJAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">20</span><span class="archive-link-text">优质笔记 #20</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNBa4gFwJzSBiO6lAn?scode=ANAAyQcbAAgC07r9uWAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">21</span><span class="archive-link-text">优质笔记 #21</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNGg1hYWEeR00JP16U?scode=ANAAyQcbAAg9H1kl0sAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">22</span><span class="archive-link-text">优质笔记 #22</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNkAQt39v8QhSnShiS?scode=ANAAyQcbAAgGAUDl1hAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">23</span><span class="archive-link-text">优质笔记 #23</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNZoaZjyZbRxijmLeE?scode=ANAAyQcbAAgmREaouBAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">24</span><span class="archive-link-text">优质笔记 #24</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNER1G8A3mQdiYbSqg?scode=ANAAyQcbAAg6fkapO7AS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">25</span><span class="archive-link-text">优质笔记 #25</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCN1njgTe8rQlShjMxM?scode=ANAAyQcbAAg45PuftAAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">26</span><span class="archive-link-text">优质笔记 #26</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNgBiyyCubQ6GygL2b?scode=ANAAyQcbAAgPHIlrNQAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">27</span><span class="archive-link-text">优质笔记 #27</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNpLjZ3xdIQLaylDL8?scode=ANAAyQcbAAgXWSzh4AAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">28</span><span class="archive-link-text">优质笔记 #28</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCND1VefjCOThO3wBo2?scode=ANAAyQcbAAg31I02xlAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">29</span><span class="archive-link-text">优质笔记 #29</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNDppKRicIT62fgD69?scode=ANAAyQcbAAgNl5JcNbAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">30</span><span class="archive-link-text">优质笔记 #30</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNzLYsENbQTK2ze12F?scode=ANAAyQcbAAgH75KuTIAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">31</span><span class="archive-link-text">优质笔记 #31</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNHNeaQ5EeTBCqOBWK?scode=ANAAyQcbAAgGyaGCqSAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">32</span><span class="archive-link-text">优质笔记 #32</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsCN7xP8CXCZRIW74gQq?scode=ANAAyQcbAAgtOzZi1vAS4AnwY8ALY" target="_blank">
+      <span class="archive-link-num">33</span><span class="archive-link-text">优质笔记 #33</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsCNHStcuvy9R1m2xMYK?scode=ANAAyQcbAAg2mwOaFFASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">34</span><span class="archive-link-text">优质笔记 #34</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsCNctozuP8tQvGFwlFi?scode=ANAAyQcbAAgTQBF0s0ASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">35</span><span class="archive-link-text">优质笔记 #35</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsCNtTENPmaeTbaQl1ck?scode=ANAAyQcbAAgJBzEvSaASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">36</span><span class="archive-link-text">优质笔记 #36</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsCN9U71EqjKTJ07v34y?scode=ANAAyQcbAAg1QtU1zAASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">37</span><span class="archive-link-text">优质笔记 #37</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsot4H13taSQi116YhSu?scode=ANAAyQcbAAgok8J80n" target="_blank">
+      <span class="archive-link-num">38</span><span class="archive-link-text">优质笔记 #38</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKskLTmshAbQYe10ntAEY?scode=ANAAyQcbAAgfBjXZx3ASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">39</span><span class="archive-link-text">优质笔记 #39</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsPfZPvaNATwymTDdR1W?scode=ANAAyQcbAAgZfd5019ASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">40</span><span class="archive-link-text">优质笔记 #40</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKs51uftZYqS3yi0GmaJi?scode=ANAAyQcbAAg5HIaxtHASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">41</span><span class="archive-link-text">优质笔记 #41</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsnXXciU4qQg60b0DqQ2?scode=ANAAyQcbAAglfaMMGgASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">42</span><span class="archive-link-text">优质笔记 #42</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsTVPdMEE8SRiBhP0qM4?scode=ANAAyQcbAAg2SS0npDASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">43</span><span class="archive-link-text">优质笔记 #43</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsUmdFLoEfSAyURf78yl?scode=ANAAyQcbAAg0agzKMfASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">44</span><span class="archive-link-text">优质笔记 #44</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsQbtiRYCCR6iKS1ZvP6?scode=ANAAyQcbAAgGgKZqveASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">45</span><span class="archive-link-text">优质笔记 #45</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsIZW61DOMThKIyc7Ra4?scode=ANAAyQcbAAgCyZNjBmASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">46</span><span class="archive-link-text">优质笔记 #46</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsSW5F8aG6Sna8QhDIO5?scode=ANAAyQcbAAgxEwJk7oASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">47</span><span class="archive-link-text">优质笔记 #47</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsM7zaq1cMSQulSI3XiV?scode=ANAAyQcbAAgptvyKJ1ASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">48</span><span class="archive-link-text">优质笔记 #48</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsBQoFilugTsuxcoL1gf?scode=ANAAyQcbAAg1JxTf6NASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">49</span><span class="archive-link-text">优质笔记 #49</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKszRaSrHvPQrKJ3huAka?scode=ANAAyQcbAAgyKWBnjOASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">50</span><span class="archive-link-text">优质笔记 #50</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKs1mbPo0fqTQWmWtPGMy?scode=ANAAyQcbAAgvI8Ou6gASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">51</span><span class="archive-link-text">优质笔记 #51</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsT7guTJtuSdyLs0gVpB?scode=ANAAyQcbAAgsvhf0A1ASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">52</span><span class="archive-link-text">优质笔记 #52</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsY56DrYN0QkW1eIunI2?scode=ANAAyQcbAAgTwSjDvBASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">53</span><span class="archive-link-text">优质笔记 #53</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsjqEK8czLTNWt1a10s4?scode=ANAAyQcbAAghsMNr49ASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">54</span><span class="archive-link-text">优质笔记 #54</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsPqFzrSeETXayJAaj0n?scode=ANAAyQcbAAgDEuWXrsASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">55</span><span class="archive-link-text">优质笔记 #55</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsvaDqO0E8QGiGDnOcdt?scode=ANAAyQcbAAgrWBZ1ZaASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">56</span><span class="archive-link-text">优质笔记 #56</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsnmOD0OBATUqb7D3JKF?scode=ANAAyQcbAAgtuRl6jJASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">57</span><span class="archive-link-text">优质笔记 #57</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKsiaFVHG11Rz2kAx69FX?scode=ANAAyQcbAAgxifCJMKASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">58</span><span class="archive-link-text">优质笔记 #58</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKs6JWJN3RdTTObECxuNL?scode=ANAAyQcbAAgZf6tz0nASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">59</span><span class="archive-link-text">优质笔记 #59</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_ASIAzgY1AKs1czHHaIiS6WsBWQUnE?scode=ANAAyQcbAAgDRsMp51ASIAzgY1AKs" target="_blank">
+      <span class="archive-link-num">60</span><span class="archive-link-text">优质笔记 #60</span>
+    </a>
+    <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AQQAAwb5APM3VvFCJB1RoG9IdgLUA?scode=ANAAyQcbAAgMnAg11gAWIA7QbZAO4" target="_blank">
+      <span class="archive-link-num">61</span><span class="archive-link-text">优质笔记 #61</span>
+    </a>
+  </div>
+</div>
+
+<!-- footer -->
+<div class="footer">
+  <p>滋补行业运营 · 数据来源：小红书鹰眼平台 · 数据范围 2026-04-09 至 2026-04-15</p>
+  <p style="margin-top:4px">每周三更新 · 如有疑问请联系运营小组</p>
+</div>
+
+</div>
+</body>
+</html>

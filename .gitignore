@@ -1,0 +1,6 @@
+# 只同步小报产出物
+*
+!output/
+!output/**
+!.gitignore
+output/*.bak
