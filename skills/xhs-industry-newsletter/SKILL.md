@@ -127,7 +127,28 @@ python3 skills/aibibp-cdn-upload/aibibp-cdn-upload/scripts/upload_to_cdn.py outp
 - 每期小报链接永久有效（CDN 公网可分享）
 - 定时任务已配置（每周三 10:30），自动生成时读取上期文件继承归档
 
-### 鹰眼封面图提取流程
-1. 调用 `searchNoteList` API，从响应的 `discoveryBasic[0].discoveryLink` 字段获取封面路径
-2. 将域名从 `ci.xiaohongshu.com` 替换为 `sns-img-hw.xhscdn.com`
-3. 上传前用 `curl -o /dev/null -w "%{http_code}"` 验证每条封面 URL 返回 200
+### 封面图获取流程（必须从笔记客户端取，保证对外可见）
+
+**背景**：鹰眼 API `discoveryLink` 返回的封面 key 有时不完整或已过期（返回 404）。**必须从小红书笔记客户端页面实时抓取当前有效封面**，确保对外可见。
+
+**强制流程**：
+1. 对每条笔记，用浏览器访问 `https://www.xiaohongshu.com/explore/{笔记ID}`
+2. 执行 JS 取图片：
+   ```js
+   Array.from(document.querySelectorAll('img'))
+     .map(i => i.src)
+     .filter(s => s.includes('xhscdn') && !s.includes('avatar') && !s.includes('picasso'))
+   ```
+3. 取第一张非头像的图片 URL，提取 `sns-webpic-qc.xhscdn.com/.../{路径key}!nd_...` 中的 `{路径key}`
+4. 拼接为：`https://sns-img-hw.xhscdn.com/{路径key}?imageView2/2/w/270/format/jpg`
+5. 用 `curl -o /dev/null -w "%{http_code}"` 验证返回 200
+   - 若 404，尝试加 `notes_pre_post/`、`note_pre_post_uhdr/`、`spectrum/` 前缀
+6. **只有验证 200 的 URL 才能写入 HTML**
+
+**禁止行为**：
+- ❌ 不能直接用鹰眼 API 返回的 `discoveryLink`（不验证直接写入，是封面加载失败的根本原因）
+- ❌ 不能使用 `ci.xiaohongshu.com` 域名（内网域名，对外不可访问）
+- ❌ 不能使用 `sns-webpic-qc.xhscdn.com` 域名（带时间戳鉴权，过期后 403）
+
+**已删除笔记检测**：
+- 访问笔记页面时，若页面无图片（imgs 为空或仅有系统图片），说明笔记已被删除，**必须从候选池中选其他笔记替换，不得放入小报**
