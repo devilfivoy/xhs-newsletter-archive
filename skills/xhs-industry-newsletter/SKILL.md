@@ -46,11 +46,16 @@ description: 生成小红书行业优质笔记周报（HTML 小报）并上传 C
 
 向用户确认以下信息（未提供时询问）：
 - 行业类目（如：美食滋补）
-- 数据时间范围（如：Apr 9–15）
 - 周次（如：2026 第 16 周）
 - 板块 03、04 的笔记数据（每条：笔记 ID / 标题 / 封面图 URL / 赞藏评数量 / 店铺名 / 标签）
 - 本期新增往期归档链接（可选）
 - 板块 02 玩法内容是否沿用上期（默认沿用）
+
+**⚠️ 日期范围规则（必须遵守）**：
+- 数据时间范围 = **从生成当天往前推 7 天**（不含今天，含第 7 天前）
+- 例：5月7日生成 → Apr 30–May 7（即 Apr 30、May 1、2、3、4、5、6、7，共 8 天跨度）
+- 计算方式：`生成日期 - 7 天` 到 `生成日期`
+- 例：Apr 28 生成 → Apr 21–28
 
 ### 2. 填充模板
 
@@ -58,7 +63,7 @@ description: 生成小红书行业优质笔记周报（HTML 小报）并上传 C
 
 ```
 {{WEEK_LABEL}}     → 2026 第 16 周
-{{DATE_RANGE}}     → Apr 9–15
+{{DATE_RANGE}}     → Apr 30–May 7（当天往前推7天）
 {{INDUSTRY}}       → 美食滋补行业
 {{JIEQI_NAME}}     → 谷雨 · 4月20日前后
 {{JIEQI_DESC}}     → ...
@@ -68,11 +73,14 @@ description: 生成小红书行业优质笔记周报（HTML 小报）并上传 C
 
 节气判断规则（参考 `references/jieqi.md`）。
 
-### 3. 往期归档板块处理
+### 3. 往期归档板块处理（⚠️ 严格按顺序执行）
 
-- 读取上期 HTML 文件中 `archive-grid` 内的所有 `<a>` 标签，完整复制
-- 在末尾追加本期用户新增的链接（编号顺延）
-- 更新 `sec-meta` 和 `archive-week-label` 中的总数
+- **Step 3a：读取上期 HTML** 中 `archive-grid` 内的所有 `<a>` 标签
+- **Step 3b：查找上期小报 CDN 链接** — 从存档索引 `output/newsletter-archive.md` 中获取最近一期的 CDN 链接
+- **Step 3c：插入最新链接** — 将上期小报 CDN 链接作为**编号 01**，插入到 `archive-grid` 的**最前面**
+- **Step 3d：追加其余归档** — 将 Step 3a 读取的所有 `<a>` 标签原样追加到 Step 3c 之后（编号顺延）
+- **Step 3e：更新计数** — 更新 `sec-meta` 和 `archive-week-label` 中的总数
+- **核心原则：每期新生成的小报链接必须放在第 05 部分的最前面（编号 01），旧的自动后移顺延**
 
 ### 4. 输出文件命名
 
@@ -127,28 +135,71 @@ python3 skills/aibibp-cdn-upload/aibibp-cdn-upload/scripts/upload_to_cdn.py outp
 - 每期小报链接永久有效（CDN 公网可分享）
 - 定时任务已配置（每周三 10:30），自动生成时读取上期文件继承归档
 
-### 封面图获取流程（必须从笔记客户端取，保证对外可见）
+### 封面图获取流程（⚠️ 必须严格遵守，历史上反复出错）
 
-**背景**：鹰眼 API `discoveryLink` 返回的封面 key 有时不完整或已过期（返回 404）。**必须从小红书笔记客户端页面实时抓取当前有效封面**，确保对外可见。
+**核心结论（2026-05-07 验证）**：
+- `sns-webpic-qc.xhscdn.com` URL 含时间戳鉴权，**对外必然 404，绝对不能用**
+- 正确方式：用 SSO Cookie 抓取笔记详情页 HTML，从 `imageList` 中提取 fileId，**去掉时间戳hash前缀**，直接拼 `sns-img-hw.xhscdn.com/{fileId}` 并 curl 验证
 
-**强制流程**：
-1. 对每条笔记，用浏览器访问 `https://www.xiaohongshu.com/explore/{笔记ID}`
-2. 执行 JS 取图片：
-   ```js
-   Array.from(document.querySelectorAll('img'))
-     .map(i => i.src)
-     .filter(s => s.includes('xhscdn') && !s.includes('avatar') && !s.includes('picasso'))
-   ```
-3. 取第一张非头像的图片 URL，提取 `sns-webpic-qc.xhscdn.com/.../{路径key}!nd_...` 中的 `{路径key}`
-4. 拼接为：`https://sns-img-hw.xhscdn.com/{路径key}?imageView2/2/w/270/format/jpg`
-5. 用 `curl -o /dev/null -w "%{http_code}"` 验证返回 200
-   - 若 404，尝试加 `notes_pre_post/`、`note_pre_post_uhdr/`、`spectrum/` 前缀
-6. **只有验证 200 的 URL 才能写入 HTML**
+**强制流程（curl 命令行方式，无需浏览器）**：
 
-**禁止行为**：
-- ❌ 不能直接用鹰眼 API 返回的 `discoveryLink`（不验证直接写入，是封面加载失败的根本原因）
-- ❌ 不能使用 `ci.xiaohongshu.com` 域名（内网域名，对外不可访问）
-- ❌ 不能使用 `sns-webpic-qc.xhscdn.com` 域名（带时间戳鉴权，过期后 403）
+```bash
+# Step 1: 用 SSO Cookie 抓笔记详情页 HTML
+TOKEN=$(jq -r '."common-internal-access-token-prod"' /home/node/.token/sso_token.json)
+curl -s "https://www.xiaohongshu.com/discovery/item/{笔记ID}" \
+  -H "Cookie: common-internal-access-token-prod=${TOKEN}" \
+  -H "User-Agent: Mozilla/5.0" > /tmp/note.html
+
+# Step 2: 从 HTML 中提取 urlPre 字段（含 Unicode 转义）
+# 示例原始值: http:\\u002F\\u002Fsns-webpic-qc.xhscdn.com\\u002F202605071140\\u002F{hash}\\u002F{fileId}!nd_xxx
+# 格式规律：时间戳/hash/[子目录/]fileId
+grep -o '"urlPre":"[^"]*"' /tmp/note.html | head -1
+
+# Step 3: 提取 fileId（去掉时间戳 hash，去掉 !nd_xxx 后缀）
+# 时间戳格式: 14位数字，例如 202605071140
+# hash 格式: 32位十六进制字符串
+# fileId 格式: 1040xxx 开头，可能带 notes_pre_post/、spectrum/、ark_notes/ 子目录前缀
+python3 -c "
+import re, json
+raw = open('/tmp/note.html').read()
+m = re.search(r'\"urlPre\":\"(http[^\"]+)\"', raw)
+if m:
+    url = m.group(1).encode().decode('unicode_escape')
+    # 提取 fileId：去掉 时间戳hash/ 前缀，去掉 !nd_xxx 后缀
+    m2 = re.search(r'xhscdn\.com/\d+/[0-9a-f]+/(.+?)!', url)
+    if not m2:
+        m2 = re.search(r'xhscdn\.com/\d+/(.+?)!', url)
+    if m2:
+        fileid = m2.group(1)
+        print(f'fileId: {fileid}')
+        print(f'封面URL: https://sns-img-hw.xhscdn.com/{fileid}?imageView2/2/w/270/format/jpg')
+"
+
+# Step 4: curl 验证（必须 200 才能用）
+curl -s -o /dev/null -w "%{http_code}" \
+  "https://sns-img-hw.xhscdn.com/{fileId}?imageView2/2/w/270/format/jpg"
+```
+
+**子目录规律**（fileId 可能含前缀，原样保留）：
+- 无前缀：`1040gxxx...`（最常见）
+- `notes_pre_post/1040g3kxxx...`
+- `spectrum/1040g0kxxx...`
+- `ark_notes/104104eoxxx...`
+
+**最终写入 HTML 的 URL 格式**：
+```
+https://sns-img-hw.xhscdn.com/{fileId}?imageView2/2/w/270/format/jpg
+```
+
+**三条铁律（绝对不能违反）**：
+- ❌ `sns-webpic-qc.xhscdn.com` — 含时间戳鉴权，对外 404，**禁止使用**
+- ❌ `ci.xiaohongshu.com` — 内网域名，对外不可访问，**禁止使用**
+- ❌ 未经 curl 验证 200 就写入 HTML — **必须先验证**
 
 **已删除笔记检测**：
-- 访问笔记页面时，若页面无图片（imgs 为空或仅有系统图片），说明笔记已被删除，**必须从候选池中选其他笔记替换，不得放入小报**
+- 若抓取到的 HTML 中无 `imageList` 或 `urlPre` 字段，说明笔记已删除/私密，**必须换其他笔记**
+
+**板块05 往期优质笔记存档规则（⚠️ 必须遵守）**：
+- 只能放：往期优质笔记**文档链接**（微信文档 doc.weixin.qq.com）和历次生成的**周报小报 CDN 链接**
+- **绝对不能放**：单条笔记的 xiaohongshu.com/explore/ 链接
+- 每期生成后，在存档中新增一行指向本期小报 CDN 链接，编号顺延
