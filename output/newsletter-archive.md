@@ -2,6 +2,7 @@
 
 每周三更新，最新在最上方。
 
+| 2026 第21周 | May 5–12 | 2026-05-12 | [查看](https://fe-static.xhscdn.com/formula-static/aibibp/vofhtc9z/viz-zibu-weekly-20260512.html) | `viz-zibu-weekly-20260512.html` |
 | 期数 | 数据范围 | 发布日期 | CDN 链接 | 本地文件 |
 |------|----------|----------|----------|----------|
 | 2026 第20周 | Apr 28–May 4 | 2026-05-06 | [查看](https://fe-static.xhscdn.com/formula-static/aibibp/66s42pa5/viz-zibu-weekly-20260506.html) | `viz-zibu-weekly-20260506.html` |
