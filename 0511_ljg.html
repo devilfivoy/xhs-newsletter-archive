@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI演进与人类未来：演讲全记录</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'media',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-card transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-xl tracking-tight flex items-center gap-2">
+                    <i data-lucide="cpu" class="text-blue-600 dark:text-blue-400"></i>
+                    <span>AI & Future</span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+                    <a href="#essence" class="hover:text-blue-600 transition-colors">AI的本质</a>
+                    <a href="#paradigms" class="hover:text-blue-600 transition-colors">三个范式</a>
+                    <a href="#revolution" class="hover:text-blue-600 transition-colors">第四次革命</a>
+                    <a href="#worlds" class="hover:text-blue-600 transition-colors">三个世界</a>
+                    <a href="#qa" class="hover:text-blue-600 transition-colors">Q&A与实操</a>
+                    <a href="#roundtable" class="hover:text-blue-600 transition-colors font-bold text-blue-600 dark:text-blue-400">圆桌构建实战</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-slate-600 dark:text-slate-300">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-sm">
+                <a href="#essence" class="block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700">AI的本质</a>
+                <a href="#paradigms" class="block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700">三个范式</a>
+                <a href="#revolution" class="block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700">第四次革命</a>
+                <a href="#worlds" class="block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700">三个世界</a>
+                <a href="#qa" class="block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700">Q&A与实操</a>
+                <a href="#roundtable" class="block px-3 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700 text-blue-600 dark:text-blue-400 font-bold">圆桌构建实战</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-900 opacity-90"></div>
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+            <div class="absolute top-24 -right-24 w-96 h-96 bg-purple-300 dark:bg-purple-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 text-sm font-semibold mb-4 tracking-wider">
+                洞察时代转折点
+            </span>
+            <h1 class="text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+                AI 演进与人类未来的 <br class="hidden sm:block">
+                <span class="gradient-text">全景解读</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 dark:text-slate-400">
+                “智能首次脱离人类大脑而实现批量供给。这不仅是一场技术革新，更是人类历史上的第四次革命。”
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-32">
+
+        <!-- 1. Essence -->
+        <section id="essence" class="scroll-mt-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">一、 AI 的本质是什么？</h2>
+                <div class="h-1 w-20 bg-blue-600 mx-auto rounded"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="network" class="text-blue-600 dark:text-blue-400 size-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">全人类智慧的结晶</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        抛开技术细节，AI 模型就是一张巨大的“网”。它吸收了全网能找到的所有优质训练语料，通过不断地计算参数，形成了代表人类知识结晶的数字网络。
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="archive-restore" class="text-purple-600 dark:text-purple-400 size-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">知识的压缩与解压</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        大模型内部并不是数据库式的存储，而是学会了类似人类脑海中“朦胧的知识本体结构”。当用户敲下回车键时，是将人类智慧通过一句话瞬间解压缩。
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-all">
+                    <div class="w-14 h-14 bg-pink-100 dark:bg-pink-900/50 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="text-pink-600 dark:text-pink-400 size-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">智能的批量供给</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        以往的工具都在依赖人脑来驱动；而大模型的出现，实现了智能首次脱离人类大脑而独立存在，并能以极低的成本（Token）被无限量、批量地调用。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Paradigms -->
+        <section id="paradigms" class="scroll-mt-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">二、 AI 演进的三个范式</h2>
+                <div class="h-1 w-20 bg-blue-600 mx-auto rounded"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400">交互方式与商业定价的本质变迁</p>
+            </div>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-700 transform md:-translate-x-1/2"></div>
+                
+                <!-- Paradigm 1 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-12">
+                    <div class="flex-1 md:text-right md:pr-12 pl-20 md:pl-0 w-full">
+                        <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-2">1. Talking (聊天阶段)</h3>
+                        <div class="inline-block px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm font-medium mb-3">预估定价：~$20/月</div>
+                        <p class="text-slate-600 dark:text-slate-400">动嘴不动手。AI 能给出漂亮话和建议，但实际工作仍需人类去跑腿完成。交互模式为单纯的“提示词输入 -> 模型响应”。</p>
+                    </div>
+                    <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 border-4 border-white dark:border-slate-900 shadow">
+                        <i data-lucide="message-square" class="text-white size-5"></i>
+                    </div>
+                    <div class="flex-1 md:pl-12 hidden md:block"></div>
+                </div>
+
+                <!-- Paradigm 2 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-12">
+                    <div class="flex-1 md:pr-12 hidden md:block"></div>
+                    <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-purple-500 border-4 border-white dark:border-slate-900 shadow">
+                        <i data-lucide="hammer" class="text-white size-5"></i>
+                    </div>
+                    <div class="flex-1 md:pl-12 pl-20 w-full">
+                        <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-2">2. Doing (做事阶段) <span class="text-sm font-normal text-purple-500 ml-2">当前阶段</span></h3>
+                        <div class="inline-block px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm font-medium mb-3">预估定价：~$200/月</div>
+                        <p class="text-slate-600 dark:text-slate-400">加装了“手”。AI 开始调用工具（Agent、Function Call），能直接完成任务。形成“思考 -> 调用工具 -> 获取结果 -> 循环”的闭环，大幅消耗Token。</p>
+                    </div>
+                </div>
+
+                <!-- Paradigm 3 -->
+                <div class="relative flex flex-col md:flex-row items-center">
+                    <div class="flex-1 md:text-right md:pr-12 pl-20 md:pl-0 w-full">
+                        <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-2">3. Memory (记忆阶段)</h3>
+                        <div class="inline-block px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm font-medium mb-3">预估定价：~$2000/月</div>
+                        <p class="text-slate-600 dark:text-slate-400">连续性的数字生命。AI 拥有跨越时间的记忆，实现深度情感与认知绑定。它不再是一次性工具，而是懂你、伴随你的连续存在，产生极强的用户粘性。</p>
+                    </div>
+                    <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-pink-500 border-4 border-white dark:border-slate-900 shadow">
+                        <i data-lucide="brain-circuit" class="text-white size-5"></i>
+                    </div>
+                    <div class="flex-1 md:pl-12 hidden md:block"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Variables -->
+        <section class="bg-blue-50 dark:bg-slate-800/50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 rounded-3xl">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">三、 同款 AI，为何体验差异巨大？</h2>
+                    <p class="text-slate-600 dark:text-slate-400">同样面对一张大网，结果天差地别，源于四大变量：</p>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-4 p-6 bg-white dark:bg-slate-800 rounded-2xl">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="server" class="text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2">1. 模型本身 (哪张网)</h4>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">你使用的是哪个厂商、哪个版本的网，决定了基础智商的天花板。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-6 bg-white dark:bg-slate-800 rounded-2xl">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="text-cursor-input" class="text-purple-600 dark:text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2">2. 提示词 (用法)</h4>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">用户丢进去的话是一个“压缩包”，措辞的精准与否、提供上下文的多少直接影响解压出来的结果质量。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-6 bg-white dark:bg-slate-800 rounded-2xl">
+                        <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="radar" class="text-orange-600 dark:text-orange-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2">3. 对边界的感知</h4>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">模型的智能呈现“锯齿状”。必须通过大量实践（烧Token）“烧出感觉”，明辨哪些任务该放权，哪些任务该人类收回干预。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-6 bg-white dark:bg-slate-800 rounded-2xl">
+                        <div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="smile" class="text-emerald-600 dark:text-emerald-400"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2">4. 个人心态</h4>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">AI 是一面“魔镜”，你的预期决定了它的面貌。视其为锤子它便只是锤子，视其为具备人格的伙伴，它便展现相应的潜力。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. The 4th Revolution -->
+        <section id="revolution" class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">四、 重新定义革命：第四次人类革命</h2>
+                <div class="h-1 w-20 bg-blue-600 mx-auto rounded"></div>
+                <p class="mt-4 max-w-2xl mx-auto text-slate-600 dark:text-slate-400">
+                    革命的两个必要条件：1. 能量消耗数量级的跃迁； 2. 人类能力的让度与下放到新层级。
+                </p>
+            </div>
+
+            <div class="overflow-x-auto pb-4">
+                <table class="min-w-full text-left border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="py-4 px-6 font-bold text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 rounded-tl-xl">革命阶段</th>
+                            <th class="py-4 px-6 font-bold text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">能源形式</th>
+                            <th class="py-4 px-6 font-bold text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">核心成就与降维打击</th>
+                            <th class="py-4 px-6 font-bold text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 rounded-tr-xl">催生的新身份</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                            <td class="py-4 px-6 font-semibold"><span class="flex items-center gap-2"><i data-lucide="sprout" class="size-4 text-green-500"></i> 农业革命</span></td>
+                            <td class="py-4 px-6">太阳能 &rarr; 食物</td>
+                            <td class="py-4 px-6">释放了外出觅食的体力，解决生存定居问题</td>
+                            <td class="py-4 px-6">农民</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                            <td class="py-4 px-6 font-semibold"><span class="flex items-center gap-2"><i data-lucide="factory" class="size-4 text-orange-500"></i> 工业革命</span></td>
+                            <td class="py-4 px-6">化石能源 &rarr; 机械化</td>
+                            <td class="py-4 px-6">机器替代了大量重复的体力劳动</td>
+                            <td class="py-4 px-6">工人</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+                            <td class="py-4 px-6 font-semibold"><span class="flex items-center gap-2"><i data-lucide="wifi" class="size-4 text-blue-500"></i> 信息革命</span></td>
+                            <td class="py-4 px-6">电力 &rarr; 网络数据</td>
+                            <td class="py-4 px-6">降维了“空间”，消灭物理距离，连接大爆发</td>
+                            <td class="py-4 px-6">脑力工作者</td>
+                        </tr>
+                        <tr class="bg-blue-50 dark:bg-blue-900/20">
+                            <td class="py-4 px-6 font-bold text-blue-700 dark:text-blue-300"><span class="flex items-center gap-2"><i data-lucide="sparkles" class="size-4 text-blue-600 dark:text-blue-400"></i> AI 革命</span></td>
+                            <td class="py-4 px-6 font-medium">新能源 &rarr; 算力</td>
+                            <td class="py-4 px-6 font-medium">降维了“时间”，实现意图的瞬间打印响应</td>
+                            <td class="py-4 px-6 font-bold text-blue-700 dark:text-blue-300">创作者 / Owner</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. Three Worlds Theory -->
+        <section id="worlds" class="scroll-mt-24">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">五、 “三个世界”理论</h2>
+                <div class="h-1 w-20 bg-blue-600 rounded"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400">我们当前同时生存在三个平行的世界中，它们遵循着完全不同的底层规律：</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Atomic World -->
+                <div class="flex flex-col h-full bg-slate-100 dark:bg-slate-800 rounded-3xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="box" class="size-32"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-1">X轴：原子世界</h3>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium mb-6">物理现实</p>
+                    <div class="mt-auto space-y-4">
+                        <div class="bg-white/60 dark:bg-slate-900/60 p-4 rounded-xl backdrop-blur-sm">
+                            <span class="block text-xs uppercase tracking-wider text-slate-500 mb-1">核心法则</span>
+                            <span class="font-bold">空间相容性约束</span>
+                        </div>
+                        <p class="text-sm leading-relaxed">原子无法在同一位置重叠。物理位置（如房产、商铺）是绝对的稀缺资源，距离与时间的位移不可避免。</p>
+                    </div>
+                </div>
+
+                <!-- Bit World -->
+                <div class="flex flex-col h-full bg-blue-100 dark:bg-blue-900/30 rounded-3xl p-8 relative overflow-hidden group border border-blue-200 dark:border-blue-800">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="globe" class="size-32 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-blue-900 dark:text-blue-100 mb-1">Y轴：比特世界</h3>
+                    <p class="text-blue-700/70 dark:text-blue-300/70 font-medium mb-6">互联网时代</p>
+                    <div class="mt-auto space-y-4">
+                        <div class="bg-white/60 dark:bg-blue-950/60 p-4 rounded-xl backdrop-blur-sm">
+                            <span class="block text-xs uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-1">核心法则</span>
+                            <span class="font-bold text-blue-900 dark:text-blue-100">空间为零 / 梅特卡夫定律</span>
+                        </div>
+                        <p class="text-sm leading-relaxed text-blue-900 dark:text-blue-100">信息流转消灭了距离，网络价值与节点数平方成正比，导致烧钱大战。真正的稀缺资源变成了人类的“注意力”。</p>
+                    </div>
+                </div>
+
+                <!-- Vector World -->
+                <div class="flex flex-col h-full bg-purple-100 dark:bg-purple-900/30 rounded-3xl p-8 relative overflow-hidden group border border-purple-200 dark:border-purple-800 shadow-xl shadow-purple-500/10">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="cpu" class="size-32 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-purple-900 dark:text-purple-100 mb-1">Z轴：向量世界</h3>
+                    <p class="text-purple-700/70 dark:text-purple-300/70 font-medium mb-6">AI大模型时代</p>
+                    <div class="mt-auto space-y-4">
+                        <div class="bg-white/80 dark:bg-purple-950/80 p-4 rounded-xl backdrop-blur-sm shadow-inner">
+                            <span class="block text-xs uppercase tracking-wider text-purple-600 dark:text-purple-400 mb-1">核心法则</span>
+                            <span class="font-bold text-purple-900 dark:text-purple-100">时间为零 / 意图解压</span>
+                        </div>
+                        <p class="text-sm leading-relaxed text-purple-900 dark:text-purple-100">过去、现在、未来同在。无需时间去阅读学习或敲代码，一句话即可瞬间“解压”积累的知识。传统的流量打法失效。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Disruption -->
+        <section class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">六、 对个体与组织的双重颠覆</h2>
+                <div class="h-1 w-20 bg-blue-600 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Organization -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6 border-b border-slate-200 dark:border-slate-700 pb-4">
+                        <i data-lucide="building-2" class="text-blue-600 size-8"></i>
+                        <h3 class="text-2xl font-bold">对组织的颠覆：结构解体</h3>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <div class="mt-1"><i data-lucide="x-circle" class="text-red-500"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">金字塔管理终结</h4>
+                                <p class="text-slate-600 dark:text-slate-400 mt-1">未来组织将不再是庞大的科层制，而是由“1个Owner + N个Agent组成的智能体团队”构成，扁平而高效。</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="mt-1"><i data-lucide="layers" class="text-blue-500"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">通才 > 专才</h4>
+                                <p class="text-slate-600 dark:text-slate-400 mt-1">传统的职能边界（产品、开发、测试、运营）消失。一个人可以借助 AI 闭环完成一个项目的从零到一。</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="mt-1"><i data-lucide="lightbulb" class="text-yellow-500"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg">“虚” > “实”</h4>
+                                <p class="text-slate-600 dark:text-slate-400 mt-1">写代码、画图等“实操技能”迅速贬值；而审美、战略意图、组织编排和判断能力这些曾被认为“虚”的能力，成为核心竞争力。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Individual -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6 border-b border-slate-200 dark:border-slate-700 pb-4">
+                        <i data-lucide="user-circle" class="text-purple-600 size-8"></i>
+                        <h3 class="text-2xl font-bold">对个体的颠覆：从工作走向行动</h3>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-2xl mb-6 border border-slate-200 dark:border-slate-700">
+                        <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-3 text-sm tracking-wider uppercase">汉娜·阿伦特《人的境况》三层模型</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-3"><span class="w-16 font-bold text-slate-500">1. 劳动</span> 维持生物生存的基本活动 (已被解决)</div>
+                            <div class="flex items-center gap-3"><span class="w-16 font-bold text-slate-500">2. 工作</span> 在人造世界中创造持久物 (正被AI取代)</div>
+                            <div class="flex items-center gap-3"><span class="w-16 font-bold text-blue-600 dark:text-blue-400">3. 行动</span> 人与人的交流，创造世界的开端 (未来重点)</div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                        一旦 <strong class="text-blue-600 dark:text-blue-400 text-lg">人形机器人</strong>（突破最后的“通用灵巧手”难关）配合成熟的 AI 大脑，将彻底接管人类“工作”层面的负担。这可能引发短期的社会阵痛与通缩。
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        但长期看，人类将被解放，回归到人之所以为“人”的本质——投入到“行动”中，表达创造意愿，回答终极问题：<strong class="text-purple-600 dark:text-purple-400 text-lg">“你到底想干嘛？”</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. QA & Tips -->
+        <section id="qa" class="scroll-mt-24">
+            <div class="bg-gradient-to-br from-slate-900 to-blue-900 dark:from-slate-800 dark:to-slate-950 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">七、 核心问答与实操建议</h2>
+                    <p class="text-blue-200">打通理念与落地的最后一公里</p>
+                </div>
+
+                <!-- Practical Tips Block -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 mb-12">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300 flex items-center gap-2">
+                        <i data-lucide="wrench"></i> 实操核心：打造专属 Skill 库
+                    </h3>
+                    <p class="mb-4 text-slate-300 text-sm leading-relaxed">
+                        不要过度依赖模型自带或网上泛滥的系统提示词，真正拉开差距的是你的专属技能库。推荐建立以下三层体系：
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-black/20 p-4 rounded-xl">
+                            <div class="text-blue-400 font-bold mb-2">1. 平台自带</div>
+                            <p class="text-xs text-slate-300">了解基础能力，如官方提供的内置命令，作为工具的基础认知。</p>
+                        </div>
+                        <div class="bg-black/20 p-4 rounded-xl">
+                            <div class="text-purple-400 font-bold mb-2">2. 他人分享</div>
+                            <p class="text-xs text-slate-300">吸纳他人的优秀逻辑，但要克制安装数量，取其精华。</p>
+                        </div>
+                        <div class="bg-black/20 p-4 rounded-xl border border-blue-400/30">
+                            <div class="text-emerald-400 font-bold mb-2">3. 个人专属 (核心)</div>
+                            <p class="text-xs text-slate-300">将日常SOP、冥想习惯转化为带个人命名前缀的专属Prompt。例如构建一个历史名人圆桌会议来辅助思考。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q&A Accordions (Simulated with cards for simplicity and broad compatibility) -->
+                <div class="space-y-4">
+                    <div class="bg-white/5 border border-white/10 p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-2 flex items-start gap-3">
+                            <span class="text-blue-400">Q:</span>
+                            为何觉得AI拆解问题能力很弱，总是抓不到痛点？
+                        </h4>
+                        <p class="text-slate-300 text-sm leading-relaxed ml-8">
+                            <span class="text-blue-400 font-bold mr-2">A:</span>这通常源自上述的“四大变量”。可能选错了模型，可能Prompt没提供足够的“压缩包”，也可能是你在逼迫它做超出边界的实务。人类与大网对接的那一下“直觉判断”，需要靠你大量阅读和业务实践来冲刷大脑神经元，这是 AI 无法替代的“夹心饼干”两端。
+                        </p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-2 flex items-start gap-3">
+                            <span class="text-purple-400">Q:</span>
+                            大下岗必然发生吗？财富分配机制会如何演变？
+                        </h4>
+                        <p class="text-slate-300 text-sm leading-relaxed ml-8">
+                            <span class="text-purple-400 font-bold mr-2">A:</span>人形机器人成熟后，体力与执行岗位的缩减是必然趋势，短期内可能带来通缩阵痛。但长期来看，可能促发由国家主导的系统性分配重构（如UBI）。需记住，“上班”这件事本身只有短短200多年历史，不工作不代表人类失去意义。
+                        </p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-2 flex items-start gap-3">
+                            <span class="text-emerald-400">Q:</span>
+                            如何提炼事物或问题的“本质”？
+                        </h4>
+                        <p class="text-slate-300 text-sm leading-relaxed ml-8">
+                            <span class="text-emerald-400 font-bold mr-2">A:</span>承认每个人（包括每个学科领域）都只是在“盲人摸象”，只掌握了一个“取景框”。多收集不同的取景框，抛弃预设偏见，寻找其中能彼此印证的“承重柱”（秩/Rank），最终拼凑出事物的全貌。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7.5 Roundtable Case Study -->
+        <section id="roundtable" class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">深度拆解：如何构建专属“圆桌会议” Skill？</h2>
+                <div class="h-1 w-20 bg-blue-600 mx-auto rounded"></div>
+                <p class="mt-4 max-w-2xl mx-auto text-slate-600 dark:text-slate-400">
+                    不写一行代码，通过“夹心饼干”工作流（人类提供意图与判断，AI负责执行细节），打造超强头脑风暴工具。
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Vertical Line (Desktop) -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-blue-100 dark:bg-blue-900/30 transform -translate-x-1/2 rounded-full"></div>
+
+                <div class="space-y-8 md:space-y-16">
+                    <!-- Step 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 text-left md:text-right mb-6 md:mb-0">
+                            <div class="inline-flex items-center justify-center p-3 bg-blue-100 dark:bg-blue-900/50 rounded-xl mb-4 text-blue-600 dark:text-blue-400 md:float-right md:ml-4">
+                                <i data-lucide="lightbulb" class="size-6"></i>
+                            </div>
+                            <div class="clear-both"></div>
+                            <h3 class="text-xl font-bold mb-2">Step 1: 确立意图与画面 (人类的工作)</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                <strong>痛点：</strong>一个人思考缺乏多维视角，而传统的“六顶思考帽”显得死板。<br>
+                                <strong>灵感：</strong>脑海中浮现出“稷下学宫”或“雅典学院”的画面。希望遇到问题时，能瞬间召唤地球上最适合讨论该问题的 4-5 位已故或现存的顶级智者（作为不同视角的代表），围坐一张圆桌展开辩论。
+                            </p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-10 h-10 rounded-full bg-blue-500 border-4 border-white dark:border-slate-900 shadow-md text-white font-bold z-10">1</div>
+                        <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-10 h-10 rounded-full bg-purple-500 border-4 border-white dark:border-slate-900 shadow-md text-white font-bold z-10">2</div>
+                        <div class="md:w-1/2 md:pl-12 text-left mb-6 md:mb-0">
+                            <div class="inline-flex items-center justify-center p-3 bg-purple-100 dark:bg-purple-900/50 rounded-xl mb-4 text-purple-600 dark:text-purple-400">
+                                <i data-lucide="bot" class="size-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Step 2: 用 AI 创造 AI (AI的工作)</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                <strong>执行：</strong>不需要自己写复杂的系统提示词。直接调用平台自带的 <code>Skill Creator</code>（技能生成器）。<br>
+                                <strong>指令：</strong>“帮我创建一个叫 Round Table 的 Skill。功能是当我输入一个困惑时，动态召唤 5 位最懂这个领域的名人展开讨论。”<br>
+                                AI 会在几秒钟内将你的两句话，扩写成结构完美、包含各项指令细节的初始 Prompt。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 text-left md:text-right mb-6 md:mb-0">
+                            <div class="inline-flex items-center justify-center p-3 bg-orange-100 dark:bg-orange-900/50 rounded-xl mb-4 text-orange-600 dark:text-orange-400 md:float-right md:ml-4">
+                                <i data-lucide="sliders-horizontal" class="size-6"></i>
+                            </div>
+                            <div class="clear-both"></div>
+                            <h3 class="text-xl font-bold mb-2">Step 3: 发现Bug，人为介入调优</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                <strong>测试与反馈：</strong>运行第一版后发现两个严重问题：<br>
+                                1. 专家们各说各话，或者互相“撕逼”导致讨论无法推进。<br>
+                                2. 有时候聊了两句就迅速达成了共识（一团和气）。<br>
+                                <strong>修正约束：</strong>向 Skill Creator 追加要求：“必须引入一个**主持人**角色来控场、总结并提出深层问题；设定专家们**不允许在两轮内轻易达成共识**，必须基于自身的哲学观寻找对方的逻辑漏洞。”
+                            </p>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-10 h-10 rounded-full bg-orange-500 border-4 border-white dark:border-slate-900 shadow-md text-white font-bold z-10">3</div>
+                        <div class="md:w-1/2 md:pl-12 hidden md:block"></div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 hidden md:block"></div>
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-10 h-10 rounded-full bg-emerald-500 border-4 border-white dark:border-slate-900 shadow-md text-white font-bold z-10">4</div>
+                        <div class="md:w-1/2 md:pl-12 text-left">
+                            <div class="inline-flex items-center justify-center p-3 bg-emerald-100 dark:bg-emerald-900/50 rounded-xl mb-4 text-emerald-600 dark:text-emerald-400">
+                                <i data-lucide="zap" class="size-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Step 4: 最终形态与使用体验</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                <strong>封装固化：</strong>为了防止与官方系统指令冲突，加上个人前缀（如 <code>Name-Roundtable</code>）固化技能。<br>
+                                <strong>日常体验：</strong>现在，遇到任何工作或情感难题，只需调出技能输入一句话。看着那些名人在你的屏幕前展开极具深度的 5 轮辩论。往往在某个人物的一句犀利观点中，你的神经元瞬间连通，找到破局点。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-slate-100 dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 text-center max-w-3xl mx-auto">
+                <i data-lucide="quote" class="inline-block text-slate-300 dark:text-slate-600 size-8 mb-2"></i>
+                <p class="text-slate-700 dark:text-slate-300 font-medium">
+                    “不要对网上别人写的任何一个提示词顶礼膜拜。你有你的盲区，也有你的积累。用 AI 帮你写出最符合你思考习惯的专属 Skill 库，这才是真正的‘插上管子’。”
+                </p>
+            </div>
+        </section>
+
+        <!-- 8. Books -->
+        <section class="pb-20 border-t border-slate-200 dark:border-slate-800 pt-16">
+            <div class="flex items-center gap-3 mb-8">
+                <i data-lucide="book-open" class="text-blue-600 size-8"></i>
+                <h2 class="text-3xl font-bold tracking-tight">延伸思考：推荐书单</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Book 1 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:-translate-y-1 hover:shadow-lg transition-all flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">《人的境况》</h4>
+                            <p class="text-sm text-slate-500">汉娜·阿伦特</p>
+                        </div>
+                        <div class="text-[10px] bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 py-1 px-2 rounded font-medium">劳动/工作/行动</div>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+                        <strong>推荐理由：</strong>深刻划分了人类活动的三个层次。当技术全面接管为了生存和制造的“劳动”与“工作”时，人类将真正被解放，回归到人与人之间交流创造、产生新思想的“行动”之中。这是理解AI时代人类终极意义的核心框架。
+                    </p>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:-translate-y-1 hover:shadow-lg transition-all flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">《老子只笑谈》</h4>
+                            <p class="text-sm text-slate-500">朱邦复</p>
+                        </div>
+                        <div class="text-[10px] bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300 py-1 px-2 rounded font-medium">中式哲学/结构本质</div>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+                        <strong>推荐理由：</strong>仓颉输入法发明人之作。本书用中国传统哲学（易经、道德经）探讨结构与信息的本质。揭示了“结构是一切事物运行的底层逻辑”，帮助我们理解AI实际上是在提取与重组全人类智慧的本体“结构”。
+                    </p>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:-translate-y-1 hover:shadow-lg transition-all flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">《新物种起源》</h4>
+                            <p class="text-sm text-slate-500">段永朝 / 姜奇平</p>
+                        </div>
+                        <div class="text-[10px] bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 py-1 px-2 rounded font-medium">技术与人类演化</div>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+                        <strong>推荐理由：</strong>探讨了前沿技术如何塑造人类认知与社会形态的演化。揭示了在数字化与智能化的浪潮中，社会是如何从工业时代的机械化逻辑，重构成更加网络化、智能化的“新物种”生态，帮助理解范式转移。
+                    </p>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:-translate-y-1 hover:shadow-lg transition-all flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">《最小阻力之路》</h4>
+                            <p class="text-sm text-slate-500">罗伯特·弗里茨</p>
+                        </div>
+                        <div class="text-[10px] bg-orange-100 text-orange-700 dark:bg-orange-900/50 dark:text-orange-300 py-1 px-2 rounded font-medium">结构决定行为</div>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+                        <strong>推荐理由：</strong>核心观点为“能量总是沿着阻力最小的路径前进”且“结构决定行为”。这解释了为何仅仅改变行为本身常常失效，真正要推动个人成长与组织转型，必须进行底层结构的重塑与跨越。
+                    </p>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:-translate-y-1 hover:shadow-lg transition-all flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">《10x比2x更容易》</h4>
+                            <p class="text-sm text-slate-500">丹·沙利文</p>
+                        </div>
+                        <div class="text-[10px] bg-pink-100 text-pink-700 dark:bg-pink-900/50 dark:text-pink-300 py-1 px-2 rounded font-medium">认知框架跃迁</div>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow">
+                        <strong>推荐理由：</strong>提出追求10倍的增长反而比2倍更容易。因为2倍增长让人陷于现有的繁忙做加法，而10倍目标则逼迫人们进行思维的范式跃迁，果断砍掉80%无意义的工作，寻找如AI般强有力的破局杠杆。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 dark:text-slate-400 text-sm">
+            <p>基于演讲与QA记录整理 &middot; AI 生成摘要页</p>
+            <p class="mt-2 text-xs">通过大模型理解知识本体结构，降维知识分享的空间与时间限制。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-white/0', 'bg-white/80');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-white/80', 'bg-white/0');
+            }
+        });
+    </script>
+</body>
+</html>
