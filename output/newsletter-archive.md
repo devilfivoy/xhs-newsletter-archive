@@ -1,7 +1,8 @@
 # 滋补行业优质笔记周报 · 存档索引
 
 每周三更新，最新在最上方。
-| 2026 第24周 | May 19–May 25 | 2026-05-26 | [查看](https://fe-static.xhscdn.com/formula-static/aibibp/bp764kwi/viz-zibu-weekly-20260526.html) | `viz-zibu-weekly-20260526.html` |
+| 2026 第25周 | May 26–Jun 1 | 2026-06-02 | [查看](https://fe-static.xhscdn.com/formula-static/aibibp/vrizade5/viz-zibu-weekly-20260602.html) | `viz-zibu-weekly-20260602.html` |
+| 2026 第24周 | May 19–May 25 | 2026-05-26 | [查看](https://fe-static.xhscdn.com/formula-static/aibibp/x1k9e6rc/viz-zibu-weekly-20260526.html) | `viz-zibu-weekly-20260526.html` |
 
 | 2026 第21周 | May 5–11 | 2026-05-13 | [查看](https://fe-static.xhscdn.com/formula-static/aibibp/azyowm9a/viz-zibu-weekly-20260513.html) | `viz-zibu-weekly-20260513.html` |
 | 2026 第21周 | May 5–12 | 2026-05-12 | [查看](https://fe-static.xhscdn.com/formula-static/aibibp/vofhtc9z/viz-zibu-weekly-20260512.html) | `viz-zibu-weekly-20260512.html` |
