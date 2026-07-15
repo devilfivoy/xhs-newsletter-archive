@@ -4,312 +4,205 @@
 <meta charset="UTF-8">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>美食滋补行业·优质笔记周报 · 2026年第25周</title>
+<title>美食滋补行业·优质笔记周报 · 2026年第26周</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif; background: #F5F0ED; color: #1a1a1a; }
+body { font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif; background: #F2F2F2; color: #1a1a1a; }
 #wrap { width: 860px; margin: 32px auto 60px; }
+
 .header {
-  background: linear-gradient(135deg, #D4827E 0%, #A86A65 100%);
-  border-radius: 16px;
-  padding: 32px 36px 28px;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
+  background: linear-gradient(135deg, #D98A8A 0%, #B57070 100%);
+  border-radius: 16px; padding: 32px 36px 28px; color: #fff;
+  position: relative; overflow: hidden; margin-bottom: 20px;
 }
 .header::before {
-  content: '';
-  position: absolute;
-  right: -40px; top: -40px;
-  width: 220px; height: 220px;
-  border-radius: 50%;
+  content: ''; position: absolute; right: -40px; top: -40px;
+  width: 220px; height: 220px; border-radius: 50%;
   background: rgba(255,255,255,0.08);
 }
 .header-tags { display: flex; gap: 8px; margin-bottom: 12px; }
 .htag {
-  background: rgba(255,255,255,0.22);
-  border-radius: 20px;
-  padding: 3px 10px;
-  font-size: 11px;
-  letter-spacing: 0.5px;
+  background: rgba(255,255,255,0.2); border-radius: 20px;
+  padding: 3px 10px; font-size: 11px; letter-spacing: 0.5px;
 }
 .header h1 { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 8px; }
-.header-sub { font-size: 13px; opacity: 0.88; }
+.header-sub { font-size: 13px; opacity: 0.85; }
 .header-date {
-  position: absolute;
-  right: 36px; top: 32px;
-  text-align: right;
-  font-size: 12px; opacity: 0.85;
+  position: absolute; right: 36px; top: 32px; text-align: right;
+  font-size: 12px; opacity: 0.8;
 }
 .header-date strong { display: block; font-size: 20px; font-weight: 700; }
+
 .section {
-  background: #fff;
-  border-radius: 14px;
-  padding: 28px 32px;
-  margin-bottom: 18px;
+  background: #fff; border-radius: 14px;
+  padding: 28px 32px; margin-bottom: 18px;
 }
 .sec-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  padding-bottom: 14px;
-  border-bottom: 1.5px solid #EDE8E6;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1.5px solid #F0F0F0;
 }
 .sec-title { display: flex; align-items: center; gap: 10px; }
 .sec-num {
-  width: 28px; height: 28px;
-  background: #D4827E;
-  color: #fff;
-  border-radius: 8px;
-  font-size: 13px; font-weight: 700;
+  width: 28px; height: 28px; background: #D98A8A; color: #fff;
+  border-radius: 8px; font-size: 13px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
 }
 .sec-title h2 { font-size: 17px; font-weight: 700; }
 .sec-meta { font-size: 12px; color: #999; }
+
 .jieqi-box {
-  background: linear-gradient(135deg, #FBF7F5 0%, #F8F0ED 100%);
-  border-radius: 10px;
-  padding: 18px 22px;
-  margin-bottom: 18px;
+  background: linear-gradient(135deg, #FFF8F6 0%, #FFF5F2 100%);
+  border-radius: 10px; padding: 18px 22px; margin-bottom: 18px;
 }
-.jieqi-name { font-size: 15px; font-weight: 700; color: #D4827E; margin-bottom: 4px; }
-.jieqi-desc { font-size: 13px; color: #666; line-height: 1.7; }
+.jieqi-name { font-size: 15px; font-weight: 700; color: #D98A8A; margin-bottom: 4px; }
+.jieqi-desc { font-size: 13px; color: #555; line-height: 1.7; }
 .jieqi-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
 .jieqi-col {
-  background: #FDFBF9;
-  border-radius: 8px;
-  padding: 14px 16px;
-  border-left: 3px solid #D4827E;
+  background: #FDF0ED; border-radius: 8px; padding: 14px 16px;
+  border-left: 3px solid #D98A8A;
 }
-.jieqi-col-title { font-size: 13px; font-weight: 700; color: #D4827E; margin-bottom: 6px; }
+.jieqi-col-title { font-size: 13px; font-weight: 700; color: #D98A8A; margin-bottom: 6px; }
 .jieqi-col-content { font-size: 12px; color: #666; line-height: 1.65; }
+
 .play-group { margin-bottom: 20px; }
 .play-group:last-child { margin-bottom: 0; }
-.play-group-head {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 12px;
-}
+.play-group-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .play-group-title { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; }
 .play-icon {
-  width: 26px; height: 26px;
-  border-radius: 7px;
-  background: #FAF3F2;
-  color: #D4827E;
-  font-size: 14px;
+  width: 26px; height: 26px; border-radius: 7px;
+  background: #FDF0ED; color: #D98A8A; font-size: 14px;
   display: flex; align-items: center; justify-content: center;
 }
 .play-links { display: flex; gap: 8px; flex-wrap: wrap; }
-.play-link-tag { font-size: 11px; color: #D4827E; text-decoration: none; }
+.play-link-tag { font-size: 11px; color: #D98A8A; text-decoration: none; }
 .play-card {
-  background: #FAFAF8;
-  border-radius: 10px;
-  padding: 14px 18px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  border: 1.5px solid transparent;
-  transition: border-color 0.2s;
+  background: #FAFAFA; border-radius: 10px; padding: 14px 18px;
+  margin-bottom: 8px; display: flex; align-items: flex-start; gap: 14px;
+  border: 1.5px solid transparent; transition: border-color 0.2s;
 }
-.play-card:hover { border-color: #F2E0DE; }
-.play-card.highlight { background: #FDF9F8; border-color: #D4827E; }
+.play-card:hover { border-color: #F0D5D0; }
+.play-card.highlight { background: #FFF8F6; border-color: #D98A8A; }
 .play-card-num {
-  width: 22px; height: 22px;
-  background: #D4827E;
-  color: #fff;
-  border-radius: 6px;
-  font-size: 11px; font-weight: 700;
+  width: 22px; height: 22px; background: #D98A8A; color: #fff;
+  border-radius: 6px; font-size: 11px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 1px;
 }
 .play-card-body h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
 .play-card-body p { font-size: 12px; color: #666; line-height: 1.6; }
-.play-card-body a {
-  display: inline-block; margin-top: 6px;
-  font-size: 11px; color: #D4827E; text-decoration: none;
-}
-.divider { height: 1px; background: #EDE8E6; margin: 18px 0; }
-.nc { display: flex; gap: 18px; margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed #E8E3E0; }
+.play-card-body a { display: inline-block; margin-top: 6px; font-size: 11px; color: #D98A8A; text-decoration: none; }
+.divider { height: 1px; background: #F0F0F0; margin: 18px 0; }
+
+.nc { display: flex; gap: 18px; margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed #EBEBEB; }
 .nc:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
 .nc-rank { flex-shrink: 0; padding-top: 2px; }
 .rn {
-  width: 32px; height: 32px;
-  border-radius: 10px;
-  background: #F0EBE9;
-  color: #A89E9A;
-  font-size: 13px; font-weight: 700;
+  width: 32px; height: 32px; border-radius: 10px;
+  background: #F5F5F5; color: #999; font-size: 13px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
 }
-.rn.gold { background: #D4827E; color: #fff; }
-.rn.silver { background: #E8A59E; color: #fff; }
-.rn.bronze { background: #E8C5C0; color: #fff; }
+.rn.gold { background: #D98A8A; color: #fff; }
+.rn.silver { background: #E2A0A0; color: #fff; }
+.rn.bronze { background: #F0D5D0; color: #fff; }
+
 .nc-cover { flex-shrink: 0; width: 100px; }
 .nc-cover a { display: block; position: relative; border-radius: 8px; overflow: hidden; }
-.nc-cover img {
-  width: 100px; height: 133px;
-  object-fit: cover;
-  display: block;
-  border-radius: 8px;
-}
+.nc-cover img { width: 100px; height: 133px; object-fit: cover; display: block; border-radius: 8px; }
 .nc-cover-stats {
   position: absolute; bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.6));
-  padding: 14px 5px 5px;
-  display: flex; justify-content: space-around;
+  background: linear-gradient(transparent, rgba(0,0,0,0.65));
+  padding: 14px 5px 5px; display: flex; justify-content: space-around;
   font-size: 10px; color: #fff;
 }
 .nc-cover-ph {
-  width: 100px; height: 133px;
-  background: #F0EBE9;
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28px;
+  width: 100px; height: 133px; background: #F5F5F5;
+  border-radius: 8px; display: flex; align-items: center;
+  justify-content: center; font-size: 28px;
 }
 .nc-body { flex: 1; min-width: 0; }
 .nc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 7px; }
-.nc-tag {
-  font-size: 10px; padding: 2px 7px;
-  border-radius: 4px;
-  background: #F0EBE9; color: #888;
-}
-.nc-tag.red { background: #FAF3F2; color: #D4827E; }
-.nc-title {
-  font-size: 14px; font-weight: 700;
-  line-height: 1.5; margin-bottom: 8px; color: #1a1a1a;
-}
+.nc-tag { font-size: 10px; padding: 2px 7px; border-radius: 4px; background: #F5F5F5; color: #666; }
+.nc-tag.red { background: #FDE8E5; color: #D98A8A; }
+.nc-title { font-size: 14px; font-weight: 700; line-height: 1.5; margin-bottom: 8px; color: #1a1a1a; }
 .nc-insight {
   font-size: 12px; color: #555; line-height: 1.7;
-  background: #FAF8F7; border-radius: 7px;
-  padding: 9px 12px; margin-bottom: 10px;
-  border-left: 3px solid #D4827E;
+  background: #F9F9F9; border-radius: 7px; padding: 9px 12px;
+  margin-bottom: 10px; border-left: 3px solid #D98A8A;
 }
-.nc-insight::before { content: '\1F4A1 '; }
-.nc-link {
-  display: inline-block; margin-top: 8px;
-  font-size: 11px; color: #D4827E; text-decoration: none;
-}
+.nc-insight::before { content: '💡 '; }
+.nc-link { display: inline-block; margin-top: 8px; font-size: 11px; color: #D98A8A; text-decoration: none; }
+
 #dl-btn {
-  position: fixed; right: 28px; top: 50%;
-  transform: translateY(-50%);
-  background: #D4827E; color: #fff;
-  border: none; border-radius: 10px;
-  padding: 10px 14px; cursor: pointer;
-  font-size: 12px; font-weight: 700;
-  writing-mode: vertical-lr;
-  letter-spacing: 2px; z-index: 99;
-  box-shadow: 0 4px 16px rgba(212,130,126,0.3);
+  position: fixed; right: 28px; top: 50%; transform: translateY(-50%);
+  background: #D98A8A; color: #fff; border: none; border-radius: 10px;
+  padding: 10px 14px; cursor: pointer; font-size: 12px; font-weight: 700;
+  writing-mode: vertical-lr; letter-spacing: 2px; z-index: 99;
+  box-shadow: 0 4px 16px rgba(217,138,138,0.35);
 }
-.archive-section {
-  background: #fff;
-  border-radius: 14px;
-  padding: 28px 32px;
-  margin-bottom: 18px;
-}
-.archive-intro {
-  font-size: 12px; color: #999;
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
-.archive-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
+
+.archive-section { background: #fff; border-radius: 14px; padding: 28px 32px; margin-bottom: 18px; }
+.archive-intro { font-size: 12px; color: #888; margin-bottom: 16px; line-height: 1.6; }
+.archive-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .archive-link {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 10px;
-  background: #FAF3F2;
-  border-radius: 8px;
-  text-decoration: none;
-  border: 1px solid #F2E0DE;
-  transition: background 0.2s, border-color 0.2s;
-  min-width: 0;
+  display: flex; align-items: center; gap: 6px; padding: 8px 10px;
+  background: #FDF0ED; border-radius: 8px; text-decoration: none;
+  border: 1px solid #F0D5D0; transition: background 0.2s, border-color 0.2s; min-width: 0;
 }
-.archive-link:hover { background: #F8EDEB; border-color: #D4827E; }
+.archive-link:hover { background: #FAE8E5; border-color: #D98A8A; }
 .archive-link-num {
-  flex-shrink: 0;
-  width: 18px; height: 18px;
-  background: #D4827E;
-  color: #fff;
-  border-radius: 4px;
-  font-size: 10px; font-weight: 700;
+  flex-shrink: 0; width: 18px; height: 18px; background: #D98A8A; color: #fff;
+  border-radius: 4px; font-size: 10px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
 }
 .archive-link-text {
-  font-size: 11px; color: #D4827E;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 11px; color: #D98A8A;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.archive-divider { height: 1px; background: #F0EBE9; margin: 16px 0; }
 .archive-week-label {
-  font-size: 11px; font-weight: 700; color: #AAA;
-  margin-bottom: 10px;
-  display: flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; color: #999;
+  margin-bottom: 10px; display: flex; align-items: center; gap: 6px;
 }
 .archive-week-label::before {
-  content: '';
-  width: 3px; height: 14px;
-  background: #D4827E;
-  border-radius: 2px;
-  display: inline-block;
+  content: ''; width: 3px; height: 14px; background: #D98A8A;
+  border-radius: 2px; display: inline-block;
 }
-.footer {
-  text-align: center;
-  font-size: 11px; color: #ccc;
-  padding: 24px 0 0;
-}
+
+.footer { text-align: center; font-size: 11px; color: #bbb; padding: 24px 0 0; }
 </style>
 </head>
 <body>
 <div id="wrap">
 
 <div class="header">
-  <div class="header-tags">
-    <span class="htag">美食滋补行业</span>
-    <span class="htag">每周运营参考</span>
-  </div>
-  <div class="header-date">
-    2026 第 25 周<br>
-    <strong>Jun 23–Jun 30</strong>
-  </div>
+  <div class="header-tags"><span class="htag">美食滋补行业</span><span class="htag">每周运营参考</span></div>
+  <div class="header-date">2026 第 26 周<br><strong>Jun 3–Jun 9</strong></div>
   <h1>滋补行业<br>优质笔记周报</h1>
   <div class="header-sub">运营方法参考</div>
 </div>
+<button id="dl-btn" onclick="window.print()">↓ 下载页面</button>
 
-<button id="dl-btn" onclick="window.print()">&darr; 下载页面</button>
-
-<!-- ══ 01 节气健康指南 ══ -->
+<!-- ═ 01 气节健康指南 ══ -->
 <div class="section">
   <div class="sec-head">
-    <div class="sec-title">
-      <div class="sec-num">01</div>
-      <h2>当月节气健康指南</h2>
-    </div>
-    <div class="sec-meta">7月 · 小暑</div>
+    <div class="sec-title"><div class="sec-num">01</div><h2>当月节气健康指南</h2></div>
+    <div class="sec-meta">6月 · 夏至 · 6月21日前后</div>
   </div>
-
   <div class="jieqi-box">
-    <div class="jieqi-name">小暑 · 7月7日前后</div>
-    <div class="jieqi-desc">小暑标志着盛夏的序幕正式拉开，天气逐渐炎热但未到极点。此时阳气日盛、温度升高，养生重点在于清热解暑、健脾养胃、利湿排毒，饮食宜清淡、少辣少油腻，多吃当季瓜菜以应对高温消耗。</div>
+    <div class="jieqi-name">夏至 · 6月21日前后</div>
+    <div class="jieqi-desc">夏至是北半球白昼最长的一天，标志着盛夏来临。此时阳气最盛、气温高、雨水充沛。养生重点在于防暑降温、清心降火、健脾开胃，饮食宜清淡多水分，适当食用苦味食物清热泻火，避免贪凉伤脾胃。</div>
   </div>
-
   <div class="jieqi-cols">
     <div class="jieqi-col">
-      <div class="jieqi-col-title">☀️ 养心安神</div>
-      <div class="jieqi-col-content">夏日心火旺盛，莲子心泡茶清心除烦，百合银耳羹滋阴润燥；酸枣仁助眠安神，适合夏季失眠人群。<br>食材：莲子心、百合、银耳、酸枣仁</div>
+      <div class="jieqi-col-title"> 防暑降温</div>
+      <div class="jieqi-col-content">夏至后烈日炎炎，绿豆汤、酸梅汤、西瓜翠衣是经典消暑方；荷叶冬瓜汤清热利湿，菊花薄荷茶疏散风热。<br>食材：绿豆、冬瓜、荷叶、菊花</div>
     </div>
     <div class="jieqi-col">
-      <div class="jieqi-col-title">🍉 清热解暑</div>
-      <div class="jieqi-col-content">西瓜翠衣煎水消暑，绿豆汤清热利尿；乌梅+冰糖熬酸梅汤生津止渴，金银花菊花茶解热毒。<br>食材：西瓜翠衣、绿豆、乌梅、金银花</div>
+      <div class="jieqi-col-title"> 清心降火</div>
+      <div class="jieqi-col-content">夏日心火旺盛，莲子百合粥养心安神，苦瓜炒蛋清热泻火；淡竹叶泡水利尿清心，麦冬沙参代茶饮养阴生津。<br>食材：莲子、百合、苦瓜、麦冬</div>
     </div>
     <div class="jieqi-col">
-      <div class="jieqi-col-title">🌿 健脾养胃</div>
-      <div class="jieqi-col-content">小暑时节脾胃运化减弱，宜食山药、芡实、蕴米煮粥健脾利湿；陈皮泡水理气健胃，炒白术和中指气。<br>食材：山药、芡实、蕴米、陈皮、白术</div>
+      <div class="jieqi-col-title">🍚 健脾开胃</div>
+      <div class="jieqi-col-content">暑湿困脾易食欲不振，山药薏米粥健脾利湿，陈皮柠檬水理气开胃；绿豆芽清热解暑，生姜红糖水驱散空调寒气。<br>食材：山药、薏米、陈皮、生姜</div>
     </div>
   </div>
 </div>
@@ -317,22 +210,13 @@ body { font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif
 <!-- ══ 02 小红书经营核心玩法 ══ -->
 <div class="section">
   <div class="sec-head">
-    <div class="sec-title">
-      <div class="sec-num">02</div>
-      <h2>小红书经营核心玩法</h2>
-    </div>
+    <div class="sec-title"><div class="sec-num">02</div><h2>小红书经营核心玩法</h2></div>
     <div class="sec-meta">运营干货</div>
   </div>
-
   <div class="play-group">
     <div class="play-group-head">
-      <div class="play-group-title">
-        <div class="play-icon">📝</div>
-        笔记运营
-      </div>
-      <div class="play-links">
-        <a class="play-link-tag" href="https://school.xiaohongshu.com/lesson/normal/7722204512f5438b9ba75b566f5757e5?fullscreen=true&shareFrom=redapp&jumpFrom=school" target="_blank">商品笔记三步通关 →</a>
-      </div>
+      <div class="play-group-title"><div class="play-icon">📝</div>笔记运营</div>
+      <div class="play-links"><a class="play-link-tag" href="https://school.xiaohongshu.com/lesson/normal/7722204512f5438b9ba75b566f5757e5?fullscreen=true&shareFrom=redapp&jumpFrom=school" target="_blank">商品笔记三步通关 →</a></div>
     </div>
     <div class="play-card">
       <div class="play-card-num">1</div>
@@ -343,18 +227,11 @@ body { font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif
       </div>
     </div>
   </div>
-
   <div class="divider"></div>
-
   <div class="play-group">
     <div class="play-group-head">
-      <div class="play-group-title">
-        <div class="play-icon">📺</div>
-        直播运营
-      </div>
-      <div class="play-links">
-        <a class="play-link-tag" href="https://doc.weixin.qq.com/doc/w3_AfgArAaXAOsCNGCmyFLg0Roy6NB6N?scode=ANAAyQcbAAgE0WptKcAS4AnwY8ALY" target="_blank">店播限时激励 →</a>
-      </div>
+      <div class="play-group-title"><div class="play-icon">📺</div>直播运营</div>
+      <div class="play-links"><a class="play-link-tag" href="https://doc.weixin.qq.com/doc/w3_AfgArAaXAOsCNGCmyFLg0Roy6NB6N?scode=ANAAyQcbAAgE0WptKcAS4AnwY8ALY" target="_blank">店播限时激励 →</a></div>
     </div>
     <div class="play-card highlight">
       <div class="play-card-num">1</div>
@@ -381,18 +258,11 @@ body { font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif
       </div>
     </div>
   </div>
-
   <div class="divider"></div>
-
   <div class="play-group">
     <div class="play-group-head">
-      <div class="play-group-title">
-        <div class="play-icon">👥</div>
-        私域运营
-      </div>
-      <div class="play-links">
-        <a class="play-link-tag" href="https://school.xiaohongshu.com/lesson/normal/17204912ca924279a1d9715256bd28d6?jumpFrom=school" target="_blank">群运营爆单课 →</a>
-      </div>
+      <div class="play-group-title"><div class="play-icon">👥</div>私域运营</div>
+      <div class="play-links"><a class="play-link-tag" href="https://school.xiaohongshu.com/lesson/normal/17204912ca924279a1d9715256bd28d6?jumpFrom=school" target="_blank">群运营爆单课 →</a></div>
     </div>
     <div class="play-card">
       <div class="play-card-num">1</div>
@@ -405,214 +275,183 @@ body { font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif
   </div>
 </div>
 
-<!-- ══ 03 本周优质笔记 TOP 5 ══ -->
+<!-- ═ 03 本周优质笔记 TOP 5 ══ -->
 <div class="section">
   <div class="sec-head">
-    <div class="sec-title">
-      <div class="sec-num">03</div>
-      <h2>本周优质笔记 TOP 5</h2>
-    </div>
-    <div class="sec-meta">滋补·中药材·茶叶类目 / Jun 23–Jun 30</div>
+    <div class="sec-title"><div class="sec-num">03</div><h2>本周优质笔记 TOP 5</h2></div>
+    <div class="sec-meta">滋补·中药材·茶叶类目 / Jun 3–Jun 9</div>
   </div>
-
   <div class="nc">
     <div class="nc-rank"><div class="rn gold">01</div></div>
     <div class="nc-cover">
-      <a href="https://www.xiaohongshu.com/explore/6a3ca21a0000000021017a55" target="_blank">
-        <img src="https://sns-img-hw.xhscdn.com/notes_pre_post/1040g3k8321pkcjd17u805q8n75mdu7j0th42uvg?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🌿</div>&quot;">
+      <a href="https://www.xiaohongshu.com/explore/6a2633da000000000803d369" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/notes_pre_post/1040g3k03214vs684nu005p9fhc1qlbfjdoi4k8g?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🐟</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️1208</span><span>⭐302</span><span>💬907</span></div>
       </a>
     </div>
     <div class="nc-body">
-      <div class="nc-tags">
-        <span class="nc-tag red">传统滋补营养品</span>
-        <span class="nc-tag">话梅糖浆</span>
-        <span class="nc-tag">梅梅多喝水</span>
-      </div>
-      <div class="nc-title">和老爸商量后：给独居人上小份装🥰</div>
-      <div class="nc-insight">「独居人小份装」精准切中单身经济需求，以「和老爸商量」的亲情叙事建立信任；手工慢火熬制+0添加成分强化品质背书，小瓶装解决大瓶易变质痛点，场景覆盖办公室、追剧、备考等高场景。</div>
-      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a3ca21a0000000021017a55" target="_blank">查看原笔记 &rarr;</a>
+      <div class="nc-tags"><span class="nc-tag red">传统滋补营养品</span><span class="nc-tag">海味零食</span><span class="nc-tag">小满的海味清单</span></div>
+      <div class="nc-title">10r而已……却被她们误以为很贵的礼物啊🥰！</div>
+      <div class="nc-insight">「10r」低价锚点+「被误以为很贵」反差制造惊喜感，2000单售空作为社会证明前置，高评论数（907）说明互动氛围极强，促单话术清晰有效。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a2633da000000000803d369" target="_blank">查看原笔记 →</a>
     </div>
   </div>
-
   <div class="nc">
     <div class="nc-rank"><div class="rn silver">02</div></div>
     <div class="nc-cover">
-      <a href="https://www.xiaohongshu.com/explore/6a3a4aca000000000f030c7b" target="_blank">
-        <img src="https://sns-img-hw.xhscdn.com/spectrum/1040g34o321ojrp806u105n6gdgdk3rin3lethmo?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🌿</div>&quot;">
+      <a href="https://www.xiaohongshu.com/explore/6a255e780000000036001dee" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/1040g2sg3213hb0v4n2f05p7an6208kbbf2qpl9g?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🍮</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️1251</span><span>⭐194</span><span>💬264</span></div>
       </a>
     </div>
     <div class="nc-body">
-      <div class="nc-tags">
-        <span class="nc-tag red">传统滋补营养品</span>
-        <span class="nc-tag">经期养生</span>
-        <span class="nc-tag">青禾澜</span>
-      </div>
-      <div class="nc-title">经期前后贪冷这事，老祖宗比你早防了几千年</div>
-      <div class="nc-insight">以「老祖宗」权威背书切入经期贪冷痛点，将传统养生智慧与现代女性生活场景（冻奶茶、冰西瓜）形成反差共鸣；「像装了一块冰，暖不回来」具象化体感描写激发代入感。</div>
-      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a3a4aca000000000f030c7b" target="_blank">查看原笔记 &rarr;</a>
+      <div class="nc-tags"><span class="nc-tag red">传统滋补营养品</span><span class="nc-tag">芡实糕</span><span class="nc-tag">蓝辛巴糕团</span></div>
+      <div class="nc-title">已经很久没有吃到过这么好吃的芡实糕了！！</div>
+      <div class="nc-insight">「很久没有吃到过」唤醒味觉记忆，情感共鸣驱动收藏（194）；芡实糕作为应季健脾食材，契合夏季祛湿需求，糯叽叽口感标签精准锚定目标人群。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a255e780000000036001dee" target="_blank">查看原笔记 →</a>
     </div>
   </div>
-
   <div class="nc">
     <div class="nc-rank"><div class="rn bronze">03</div></div>
     <div class="nc-cover">
-      <a href="https://www.xiaohongshu.com/explore/6a3cf4ff0000000022018899" target="_blank">
-        <img src="https://sns-img-hw.xhscdn.com/1040g008321qtqn5c72305pvrh1a1jv4qrjj9ue8?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🍵</div>&quot;">
+      <a href="https://www.xiaohongshu.com/explore/6a24e309000000003502a05d" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/1040g2sg3213mr3j16seg5q51l906beki6pssvd0?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🍶</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️431</span><span>⭐304</span><span>💬75</span></div>
       </a>
     </div>
     <div class="nc-body">
-      <div class="nc-tags">
-        <span class="nc-tag red">茶·养生饮品</span>
-        <span class="nc-tag">薄荷冰可可</span>
-        <span class="nc-tag">向往一杯</span>
-      </div>
-      <div class="nc-title">早起的动力就是这杯薄荷冰可可给的！</div>
-      <div class="nc-insight">「早起的动力」绑定夏日倦怠情绪痛点，薄荷+可可的清凉组合精准覆盖咖啡替代场景；0糖0添加卖点覆盖减脂人群，夜间不影响睡眠的差异化卖点突出。</div>
-      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a3cf4ff0000000022018899" target="_blank">查看原笔记 &rarr;</a>
+      <div class="nc-tags"><span class="nc-tag red">传统滋补营养品</span><span class="nc-tag">醪糟</span><span class="nc-tag">花姐的古法醪糟米酒</span></div>
+      <div class="nc-title">90岁老人推荐的，入夏坚持吃一个月</div>
+      <div class="nc-insight">「90岁老人」权威背书+「坚持吃一个月」行为指令构成强信任链条，古法醪糟场景化叙事激发用户对传统养生智慧的向往，收藏量（304）远超点赞说明实用性强。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a24e309000000003502a05d" target="_blank">查看原笔记 →</a>
     </div>
   </div>
-
   <div class="nc">
-    <div class="nc-rank"><div class="rn">04</div></div>
+    <div class="nc-rank"><div class="rn ">04</div></div>
     <div class="nc-cover">
-      <a href="https://www.xiaohongshu.com/explore/6a3cd558000000001503dee8" target="_blank">
-        <img src="https://sns-img-hw.xhscdn.com/1040g2sg321r33k1q7ae04ajssso9uounb36jcf0?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🌿</div>&quot;">
+      <a href="https://www.xiaohongshu.com/explore/6a23921100000000360025b5" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/spectrum/1040g34o32100af9b72105n61rceli69o6sdkuc8?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🥣</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️300</span><span>⭐129</span><span>💬34</span></div>
       </a>
     </div>
     <div class="nc-body">
-      <div class="nc-tags">
-        <span class="nc-tag red">传统滋补营养品</span>
-        <span class="nc-tag">黑蜂蜜</span>
-        <span class="nc-tag">小张在阿勒泰卖蜂蜜</span>
-      </div>
-      <div class="nc-title">时隔8个月，我们又见面了🫡</div>
-      <div class="nc-insight">「时隔8个月」制造稀缺感和期待值，产地直供（阿勒泰）+ 43°高波美度强化品质信任；「下单两斤送灰枣」促销驱动即时转化，农户直销人设增强真实感。</div>
-      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a3cd558000000001503dee8" target="_blank">查看原笔记 &rarr;</a>
+      <div class="nc-tags"><span class="nc-tag red">传统滋补营养品</span><span class="nc-tag">藕粉</span><span class="nc-tag">三家村藕粉旗舰店</span></div>
+      <div class="nc-title">吃干净舒服的早餐，也是对头发的热爱！</div>
+      <div class="nc-insight">「干净配料表」直击成分党痛点，藕粉作为传统滋补早餐场景切入，搭配补铁、好气色功效标签，精准覆盖熬夜女性人群，评论34条说明转化意愿高。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a23921100000000360025b5" target="_blank">查看原笔记 →</a>
     </div>
   </div>
-
   <div class="nc">
-    <div class="nc-rank"><div class="rn">05</div></div>
+    <div class="nc-rank"><div class="rn ">05</div></div>
     <div class="nc-cover">
-      <a href="https://www.xiaohongshu.com/explore/6a3a1cbd00000000160255d3" target="_blank">
-        <img src="https://sns-img-hw.xhscdn.com/1040g2sg321ocn4eu7ae05n9q7k14biaju96p97o?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🌿</div>&quot;">
+      <a href="https://www.xiaohongshu.com/explore/6a211fad0000000036002abc" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/1040g00832101b7ssn2005ptk1pfk4go0bv21t18?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🌿</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️405</span><span>⭐187</span><span>💬16</span></div>
       </a>
     </div>
     <div class="nc-body">
-      <div class="nc-tags">
-        <span class="nc-tag red">传统滋补营养品</span>
-        <span class="nc-tag">玫瑰蜜</span>
-        <span class="nc-tag">安安助农</span>
-      </div>
-      <div class="nc-title">20➕打工人蕞爱的排毐兔疫力养颜蜜卖爆！</div>
-      <div class="nc-insight">「20+打工人」精准圈定核心人群，野玫瑰+野蔷薇+野七里香的三重花蜜叠加营造珍稀感；引用《本草纲目》和《芈月传》双背书提升文化溢价，「漂亮蜜」定位直击女性养颜需求。</div>
-      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a3a1cbd00000000160255d3" target="_blank">查看原笔记 &rarr;</a>
+      <div class="nc-tags"><span class="nc-tag red">传统滋补营养品</span><span class="nc-tag">坚果补给</span><span class="nc-tag">Soileta自律日记</span></div>
+      <div class="nc-title">长得不起眼，但补Omega-3是认真的</div>
+      <div class="nc-insight">「不起眼」反向营销引发好奇，Omega-3+植物蛋白双营养卖点清晰，25大卡低卡标签覆盖减脂人群，坚果+籽类组合构成差异化健康零食定位。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a211fad0000000036002abc" target="_blank">查看原笔记 →</a>
     </div>
   </div>
 </div>
 
-<!-- ══ 04 近期其他类目优质笔记参考 ══ -->
+<!-- ═ 04 近期其他类目优质笔记参考 ══ -->
 <div class="section">
   <div class="sec-head">
-    <div class="sec-title">
-      <div class="sec-num">04</div>
-      <h2>近期其他类目优质笔记参考</h2>
-    </div>
-    <div class="sec-meta">休食类目 / Jun 23–Jun 30</div>
+    <div class="sec-title"><div class="sec-num">04</div><h2>近期其他类目优质笔记参考</h2></div>
+    <div class="sec-meta">休食类目 / Jun 3–Jun 9</div>
   </div>
-
   <div class="nc">
     <div class="nc-rank"><div class="rn gold">01</div></div>
     <div class="nc-cover">
-      <a href="https://www.xiaohongshu.com/explore/6a3e53bc000000001101ad86" target="_blank">
-        <img src="https://sns-img-hw.xhscdn.com/1040g2sg321shupks72eg5qbs8jqoa2gdrpcebq0?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🍰</div>&quot;">
+      <a href="https://www.xiaohongshu.com/explore/6a2216370000000035030a94" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/notes_pre_post/1040g3k83210vdrne6s704a7jurmgggu587qame0?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>☕</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️87</span><span>⭐27</span><span>💬1</span></div>
       </a>
     </div>
     <div class="nc-body">
-      <div class="nc-tags">
-        <span class="nc-tag red">休食·烘焙糕点</span>
-        <span class="nc-tag">夹心米糕</span>
-        <span class="nc-tag">馋猫饱饱</span>
-      </div>
-      <div class="nc-title">香港朋友寄来的👍这个月已经回购5678次了</div>
-      <div class="nc-insight">「香港朋友寄来」制造地域稀缺感，「回购5678次」夸张数字强化社交证明；首批400份秒空+全线爆仓的产能叙事驱动从众心理，0蔗糖+0反式脂肪覆盖减脂控糖双人群。</div>
-      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a3e53bc000000001101ad86" target="_blank">查看原笔记 &rarr;</a>
+      <div class="nc-tags"><span class="nc-tag red">休食·咖啡</span><span class="nc-tag">端午礼盒</span><span class="nc-tag">白房子咖啡</span></div>
+      <div class="nc-title">咖啡爱好者的端午礼包来啦～</div>
+      <div class="nc-insight">端午节点营销，「咖啡爱好者礼包」精准定位细分人群，22包家庭装+瑰夏/乌拉嘎/耶佳品类展示专业感，文创礼盒场景拓展送礼需求。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a2216370000000035030a94" target="_blank">查看原笔记 →</a>
     </div>
   </div>
-
   <div class="nc">
     <div class="nc-rank"><div class="rn silver">02</div></div>
     <div class="nc-cover">
-      <a href="https://www.xiaohongshu.com/explore/6a3bdd3500000000150243cd" target="_blank">
-        <img src="https://sns-img-hw.xhscdn.com/1040g008321q49q61no005opsq0t6bqljnqn3oe0?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🍬</div>&quot;">
+      <a href="https://www.xiaohongshu.com/explore/6a2193fb00000000220200f0" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/notes_pre_post/1040g3k83210akpnnn48g4aug32qmtrt3nfpdnu0?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🫒</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️314</span><span>⭐161</span><span>💬41</span></div>
       </a>
     </div>
     <div class="nc-body">
-      <div class="nc-tags">
-        <span class="nc-tag red">休食·糖果零食</span>
-        <span class="nc-tag">爆酸软糖</span>
-        <span class="nc-tag">白白家糖果</span>
-      </div>
-      <div class="nc-title">“9.9元一罐爆酸三拼软糖”</div>
-      <div class="nc-insight">「9.9元」极致低价锚点降低尝试门槛，「爆酸三拼」味觉刺激制造内容钩子；极致味觉体验（酸到变形）天然具备社交分享属性，低客单价驱动冲动购买。</div>
-      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a3bdd3500000000150243cd" target="_blank">查看原笔记 &rarr;</a>
+      <div class="nc-tags"><span class="nc-tag red">休食·蜜饯</span><span class="nc-tag">古法手作</span><span class="nc-tag">潮汕话梅研究所</span></div>
+      <div class="nc-title">难怪潮汕长辈不爱超市话梅🤤</div>
+      <div class="nc-insight">「难怪潮汕长辈不爱超市」对比结构制造认知冲突，古法手作+节气慢差事叙事建立品质壁垒，高收藏（161）说明用户对传统工艺内容认可度高。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a2193fb00000000220200f0" target="_blank">查看原笔记 →</a>
     </div>
   </div>
-
   <div class="nc">
     <div class="nc-rank"><div class="rn bronze">03</div></div>
     <div class="nc-cover">
-      <a href="https://www.xiaohongshu.com/explore/6a3b62ab00000000220184d4" target="_blank">
-        <img src="https://sns-img-hw.xhscdn.com/notes_pre_post/1040g3k8321pl4nucn2b05one1l8nqm60vop1g7o?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🥛</div>&quot;">
+      <a href="https://www.xiaohongshu.com/explore/6a2001860000000035023478" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/1040g2sg320urqhf1n53g5q3a9sojfncjjknllkg?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🍞</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️877</span><span>⭐151</span><span>💬63</span></div>
       </a>
     </div>
     <div class="nc-body">
-      <div class="nc-tags">
-        <span class="nc-tag red">休食·乳制品</span>
-        <span class="nc-tag">冷萃酸奶</span>
-        <span class="nc-tag">盛荷牧场</span>
-      </div>
-      <div class="nc-title">唯一缺点：量大和太瓷实了❗！❗！</div>
-      <div class="nc-insight">「唯一缺点」反向营销制造好奇心钩子，将「量大」「瓷实」包装为缺点实为品质炫耀；14种口味矩阵覆盖全口味偏好，色彩叙事激发拍照分享欲。</div>
-      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a3b62ab00000000220184d4" target="_blank">查看原笔记 &rarr;</a>
+      <div class="nc-tags"><span class="nc-tag red">休食·面包糕点</span><span class="nc-tag">厚切吐司</span><span class="nc-tag">梦梦零食屋</span></div>
+      <div class="nc-title">再冷漠的人吃了这一口都会笑！！厚切吐司！！</div>
+      <div class="nc-insight">「再冷漠的人吃了都会笑」夸张情绪钩子抓眼球，「厚切=一片抵两片」价值感表达降低决策成本，高赞（877）说明内容冲动传播力强。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a2001860000000035023478" target="_blank">查看原笔记 →</a>
     </div>
   </div>
-
   <div class="nc">
-    <div class="nc-rank"><div class="rn">04</div></div>
+    <div class="nc-rank"><div class="rn ">04</div></div>
     <div class="nc-cover">
-      <a href="https://www.xiaohongshu.com/explore/6a39e10b000000001102c10d" target="_blank">
-        <img src="https://sns-img-hw.xhscdn.com/1040g2sg321o6uqrgn0e04a7jurmgggu561ev7qg?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🍫</div>&quot;">
+      <a href="https://www.xiaohongshu.com/explore/6a22724c0000000006036ab9" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/note_pre_post_uhdr/1040g3r83211ajf3lno805p4plokqmr5ir2g5mro?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🍵</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️477</span><span>⭐182</span><span>💬68</span></div>
       </a>
     </div>
     <div class="nc-body">
-      <div class="nc-tags">
-        <span class="nc-tag red">休食·巧克力</span>
-        <span class="nc-tag">巧克力礼盒</span>
-        <span class="nc-tag">白房子咖啡</span>
-      </div>
-      <div class="nc-title">浦东美术馆莫兰迪大展巧克力礼盒来啦～</div>
-      <div class="nc-insight">「浦东美术馆莫兰迪大展」艺术IP联名赋予文化附加值，低饱和莫兰迪色系视觉设计自带高级感；第三次合作叙事积累品牌信任，礼盒装覆盖送礼+自享双场景。</div>
-      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a39e10b000000001102c10d" target="_blank">查看原笔记 &rarr;</a>
+      <div class="nc-tags"><span class="nc-tag red">休食·茶饮</span><span class="nc-tag">普洱熟茶</span><span class="nc-tag">喵茶饮事</span></div>
+      <div class="nc-title">上新一周爆卖1k单！泡出来真的和名字一样🥹</div>
+      <div class="nc-insight">「爆卖1k单」销量背书前置标题，「没有仓味但是醇厚米香」品质描述精准，0糖0香精标签覆盖养生+减脂双人群，冷热双喝场景拓展消费频次。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a22724c0000000006036ab9" target="_blank">查看原笔记 →</a>
     </div>
   </div>
-
   <div class="nc">
-    <div class="nc-rank"><div class="rn">05</div></div>
+    <div class="nc-rank"><div class="rn ">05</div></div>
     <div class="nc-cover">
-      <a href="https://www.xiaohongshu.com/explore/6a3d1c74000000000f01681a" target="_blank">
-        <img src="https://sns-img-hw.xhscdn.com/notes_pre_post/1040g3k0321rbo2ohmu105qen6sqsmlusr547e08?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🍜</div>&quot;">
+      <a href="https://www.xiaohongshu.com/explore/6a1f8d0c0000000022008044" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/note_pre_post_uhdr/1040g3r0320thf7l97e0g5pj925h1oldmmfatkgg?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🐶</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️1671</span><span>⭐215</span><span>💬45</span></div>
       </a>
     </div>
     <div class="nc-body">
-      <div class="nc-tags">
-        <span class="nc-tag red">休食·方便速食</span>
-        <span class="nc-tag">冷面</span>
-        <span class="nc-tag">丽丽朝鲜面</span>
-      </div>
-      <div class="nc-title">带着五哈同款冷面打道回府咯</div>
-      <div class="nc-insight">「五哈同款」借势综艺热点制造爆款势能，「去不了延吉也能吃到」解决地域限制痛点；工厂直供+供货商场背书强化信任，4块一袋极致性价比驱动囤货行为。</div>
-      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a3d1c74000000000f01681a" target="_blank">查看原笔记 &rarr;</a>
+      <div class="nc-tags"><span class="nc-tag red">休食·速食</span><span class="nc-tag">品牌联名</span><span class="nc-tag">三养尝新官</span></div>
+      <div class="nc-title">这狗联名碗太太太太太戳我了😭！！！</div>
+      <div class="nc-insight">「三狗联名」IP跨界制造话题热度，1671赞为本期互动冠军，陶瓷材质+微波炉可用实用卖点+高颜值情绪价值双驱动，速食场景绑定日常高频需求。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a1f8d0c0000000022008044" target="_blank">查看原笔记 →</a>
+    </div>
+  </div>
+  <div class="nc">
+    <div class="nc-rank"><div class="rn ">06</div></div>
+    <div class="nc-cover">
+      <a href="https://www.xiaohongshu.com/explore/6a261f4c0000000006031573" target="_blank">
+        <img src="https://sns-img-hw.xhscdn.com/notes_pre_post/1040g3k83214tgh7rnk805p2jd1e4mpcvie8dlp8?imageView2/2/w/270/format/jpg" alt="封面" onerror="this.style.display=&quot;none&quot;;this.parentNode.innerHTML=&quot;<div class=nc-cover-ph>🥮</div>&quot;">
+        <div class="nc-cover-stats"><span>❤️595</span><span>⭐217</span><span>💬81</span></div>
+      </a>
+    </div>
+    <div class="nc-body">
+      <div class="nc-tags"><span class="nc-tag red">休食·糕点</span><span class="nc-tag">八珍饼</span><span class="nc-tag">四季坊养生</span></div>
+      <div class="nc-title">我妈说这个好‼️女孩子是要多吃点😂</div>
+      <div class="nc-insight">「我妈说这个好」亲缘信任背书降低防备，8种药食同源成分罗列构成健康说服力，「女孩子要多吃」精准定向女性养生需求，糯叽叽口感标签增强食欲冲动。</div>
+      <a class="nc-link" href="https://www.xiaohongshu.com/explore/6a261f4c0000000006031573" target="_blank">查看原笔记 →</a>
     </div>
   </div>
 </div>
@@ -620,63 +459,56 @@ body { font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif
 <!-- ══ 05 往期优质笔记内容 ══ -->
 <div class="archive-section">
   <div class="sec-head">
-    <div class="sec-title">
-      <div class="sec-num">05</div>
-      <h2>往期优质笔记内容</h2>
-    </div>
-    <div class="sec-meta">68 篇参考笔记</div>
+    <div class="sec-title"><div class="sec-num">05</div><h2>往期优质笔记内容</h2></div>
+    <div class="sec-meta">67 篇参考笔记</div>
   </div>
   <div class="archive-intro">📚 汇总往期运营团队精选笔记，点击编号直达原文，可作为选题灵感与内容参考。</div>
-
-  <div class="archive-week-label">精选收录 · 共 68 篇</div>
+  <div class="archive-week-label">精选收录 · 共 67 篇</div>
   <div class="archive-grid">
-    <a class="archive-link" href="https://fe-static.xhscdn.com/formula-static/aibibp/8v13gld8/viz-zibu-weekly-20260630.html" target="_blank">
-      <span class="archive-link-num">01</span><span class="archive-link-text">第25周 · Jun 23–Jun 30</span>
-    </a>
-    <a class="archive-link" href="https://docs.qq.com/page/DZG15WEZkUnN0c1dW" target="_blank">
-      <span class="archive-link-num">02</span><span class="archive-link-text">第24周 · Jun 3–Jun 9</span>
-    </a>
     <a class="archive-link" href="https://docs.qq.com/page/DZGdNWkJMZUh4d2JC" target="_blank">
-      <span class="archive-link-num">03</span><span class="archive-link-text">第23周 · May 26–Jun 2</span>
+      <span class="archive-link-num">01</span><span class="archive-link-text">第25周 (May 26–Jun 2)</span>
     </a>
     <a class="archive-link" href="https://docs.qq.com/page/DZGhCWGNjUXRuZGxt" target="_blank">
-      <span class="archive-link-num">04</span><span class="archive-link-text">第22周 · May 19–May 25</span>
+      <span class="archive-link-num">02</span><span class="archive-link-text">第24周 (May 19–26)</span>
     </a>
     <a class="archive-link" href="https://docs.qq.com/page/DZHFhVHdXc3VhZmxs" target="_blank">
-      <span class="archive-link-num">05</span><span class="archive-link-text">第21周 · May 12–May 18</span>
+      <span class="archive-link-num">03</span><span class="archive-link-text">第23周 (May 12–19)</span>
     </a>
     <a class="archive-link" href="https://docs.qq.com/page/DZFhiaVR0YnFveHhk" target="_blank">
-      <span class="archive-link-num">06</span><span class="archive-link-text">第20周 · May 5–May 11</span>
+      <span class="archive-link-num">04</span><span class="archive-link-text">第22周 (May 5–12)</span>
     </a>
     <a class="archive-link" href="https://fe-static.xhscdn.com/formula-static/aibibp/0aw3m6jc/viz-zibu-weekly-20260507.html" target="_blank">
-      <span class="archive-link-num">07</span><span class="archive-link-text">第19周 · Apr 28–May 4</span>
+      <span class="archive-link-num">05</span><span class="archive-link-text">第21周 (Apr 28–May 7)</span>
+    </a>
+    <a class="archive-link" href="https://fe-static.xhscdn.com/formula-static/aibibp/z7k5kxbj/viz-zibu-weekly-20260428.html" target="_blank">
+      <span class="archive-link-num">06</span><span class="archive-link-text">第20周 (Apr 21–27)</span>
     </a>
     <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNalIosJaCSp6vlvtF?scode=ANAAyQcbAAgLKiQ5XsAS4AnwY8ALY" target="_blank">
-      <span class="archive-link-num">08</span><span class="archive-link-text">优质笔记 #1</span>
+      <span class="archive-link-num">08</span><span class="archive-link-text">优质笔记 #01</span>
     </a>
     <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCN0Q1oSfBwTOal1xXI?scode=ANAAyQcbAAg78eBwjWAS4AnwY8ALY" target="_blank">
-      <span class="archive-link-num">09</span><span class="archive-link-text">优质笔记 #2</span>
+      <span class="archive-link-num">09</span><span class="archive-link-text">优质笔记 #02</span>
     </a>
     <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNPoRFXHypS2CW8TWx?scode=ANAAyQcbAAgjxu6hKCAS4AnwY8ALY" target="_blank">
-      <span class="archive-link-num">10</span><span class="archive-link-text">优质笔记 #3</span>
+      <span class="archive-link-num">10</span><span class="archive-link-text">优质笔记 #03</span>
     </a>
     <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNgnX44uKJRnSUwu9u?scode=ANAAyQcbAAg5gal3ppAS4AnwY8ALY" target="_blank">
-      <span class="archive-link-num">11</span><span class="archive-link-text">优质笔记 #4</span>
+      <span class="archive-link-num">11</span><span class="archive-link-text">优质笔记 #04</span>
     </a>
     <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNaTUmFhfkRY69PgXB?scode=ANAAyQcbAAgJbLMxDKAS4AnwY8ALY" target="_blank">
-      <span class="archive-link-num">12</span><span class="archive-link-text">优质笔记 #5</span>
+      <span class="archive-link-num">12</span><span class="archive-link-text">优质笔记 #05</span>
     </a>
     <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNQ7hmWz1UTU2mWLXG?scode=ANAAyQcbAAgUok0zW1AS4AnwY8ALY" target="_blank">
-      <span class="archive-link-num">13</span><span class="archive-link-text">优质笔记 #6</span>
+      <span class="archive-link-num">13</span><span class="archive-link-text">优质笔记 #06</span>
     </a>
     <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCN1bdTn4LfRUmjheH7?scode=ANAAyQcbAAgV4gV1SyAS4AnwY8ALY" target="_blank">
-      <span class="archive-link-num">14</span><span class="archive-link-text">优质笔记 #7</span>
+      <span class="archive-link-num">14</span><span class="archive-link-text">优质笔记 #07</span>
     </a>
     <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNvhgjnNP5Rauvf1ph?scode=ANAAyQcbAAgU3yYyy3AS4AnwY8ALY" target="_blank">
-      <span class="archive-link-num">15</span><span class="archive-link-text">优质笔记 #8</span>
+      <span class="archive-link-num">15</span><span class="archive-link-text">优质笔记 #08</span>
     </a>
     <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCN2dIC6Xd9TbiC1kFe?scode=ANAAyQcbAAgc2qteOeAS4AnwY8ALY" target="_blank">
-      <span class="archive-link-num">16</span><span class="archive-link-text">优质笔记 #9</span>
+      <span class="archive-link-num">16</span><span class="archive-link-text">优质笔记 #09</span>
     </a>
     <a class="archive-link" href="https://doc.weixin.qq.com/doc/w3_AS4AnwY8ALYCNI074XoReQn0T0rjT?scode=ANAAyQcbAAgssk1ZOLAS4AnwY8ALY" target="_blank">
       <span class="archive-link-num">17</span><span class="archive-link-text">优质笔记 #10</span>
@@ -838,10 +670,9 @@ body { font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif
 </div>
 
 <div class="footer">
-  <p>美食滋补行业运营 · 数据来源：小红书鹰眼平台 · 数据范围 Jun 23–Jun 30</p>
+  <p>美食滋补行业运营 · 数据来源：小红书鹰眼平台 · 数据范围 2026-06-03 至 2026-06-09</p>
   <p style="margin-top:4px">每周三更新 · 如有疑问请联系运营小组</p>
 </div>
-
 </div>
 </body>
 </html>
