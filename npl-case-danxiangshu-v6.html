@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPL 案例库 | 单向树旗舰店 - 新品上新大场</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #fafbfc 0%, #f2f4f6 100%);
+            color: #333;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+        
+        /* 顶部标题区 */
+        .header {
+            background: white;
+            padding: 28px 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #d4657a 0%, #e8a0b0 100%);
+        }
+        
+        .merchant-name {
+            font-size: 26px;
+            font-weight: 800;
+            color: #2c2c2c;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        
+        @media (min-width: 768px) {
+            .merchant-name {
+                font-size: 32px;
+            }
+        }
+        
+        .case-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #777;
+            flex-wrap: wrap;
+        }
+        
+        .meta-tag {
+            padding: 4px 10px;
+            background: #f5f5f5;
+            border-radius: 12px;
+        }
+        
+        .core-strategy {
+            font-size: 15px;
+            color: #c4556a;
+            font-weight: 600;
+            padding: 14px 16px;
+            background: linear-gradient(135deg, #fdf2f4 0%, #fce8ec 100%);
+            border-left: 5px solid #d4657a;
+            border-radius: 8px;
+            line-height: 1.7;
+        }
+        
+        @media (min-width: 768px) {
+            .core-strategy {
+                font-size: 17px;
+                padding: 16px 20px;
+            }
+        }
+        
+        /* 经营成果卡片 */
+        .results-section {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        
+        @media (min-width: 768px) {
+            .results-section {
+                padding: 32px;
+            }
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #2c2c2c;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 22px;
+            background: #d4657a;
+            border-radius: 3px;
+            margin-right: 12px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+            }
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #fdf8f9 0%, #faf5f6 100%);
+            padding: 16px 12px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 2px solid transparent;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .metric-card {
+                padding: 20px 14px;
+                min-height: 160px;
+            }
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(212,101,122,0.12);
+            border-color: #d4657a;
+        }
+        
+        .metric-value {
+            font-size: 18px;
+            font-weight: 800;
+            color: #c4556a;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        
+        @media (min-width: 768px) {
+            .metric-value {
+                font-size: 22px;
+                margin-bottom: 6px;
+            }
+        }
+        
+        .metric-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        @media (min-width: 768px) {
+            .metric-label {
+                font-size: 13px;
+            }
+        }
+        
+        .growth-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4657a 0%, #e8a0b0 100%);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 8px;
+            box-shadow: 0 2px 6px rgba(212,101,122,0.2);
+            white-space: nowrap;
+        }
+        
+        @media (min-width: 768px) {
+            .growth-badge {
+                padding: 5px 12px;
+                font-size: 12px;
+                margin-top: 10px;
+            }
+        }
+        
+        .insight-box {
+            margin-top: 20px;
+            padding: 16px 18px;
+            background: linear-gradient(135deg, #fef9f5 0%, #fdf3ed 100%);
+            border-radius: 12px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+            border-left: 4px solid #e8a07a;
+        }
+        
+        @media (min-width: 768px) {
+            .insight-box {
+                padding: 20px 24px;
+                font-size: 15px;
+                margin-top: 24px;
+            }
+        }
+        
+        .insight-box strong {
+            color: #c4556a;
+        }
+        
+        /* N/P/L 三场域卡片 - 纵向排列 */
+        .npl-section {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        
+        @media (min-width: 768px) {
+            .npl-section {
+                padding: 32px;
+            }
+        }
+        
+        .npl-card {
+            background: linear-gradient(135deg, #fdf8f9 0%, #faf5f6 100%);
+            padding: 22px 20px;
+            border-radius: 12px;
+            border-top: 5px solid #d4657a;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+        
+        @media (min-width: 768px) {
+            .npl-card {
+                padding: 24px;
+                margin-bottom: 24px;
+            }
+        }
+        
+        .npl-card:last-child {
+            margin-bottom: 0;
+        }
+        
+        .npl-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .npl-title {
+            font-size: 19px;
+            font-weight: 800;
+            color: #2c2c2c;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .npl-title {
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+        }
+        
+        .npl-icon {
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(135deg, #d4657a 0%, #e8a0b0 100%);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin-right: 10px;
+            font-size: 17px;
+            box-shadow: 0 2px 6px rgba(212,101,122,0.2);
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .npl-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+        }
+        
+        .npl-content {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.9;
+        }
+        
+        @media (min-width: 768px) {
+            .npl-content {
+                font-size: 15px;
+            }
+        }
+        
+        .npl-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .npl-content li {
+            padding: 10px 0;
+            padding-left: 22px;
+            position: relative;
+            border-bottom: 1px dashed #e8e0e2;
+        }
+        
+        @media (min-width: 768px) {
+            .npl-content li {
+                padding: 11px 0;
+                padding-left: 24px;
+            }
+        }
+        
+        .npl-content li:last-child {
+            border-bottom: none;
+        }
+        
+        .npl-content li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #d4657a;
+            font-weight: 800;
+            font-size: 15px;
+        }
+        
+        .highlight-text {
+            color: #c4556a;
+            font-weight: 700;
+            background: linear-gradient(120deg, #fdf2f4 0%, transparent 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        
+        /* 笔记图片展示区 - 放大版 */
+        .note-gallery {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        
+        @media (min-width: 600px) {
+            .note-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .note-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: white;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        
+        .note-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 18px rgba(212,101,122,0.2);
+        }
+        
+        .note-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+        
+        .note-caption {
+            padding: 10px 12px;
+            background: white;
+            font-size: 13px;
+            color: #333;
+            font-weight: 600;
+            text-align: center;
+            border-top: 2px solid #f0f0f0;
+        }
+        
+        @media (min-width: 768px) {
+            .note-caption {
+                padding: 12px 14px;
+                font-size: 14px;
+            }
+        }
+        
+        /* 可视化组件 - 内容策略三卡片 */
+        .content-strategy {
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        
+        @media (min-width: 600px) {
+            .content-strategy {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .strategy-card {
+            padding: 14px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-top: 3px solid #d4657a;
+        }
+        
+        .strategy-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #d4657a 0%, #e8a0b0 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .strategy-title {
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        
+        .strategy-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* 可视化组件 - 货盘梯度 */
+        .product-tier {
+            margin-top: 16px;
+            padding: 16px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        .tier-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 10px;
+            background: #fdf8f9;
+            border-radius: 8px;
+            border-left: 4px solid #d4657a;
+        }
+        
+        .tier-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .tier-badge {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #d4657a 0%, #e8a0b0 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            margin-right: 14px;
+            flex-shrink: 0;
+        }
+        
+        .tier-info {
+            flex: 1;
+        }
+        
+        .tier-name {
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+        
+        .tier-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* 可视化组件 - 直播频次进度条 */
+        .frequency-bar {
+            margin-top: 16px;
+            padding: 16px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        .freq-label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .freq-track {
+            height: 24px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .freq-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #d4657a 0%, #e8a0b0 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-weight: 700;
+            font-size: 12px;
+            transition: width 0.3s;
+        }
+        
+        .freq-tip {
+            margin-top: 8px;
+            font-size: 12px;
+            color: #888;
+            font-style: italic;
+        }
+        
+        /* 可视化组件 - 操作要点卡片 */
+        .action-tips {
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        
+        @media (min-width: 600px) {
+            .action-tips {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .tip-card {
+            padding: 14px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border-left: 3px solid #d4657a;
+        }
+        
+        .tip-title {
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        
+        .tip-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* 历史案例回溯栏 */
+        .history-bar {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .history-bar {
+                padding: 24px;
+            }
+        }
+        
+        .history-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+        
+        @media (min-width: 768px) {
+            .history-title {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+        }
+        
+        .history-note {
+            font-size: 13px;
+            color: #999;
+            font-style: italic;
+        }
+        
+        @media (min-width: 768px) {
+            .history-note {
+                font-size: 14px;
+            }
+        }
+        
+        .footer-note {
+            text-align: center;
+            padding: 20px 16px;
+            color: #aaa;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-note {
+                padding: 24px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部标题区 -->
+        <div class="header">
+            <div class="merchant-name">单向树旗舰店</div>
+            <div class="case-meta">
+                <span class="meta-tag">📅 大场日期：2026.07.04</span>
+                <span class="meta-tag">🎯 类型：新品上新店播大场</span>
+            </div>
+            <div class="core-strategy">
+                💡 核心策略：高频预告笔记精准蓄水 → 预约用户撬动全场近半成交 → 高中低客单梯度货盘分层引爆
+            </div>
+        </div>
+        
+        <!-- 经营成果 -->
+        <div class="results-section">
+            <div class="section-title">经营成果（大场前后对比）</div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div>
+                        <div class="metric-value">显著提升</div>
+                        <div class="metric-label">预约用户<br>GMV 贡献占比</div>
+                    </div>
+                    <span class="growth-badge">CVR 大幅高于非预约</span>
+                </div>
+                <div class="metric-card">
+                    <div>
+                        <div class="metric-value">高效转化</div>
+                        <div class="metric-label">预约进房率</div>
+                    </div>
+                    <span class="growth-badge">预约人群精准度高</span>
+                </div>
+                <div class="metric-card">
+                    <div>
+                        <div class="metric-value">大幅增长</div>
+                        <div class="metric-label">GPM<br>千次观看成交额</div>
+                    </div>
+                    <span class="growth-badge">店播同比显著提升</span>
+                </div>
+                <div class="metric-card">
+                    <div>
+                        <div class="metric-value">持续攀升</div>
+                        <div class="metric-label">总观看人数</div>
+                    </div>
+                    <span class="growth-badge">人均停留时长优化</span>
+                </div>
+            </div>
+            
+            <div class="insight-box">
+                💡 <strong>关键洞察：</strong>预约用户客单价明显高于非预约，老粉丝贡献金额占据绝对主导，新粉丝转化率表现优异但基数有待扩大。近期大促期间店播 DGMV 与商笔曝光均实现显著同比增长。
+            </div>
+        </div>
+        
+        <!-- N/P/L 三场域动作 - 纵向排列 -->
+        <div class="npl-section">
+            <div class="section-title">NPL 三场域协同打法详解</div>
+            
+            <!-- N 场域 -->
+            <div class="npl-card">
+                <div class="npl-title">
+                    <span class="npl-icon">N</span>
+                    笔记（Note）— 种草蓄水期
+                </div>
+                <div class="npl-content">
+                    <ul>
+                        <li><strong>系统性预告布局：</strong>在大场前 15–30 天启动内容预热，发布多篇预告视频笔记，形成密集触达矩阵</li>
+                        <li><strong>内容策略精细化：</strong>采用三类内容组合拳，覆盖不同用户需求
+                            <!-- 内容策略可视化 -->
+                            <div class="content-strategy">
+                                <div class="strategy-card">
+                                    <div class="strategy-icon">🎯</div>
+                                    <div class="strategy-title">痛点型内容</div>
+                                    <div class="strategy-desc">针对新手艾灸操作难点、艾条品质鉴别等高频疑问，制作教学类视频，降低用户决策门槛</div>
+                                </div>
+                                <div class="strategy-card">
+                                    <div class="strategy-icon">🌿</div>
+                                    <div class="strategy-title">溯源型内容</div>
+                                    <div class="strategy-desc">深入蕲春原产地，展示艾草种植、采摘、加工全流程，强化"道地药材"心智背书</div>
+                                </div>
+                                <div class="strategy-card">
+                                    <div class="strategy-icon">☀️</div>
+                                    <div class="strategy-title">场景型内容</div>
+                                    <div class="strategy-desc">结合三伏天养生热点，植入艾灸使用场景，激发季节性消费需求</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><strong>预约转化链路优化：</strong>在笔记中嵌入直播预约入口，通过"预告→预约→开播提醒"闭环，将内容流量高效转化为直播间预约用户</li>
+                        <li><strong>商笔协同放大声量：</strong>同步加大商业化笔记投放力度，通过达人种草+信息流广告组合拳，扩大品牌曝光面</li>
+                    </ul>
+                </div>
+                
+                <!-- 笔记配图 - 可点击跳转 -->
+                <div class="note-gallery">
+                    <a href="https://www.xiaohongshu.com/explore/6a3f57b10000000011005f98" target="_blank" class="note-item">
+                        <img src="https://xhs-doc.xhscdn.com/104004dg322922cocms0c7djp3g?redoc-w=2122&redoc-h=1494" alt="有了它们‼️新手/一个人也能做艾灸🔥太方便">
+                        <div class="note-caption">有了它们‼️新手/一个人也能做艾灸🔥太方便</div>
+                    </a>
+                    <a href="https://www.xiaohongshu.com/explore/6a3a54b0000000000f01e7bf" target="_blank" class="note-item">
+                        <img src="https://xhs-doc.xhscdn.com/104004dg322923us1n0033t23u0?redoc-w=1988&redoc-h=1312" alt="避坑掺假艾条‼️一篇看懂✨内行才懂艾条门道">
+                        <div class="note-caption">避坑掺假艾条‼️一篇看懂✨内行才懂艾条门道</div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- P 场域 -->
+            <div class="npl-card">
+                <div class="npl-title">
+                    <span class="npl-icon">P</span>
+                    私域（Private）— 粉丝运营期
+                </div>
+                <div class="npl-content">
+                    <ul>
+                        <li><strong>群聊精准触达：</strong>通过品牌私域群聊推送直播预告卡片，虽贡献预约人数有限，但用户画像高度匹配，转化效率优于公域流量</li>
+                        <li><strong>老粉深度激活：</strong>
+                            <br>• <strong>观看规模</strong>：老粉丝构成直播间核心观众群体，观看人数占据主导地位
+                            <br>• <strong>转化表现</strong>：支付转化率稳定在较高水平，贡献全场绝大部分成交金额，是 GMV 基本盘
+                            <br>• <strong>客单优势</strong>：老粉客单价显著高于新粉与非粉，复购意愿强
+                        </li>
+                        <li><strong>新粉高效捕获：</strong>新粉丝虽然观看基数较小，但转化率表现惊艳，客单价亦处于高位，显示出新客对品牌产品的高度认可，后续需加强新客引流以扩大规模</li>
+                        <li><strong>赠品策略提升客单：</strong>设计组合装赠品机制（如艾灸多罐装、蜂蜜套装等），通过"买赠"心理刺激用户提升单次购买数量，有效拉高平均客单价至理想区间</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- L 场域 -->
+            <div class="npl-card">
+                <div class="npl-title">
+                    <span class="npl-icon">L</span>
+                    直播（Live）— 成交爆发期
+                </div>
+                <div class="npl-content">
+                    <ul>
+                        <li><strong>货盘梯度设计：</strong>采用"高-中-低"三层货盘结构，满足不同用户需求，最大化 GMV 与订单数
+                            <!-- 货盘梯度可视化 -->
+                            <div class="product-tier">
+                                <div class="tier-item">
+                                    <div class="tier-badge">高</div>
+                                    <div class="tier-info">
+                                        <div class="tier-name">利润担当款：石白蕲艾柱（¥128）</div>
+                                        <div class="tier-desc"><strong>定位</strong>：高品质背书，拉升整体客单水平<br><strong>作用</strong>：贡献最大 GMV 份额，吸引注重品质的核心用户</div>
+                                    </div>
+                                </div>
+                                <div class="tier-item">
+                                    <div class="tier-badge">中</div>
+                                    <div class="tier-info">
+                                        <div class="tier-name">新品引爆款：轻悦蜜蜂蜜柠檬冲饮（¥116）</div>
+                                        <div class="tier-desc"><strong>定位</strong>：夏日清凉场景，新品首发<br><strong>作用</strong>：承担拉新与话题引爆双重任务，验证市场接受度</div>
+                                    </div>
+                                </div>
+                                <div class="tier-item">
+                                    <div class="tier-badge">低</div>
+                                    <div class="tier-info">
+                                        <div class="tier-name">入门走量款：御灸键（¥65）</div>
+                                        <div class="tier-desc"><strong>定位</strong>：低价门槛，价格敏感用户友好<br><strong>作用</strong>：拉动订单数与转化率，扩大用户基数</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><strong>商卡极致覆盖：</strong>直播间商品卡片曝光率接近饱和，点击转化率表现优异，从加购到支付的转化漏斗流畅，显示出货盘结构与用户需求的高度匹配</li>
+                        <li><strong>新品首发策略：</strong>轻悦蜜作为首次亮相的核心新品，通过<strong>"直播专属优惠 + 主播重点讲解 + 货盘 C 位展示"</strong>三重加持，单场即实现可观 GMV 贡献
+                            <!-- 操作要点可视化 -->
+                            <div class="action-tips">
+                                <div class="tip-card">
+                                    <div class="tip-title">🎁 直播专属优惠</div>
+                                    <div class="tip-desc">设置直播间专享价或限时折扣券，比日常价低 10%-15%，制造"错过不再有"的紧迫感</div>
+                                </div>
+                                <div class="tip-card">
+                                    <div class="tip-title">🎤 主播重点讲解</div>
+                                    <div class="tip-desc">每 15-20 分钟循环讲解一次新品，突出卖点（夏日解暑/便携冲泡/健康无添加），配合试喝演示</div>
+                                </div>
+                                <div class="tip-card">
+                                    <div class="tip-title">📍 货盘 C 位展示</div>
+                                    <div class="tip-desc">将新品固定在直播间商品列表第 1-2 位，确保用户进入直播间即可见，减少寻找成本</div>
+                                </div>
+                                <div class="tip-card">
+                                    <div class="tip-title">💬 互动引导话术</div>
+                                    <div class="tip-desc">主播主动提问"有没有想尝鲜的宝宝？"，引导评论区互动，提升新品关注度与算法推荐权重</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><strong>店播频次保障：</strong>保持高频店播节奏，通过密集场次积累直播权重与粉丝粘性
+                            <!-- 直播频次可视化 -->
+                            <div class="frequency-bar">
+                                <div class="freq-label">📊 建议直播频次：每周 5-7 场</div>
+                                <div class="freq-track">
+                                    <div class="freq-fill" style="width: 85%;">高频</div>
+                                </div>
+                                <div class="freq-tip">💡 <strong>怎么样算高频？</strong>每周至少 5 场，每场 2-4 小时，月度总时长不低于 80 小时。保持固定开播时间（如每晚 20:00），培养用户观看习惯。</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 历史案例回溯栏 -->
+        <div class="history-bar">
+            <div class="history-title">📚 往期案例回顾</div>
+            <div class="history-note">下期将在此处展示上一期案例链接，方便商家学习回溯</div>
+        </div>
+        
+        <div class="footer-note">
+            NPL 案例库 · 每周更新 · 数据来源：小红书电商内部复盘文档<br>
+            本案例仅供内部交流学习，未经授权不可对外传播
+        </div>
+    </div>
+</body>
+</html>
