@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>休食KA行业新品提报</title>
+<style>
+:root{--bg:#f4f7f5;--card:#fff;--tx:#2d3436;--sub:#7f8c94;--ac:#3d9970;--acl:#52b788;--tbg:#e8f5ee;--ttx:#2d7a56;--bd:rgba(0,0,0,.04);--r:10px;--sh:0 1px 2px rgba(0,0,0,.03),0 2px 12px rgba(0,0,0,.04)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;-webkit-font-smoothing:antialiased}
+.hero{background:linear-gradient(135deg,#3d9970 0%,#52b788 35%,#95d5b2 70%,#b7e4c7 100%);padding:40px 20px 36px;text-align:center;color:#fff;position:relative}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+.hero h1{font-size:22px;font-weight:700;letter-spacing:.5px;position:relative}
+.hero p{font-size:12px;opacity:.85;position:relative;margin-top:6px}
+.stats{max-width:880px;margin:-12px auto 0;padding:0 12px;position:relative;z-index:2;display:flex;gap:8px}
+.st{background:#fff;border-radius:10px;padding:12px;flex:1;text-align:center;box-shadow:var(--sh)}
+.st .n{font-size:24px;font-weight:700;color:var(--ac);line-height:1}
+.st .l{font-size:10px;color:var(--sub);margin-top:3px}
+.wrap{max-width:880px;margin:0 auto;padding:24px 12px 36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.card{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;border:1px solid var(--bd)}
+.card:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.ci{position:relative;aspect-ratio:4/5;overflow:hidden;cursor:pointer;background:#eef3ef}
+.ci img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .ci img{transform:scale(1.03)}
+.cb{padding:8px 10px;display:flex;flex-direction:column;gap:4px;flex:1}
+.ch{display:flex;align-items:center;gap:6px}
+.cn{background:var(--ac);color:#fff;font-size:8px;font-weight:700;padding:1px 6px;border-radius:3px}
+.sn{font-size:9px;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cb h3{font-size:12px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tags{display:flex;flex-wrap:wrap;gap:4px}
+.tag{font-size:8px;font-weight:500;color:var(--ttx);background:var(--tbg);padding:2px 7px;border-radius:3px}
+.desc{font-size:10px;color:var(--sub);line-height:1.55}
+.dl{display:none}
+.more{color:var(--ac);cursor:pointer;font-size:9px;font-weight:500;margin-left:2px}
+.more:hover{text-decoration:underline}
+.hc{border-top:1px solid var(--bd);padding-top:8px;margin-top:2px}
+.hc-t{font-size:9px;color:var(--sub);margin-bottom:4px;font-weight:500}
+.hc-s{display:flex;gap:4px;overflow-x:auto;padding-bottom:2px;-webkit-overflow-scrolling:touch}
+.hc-s::-webkit-scrollbar{height:2px}
+.hc-s::-webkit-scrollbar-thumb{background:#ccc;border-radius:1px}
+.hc-s img{height:48px;border-radius:4px;cursor:pointer;flex-shrink:0;border:1px solid var(--bd)}
+.hc-s img:hover{opacity:.85}
+.cf{margin-top:auto;padding-top:2px}
+.btn{display:inline-flex;align-items:center;gap:3px;background:var(--ac);color:#fff;font-size:10px;font-weight:500;padding:5px 12px;border-radius:14px;text-decoration:none;transition:all .2s}
+.btn:hover{background:var(--acl);transform:translateY(-1px)}
+.ft{text-align:center;padding:28px 12px;font-size:10px;color:#bbb}
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(4px);z-index:9999;cursor:zoom-out;justify-content:center;align-items:center}
+.ov.on{display:flex}
+.ov img{max-width:92vw;max-height:92vh;object-fit:contain;border-radius:6px}
+.ov .x{position:absolute;top:14px;right:18px;color:#fff;font-size:24px;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1);border-radius:50%}
+.ov .x:hover{background:rgba(255,255,255,.2)}
+@media(max-width:640px){.hero{padding:32px 12px 28px}.hero h1{font-size:20px}.grid{grid-template-columns:repeat(2,1fr);gap:8px}.cb{padding:8px 10px}.cb h3{font-size:12px}}
+@media(max-width:380px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="hero"><h1>休食KA行业新品提报</h1><p>提报AM：诺亚 ｜ 14 款精选新品</p></div>
+<div class="stats">
+<div class="st"><div class="n">14</div><div class="l">新品</div></div>
+<div class="st"><div class="n">8</div><div class="l">商家</div></div>
+<div class="st"><div class="n">3</div><div class="l">含手卡</div></div>
+</div>
+<div class="wrap"><div class="grid"><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no321e9ap916u0g5pf55o1h99dq2l7ratg?imageView2/2/w/800/q/80/format/webp" alt="陈阿炳老卤鸭脖" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">01</span><span class="sn">陈阿炳食品旗舰店</span></div>
+<h3>陈阿炳老卤鸭脖</h3>
+<div class="tags"><span class="tag">老汤慢卤</span><span class="tag">个大饱满</span><span class="tag">嚼劲十足</span></div>
+<div class="desc"><div class="ds">1. 老汤慢卤，层层入味，卤香浓郁，每一口都啃得超过瘾<br>2. 个大饱满，肉质超紧实，筋道超过瘾，嚼劲十足<br>3. 精选优质鸭脖，严选香辛料，口感层次丰富，好吃不腻<br>4. 解馋利器，追剧夜宵下午茶，居家出游聚会都能随时享<br>5. 用美味</div></div>
+
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/6a2fbc65cde0db0001987edb?t=1785199582567&amp;xsec_token=ABXJK0yDagwxm9BxXWK3fCaLJCajnYBn4Qq-iRsKcnetM%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no3217r0pskmu0g5pf55o1h99dqpt5atf0?imageView2/2/w/800/q/80/format/webp" alt="陈阿炳老卤鸭舌" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">02</span><span class="sn">陈阿炳食品旗舰店</span></div>
+<h3>陈阿炳老卤鸭舌</h3>
+<div class="tags"><span class="tag">醇香入味</span><span class="tag">弹嫩爽口</span><span class="tag">老卤慢煮</span></div>
+<div class="desc"><div class="ds">1. 醇香入味，弹嫩爽口;根根入味，酱香浓郁<br>2. 老卤慢煮，舌尖留香，越嚼越有味<br>3. 精选优质鸭舌，每一口都是卤香好味道<br>4. 酱香诱人<br>5. 多种草本卤料，天然香辛料文火慢炖，肉质肥美，酱香诱人</div></div>
+
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/6a292dac65e82f00012f506b?t=1785199582568&amp;xsec_token=ABi1v6FUbPEGpsBru9t7siGyLXA44reL7gomCbTr1I9Eo%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o0322lqgin5n2005o8qvr9g8gq71t1dtvg?imageView2/2/w/800/q/80/format/webp" alt="桂圆抱莲子" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">03</span><span class="sn">春江月旗舰店</span></div>
+<h3>桂圆抱莲子</h3>
+<div class="tags"><span class="tag">0添加剂</span><span class="tag">湘潭寸三莲</span><span class="tag">桂圆包裹</span></div>
+<div class="desc"><div class="ds" id="p3_s">1. 0添加剂配方，配料表只有桂圆、莲子、植物油<br>2. 正宗湘潭核心产区寸三莲，自然成熟，粉糯回甘、莲香纯正<br>3. 人工精筛严选，颗粒均匀饱满，无空心、无虫蛀、无碎粒<br>4. 三重手工九道工序，低温慢烘，桂圆莲子双香深度融合<span class="more" onclick="tog('p3')"> ▼ 展开</span></div>
+        <div class="dl" id="p3_l">1. 0添加剂配方，配料表只有桂圆、莲子、植物油<br>2. 正宗湘潭核心产区寸三莲，自然成熟，粉糯回甘、莲香纯正<br>3. 人工精筛严选，颗粒均匀饱满，无空心、无虫蛀、无碎粒<br>4. 三重手工九道工序，低温慢烘，桂圆莲子双香深度融合<br>5. 极简干净配料，无硫无添加，保留食材本味，吃着安心<br>6. 全流程品控检测，可溯源，口感粉绵不硬芯、清甜不腻<br>7. 经常熬夜、气血偏弱、日常需要温和食补的上班族<br>8. 爱吃零食怕上火、追求清甜不腻、拒绝重糖重油的女生<br>9. 嘴馋爱吃小零食，想要健康无添加、干净配料的人群<br>10. 老人、小孩、全家日常解馋，想吃温和滋养小食<br>11. 秋冬干燥、口干烦躁，需要润润口、清淡食补的人群<span class="more" onclick="tog('p3')"> ▲ 收起</span></div></div>
+
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/6a58371f437d3400010349e0?t=1785204718146&amp;xsec_token=ABb2b4UWSGsDfhj95JFSuSexTVtNrWMtC4o3-LuPUfzLE%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no3213kav0s700g5o9lq7m7vi6ee30au20?imageView2/2/w/800/q/80/format/webp" alt="柠檬蜜桃夹心西梅" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">04</span><span class="sn">和和堂旗舰店</span></div>
+<h3>柠檬蜜桃夹心西梅</h3>
+<div class="tags"><span class="tag">药食同源</span><span class="tag">膳食纤维</span><span class="tag">夏日开胃</span></div>
+<div class="desc"><div class="ds" id="p4_s">1. 药食同源，女性食养滋补轻负担<br>2. 富含膳食纤维和钾元素，温和润肠、补充能量，每日3-5颗吃起来无负担<span class="more" onclick="tog('p4')"> ▼ 展开</span></div>
+        <div class="dl" id="p4_l">1. 药食同源，女性食养滋补轻负担<br>2. 富含膳食纤维和钾元素，温和润肠、补充能量，每日3-5颗吃起来无负担<br>3. 夏日开胃解馋，补充盐分糖分。夏天天热没胃口、胃口寡淡时候的开胃前点，暴汗水分流失时候的糖分及能量补充好助手，酸甜口感适合大量出汗后的口味需求<br>4. 三重夹心，告别西梅苦涩<br>5. 小小一颗，藏着三种水果的夏日味道！甄选加州西梅，融入清新柠檬与香甜蜜桃，改善了传统西梅干发苦、带药味、口感差、有核等短板<br>6. 拿起先是柠檬清香，一口咬下，西梅的软糯酸甜&amp;蜜桃的甘甜&amp;柠檬的清爽，三重真果风味碰撞，酸甜均衡不腻口！<br>7. 独立包装，方便携带<br>8. 小巧精致的独立形态，告别传统西梅干不便分享、场景受限等弊端。办公室、露营、出行时候随手一块轻松获取亲友赞赏和惊讶！适合作为下午茶、追剧、办公室、露营小零食，随手一颗方便又解馋～<br>9. 双认证工厂，配料干净放心吃<br>10. 工厂拥有 HACCP&amp;ISO 双食品认证，全流程精细化消杀生产，品质放心！<br>11. 配料精简，无多余添加，配料表「西梅干、白桃干、柠檬皮丁、食用盐（海盐）」，女生、宝妈吃着安心<span class="more" onclick="tog('p4')"> ▲ 收起</span></div></div>
+
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/6a24cf5ffad5a400016f56bf?t=1785204363346&amp;xsec_token=AB2TsjyoKHBjQrJNEXS2EIiQvUmJokqw8Wi24d6ykxMpU%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no3235d8ebrms0g5o4rs8t0912g3p63tf8?imageView2/2/w/1200/q/80/format/webp" alt="卤烤猪肝片" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">05</span><span class="sn">NOFUNSHOP无趣的店</span></div>
+<h3>卤烤猪肝片</h3>
+<div class="tags"><span class="tag">完整大块厚切</span><span class="tag">天然香辛慢卤</span><span class="tag">果木低温熏制</span></div>
+<div class="desc"><div class="ds" id="p5_s">1. 只取完整大块猪肝厚切而成，不用碎肝粘合、边角碎料<br>2. 多种天然植物香辛料文火慢卤，中和肝腥 ，卤香浓郁<br>3. 先卤后熏，传统果木柴火低温熏制，带走残余腥气、锁住肉汁，猪肝表层淡淡的柴火焦香混着卤香，口感层次分明<span class="more" onclick="tog('p5')"> ▼ 展开</span></div>
+        <div class="dl" id="p5_l">1. 只取完整大块猪肝厚切而成，不用碎肝粘合、边角碎料<br>2. 多种天然植物香辛料文火慢卤，中和肝腥 ，卤香浓郁<br>3. 先卤后熏，传统果木柴火低温熏制，带走残余腥气、锁住肉汁，猪肝表层淡淡的柴火焦香混着卤香，口感层次分明<br>4. 猪肝富含优质蛋白，每100g含45.6g高蛋白，浓缩满满营养，解馋、健身、加餐、日常小食优选<br>5. 一罐两吃的新法，开罐即食1原味吃，尽享卤烟熏的本真醇香;2附赠秘制辣油，加入调味包拌着吃，辣香激发出另一层风味，解腻过瘾<br>6. 鲜肝本味，无多余防腐添加，开封建议当日吃完，剩余密封冷藏存放，存放时长不超24小时，保留纯粹原生卤烟熏风味<span class="more" onclick="tog('p5')"> ▲ 收起</span></div></div>
+
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/6a4486c988d1c100012b04f4?t=1785208732538&amp;xsec_token=ABDx0wxFAk032VUPQPPBHr8NsX0vrQQE7k8njcvfwhzvk%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322v9ioscn2005o4rs8t0912g4opg6vo?imageView2/2/w/1200/q/80/format/webp" alt="手工豆皮辣条" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">06</span><span class="sn">NOFUNSHOP无趣的店</span></div>
+<h3>手工豆皮辣条</h3>
+<div class="tags"><span class="tag">非转基因大豆</span><span class="tag">传统手工豆皮</span><span class="tag">高蛋白零食</span></div>
+<div class="desc"><div class="ds" id="p6_s">1. 选用非转基因大豆，优质植物蛋白来源<br>2. 遵循传统农法种植，从源头确保原料的纯净与可追溯性<br>3. 非转基因大豆营养结构更稳定，每100g含24.4g蛋白质、19.8g膳食纤维<br>4. 油脂比例天然，豆香更浓郁，豆皮韧性足<span class="more" onclick="tog('p6')"> ▼ 展开</span></div>
+        <div class="dl" id="p6_l">1. 选用非转基因大豆，优质植物蛋白来源<br>2. 遵循传统农法种植，从源头确保原料的纯净与可追溯性<br>3. 非转基因大豆营养结构更稳定，每100g含24.4g蛋白质、19.8g膳食纤维<br>4. 油脂比例天然，豆香更浓郁，豆皮韧性足<br>5. 配料极简主义：看得懂，才敢放心吃<br>6. 无人工色素、无防腐剂<br>7. 配料表短而清晰，回归食材本味<br>8. 用天然酵母抽取物代替味精，提鲜不口干<br>9. 工艺讲究：非油炸，却有地道香辣味<br>10. 非油炸，不油腻，减轻身体负担<br>11. 0反式脂肪酸，对健康更加友好<br>12. 45天短保，从生产到入口都在新鲜窗口期<br>13. 口感特点：薄切入味，有韧劲，越嚼越香<br>14. 十一道标准工序层层把关，豆皮薄而不断<br>15. 豆香醇厚，咸、香、爽、辣层次分明<br>16. 入口不软烂，有韧性，回味持久<span class="more" onclick="tog('p6')"> ▲ 收起</span></div></div>
+
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/69ff0b0b721fd30001e2e0c4?t=1785208732544&amp;xsec_token=ABl0pR6YAsM7LPhi90EqNlx2ILBaUR9aHcPxEU-9Eqpqo%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322v9ip3o720g5o4rs8t0912gjebftm0?imageView2/2/w/1200/q/80/format/webp" alt="原切无花果干" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">07</span><span class="sn">NOFUNSHOP无趣的店</span></div>
+<h3>原切无花果干</h3>
+<div class="tags"><span class="tag">自然成熟鲜果</span><span class="tag">天然黄体酮</span><span class="tag">原切无添加</span></div>
+<div class="desc"><div class="ds" id="p7_s">1. 优选自然成熟的无花果鲜果制作，果肉饱满，口感细腻清甜<br>2. 无花果是女性的宝藏果，含有天然黄体酮<br>3. 配料只有无花果，鲜果原切制作，7~8斤新鲜无花果才能制作出1斤无花果干<span class="more" onclick="tog('p7')"> ▼ 展开</span></div>
+        <div class="dl" id="p7_l">1. 优选自然成熟的无花果鲜果制作，果肉饱满，口感细腻清甜<br>2. 无花果是女性的宝藏果，含有天然黄体酮<br>3. 配料只有无花果，鲜果原切制作，7~8斤新鲜无花果才能制作出1斤无花果干<br>4. 低温慢烘工艺，没有高糖腌制，果肉自然软糯,外皮略带嚼劲，最大程度保留无花果的原始风味<br>5. 0脂肪，不添加防腐剂，因此保质期只有4个月<br>6. 多种吃法，酸奶碗/泡水/煲汤均可<br>7. 本品原料选用波姬红紫皮无花果，鲜果自带深紫红色果皮，无硫磺熏染，低温烘干时紫皮慢慢转为黑褐色，是原生态无添加的标志性特征<span class="more" onclick="tog('p7')"> ▲ 收起</span></div></div>
+
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/6a042e74213e27000134ca44?t=1785208732540&amp;xsec_token=ABqk8bYArYwX06-32yiFsTpQjRwhqBr-3UlicEBfZG-GA%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o0322v9inrp74005o4rs8t0912g35k4gm8?imageView2/2/w/1200/q/80/format/webp" alt="卤烤豆腐干" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">08</span><span class="sn">NOFUNSHOP无趣的店</span></div>
+<h3>卤烤豆腐干</h3>
+<div class="tags"><span class="tag">整块原浆豆干</span><span class="tag">先卤后烤</span><span class="tag">天然香辛料</span></div>
+<div class="desc"><div class="ds" id="p8_s">1. 只选完整优质大豆研磨成型不用碎豆、淀粉填充凑重;整块原浆制成，软嫩不发硬，豆香浓郁不寡淡<br>2. 先卤后烤，多种天然植物香辛料文火慢<br>3. 卤，不依赖重辣掩盖豆本身清香，香浓入味越嚼越香<span class="more" onclick="tog('p8')"> ▼ 展开</span></div>
+        <div class="dl" id="p8_l">1. 只选完整优质大豆研磨成型不用碎豆、淀粉填充凑重;整块原浆制成，软嫩不发硬，豆香浓郁不寡淡<br>2. 先卤后烤，多种天然植物香辛料文火慢<br>3. 卤，不依赖重辣掩盖豆本身清香，香浓入味越嚼越香<br>4. 非油炸烤制起表面起泡，烤出蓬松焦香，慢烤带走豆腥，牢牢锁住卤汁，卤香渗透每一丝纤维，入口如卤肉般醇厚<br>5. 独立密封罐装开罐即食，无需额外加工<br>6. 日常解馋、佐酒小食都适配<br>7. 每100g含29.9g高蛋白，浓缩满满营养，解馋、健身、加餐、日常小食优选<br>8. 豆干本味，没有多余防腐添加，拆封后不宜常温久放，剩余密封冷藏存放，建议了日内吃完，保留纯粹原生豆卤风味<span class="more" onclick="tog('p8')"> ▲ 收起</span></div></div>
+
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/6a59ecd2f8b2fa00010b2d26?t=1785208732537&amp;xsec_token=ABcwS7Jf5-838Scn9np3rViPnuIywJrKLY4tQZTdPgTcQ%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="./images/image2.jpeg" alt="九成风干猪肉条" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">09</span><span class="sn">蜀西奇胜旗舰店</span></div>
+<h3>九成风干猪肉条</h3>
+<div class="tags"><span class="tag">九成风干</span><span class="tag">源头工厂</span><span class="tag">高蛋白猪肉</span></div>
+<div class="desc"><div class="ds">1. 细条风干猪肉条9成风干<br>2. 源头工厂，品质保障<br>3. 发货快24h内，免费试吃</div></div>
+
+<div class="cf"><a href="https://xhslink.com/m/3xBkqssyKqK" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="./images/image3.jpeg" alt="九成风干鸡肉干" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">10</span><span class="sn">蜀西奇胜旗舰店</span></div>
+<h3>九成风干鸡肉干</h3>
+<div class="tags"><span class="tag">风干鸡胸肉</span><span class="tag">高蛋白低脂</span><span class="tag">24h发货</span></div>
+<div class="desc"><div class="ds">1. 风干鸡胸肉干，高蛋白<br>2. 源头工厂，品质保障<br>3. 发货24h内，免费试吃</div></div>
+
+<div class="cf"><a href="https://xhslink.com/m/9nziLoy7VTl" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="./images/image4.jpeg" alt="芝士脆多多" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">11</span><span class="sn">隐谷野</span></div>
+<h3>芝士脆多多</h3>
+<div class="tags"><span class="tag">三重芝士叠加</span><span class="tag">芝士含量≥13%</span><span class="tag">KIRI奶油芝士</span></div>
+<div class="desc"><div class="ds" id="p11_s">1. 三重芝士叠加 香味超浓郁<br>2. 实打实的高品质芝士配比，芝士总添加量≥13%<br>3. 马苏里拉奶酪≥6.7%<br>4. KIRI奶油芝士≥3.5%<br>5. 帕玛森芝士粉≥3.5%<span class="more" onclick="tog('p11')"> ▼ 展开</span></div>
+        <div class="dl" id="p11_l">1. 三重芝士叠加 香味超浓郁<br>2. 实打实的高品质芝士配比，芝士总添加量≥13%<br>3. 马苏里拉奶酪≥6.7%<br>4. KIRI奶油芝士≥3.5%<br>5. 帕玛森芝士粉≥3.5%<br>6. 搭配严选进口黄油提香，咸香醇厚、奶香十足，完全不齁甜，越嚼越有味道<br>7. 控温烘烤 三层口感超惊艳<br>8. 一层脆｜入口咔嚓酥脆，酥而不碎<br>9. 二层松｜内部肌理蓬松，不硬不硌牙<br>10. 三层香｜芝士香气层层渗透，吃完满嘴留香<br>11. 口感干爽不油腻，脆度刚刚好，追剧吃完全停不下来<br>12. 配方干净 吃着放心<br>13. 配料表简洁清晰，无多余杂乱添加<br>14. 靠优质原料撑起本味，咸甜适中，老人小孩都能放心吃<br>15. 独立分装 便携不浪费<br>16. 净含量100g（50g×2包，双托盘包装） 贴心分装，方便分享或独享，追剧/办公零食首选<span class="more" onclick="tog('p11')"> ▲ 收起</span></div></div>
+<div class="hc"><div class="hc-t">📋 产品手卡</div><div class="hc-s"><img src="./images/image8.png" loading="lazy" onclick="z(this.src)"><img src="./images/image10.jpg" loading="lazy" onclick="z(this.src)"><img src="./images/image12.jpg" loading="lazy" onclick="z(this.src)"><img src="./images/image14.jpg" loading="lazy" onclick="z(this.src)"><img src="./images/image16.jpg" loading="lazy" onclick="z(this.src)"><img src="./images/image19.jpg" loading="lazy" onclick="z(this.src)"><img src="./images/image21.jpg" loading="lazy" onclick="z(this.src)"></div></div>
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/6a058255213e270001550fc9?t=1785225828419&amp;xsec_token=ABA4taujVdhvVNteu3o9-MHIjltyIwY5HZye2GNCe2Nrc%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="./images/image22.jpeg" alt="鲜蒸铁棍山药" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">12</span><span class="sn">隐谷野</span></div>
+<h3>鲜蒸铁棍山药</h3>
+<div class="tags"><span class="tag">焦作铁棍山药</span><span class="tag">干净配方</span><span class="tag">药食同源</span></div>
+<div class="desc"><div class="ds" id="p12_s">1. 甄选河南焦作正宗垆土铁棍山药，人工采挖，去头掐尾取中间段，营养远高于普通山药（粘多糖高出8.16倍、总氮量高出4倍），药食同源，食补价值高<br>2. 干净配方<span class="more" onclick="tog('p12')"> ▼ 展开</span></div>
+        <div class="dl" id="p12_l">1. 甄选河南焦作正宗垆土铁棍山药，人工采挖，去头掐尾取中间段，营养远高于普通山药（粘多糖高出8.16倍、总氮量高出4倍），药食同源，食补价值高<br>2. 干净配方<br>3. 原味：配料表只有山药，0脂肪、0蔗糖、低钠，无多余添加，原汁原味，吃着安心<br>4. 工艺锁鲜<br>5. 鲜蒸工艺锁住原生营养，10斤鲜山药仅产出7斤成品，营养浓缩<br>6. 口感与吸收<br>7. 入口清甜软糯，口感绵密，好消化、好吸收，温润护脾胃<br>8. 轻食健康<br>9. 0糖0脂肪轻负担，适配控卡、轻养、健康饮食需求<br>10. 食用便捷<br>11. 独立真空锁鲜小袋，开袋即食，不用蒸煮，随身携带、随时随地加餐都方便<br>12. 多场景多吃法<br>13. 原味、红枣多种口味可选；可直接即食、入菜烹饪、DIY甜品，适配早餐、下午茶、办公加餐、日常代餐等全场景<br>14. 受众广泛<br>15. 温和滋养不刺激，孕妈、宝妈、老人、控重人群、日常养生人群都能放心吃<span class="more" onclick="tog('p12')"> ▲ 收起</span></div></div>
+<div class="hc"><div class="hc-t">📋 产品手卡</div><div class="hc-s"><img src="./images/image23.jpg" loading="lazy" onclick="z(this.src)"></div></div>
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/69fd78168c2c2300016cb9c6?t=1785225828430&amp;xsec_token=ABRrJbE0IPd_H8wFIperIsxXCh82JjzTQOADSZnpo9XDk%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="./images/image24.jpg" alt="烤鱿鱼条" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">13</span><span class="sn">水一方</span></div>
+<h3>烤鱿鱼条</h3>
+<div class="tags"><span class="tag">鱿鱼肉感十足</span><span class="tag">不含淀粉增重</span><span class="tag">短保鲜制</span></div>
+<div class="desc"><div class="ds" id="p13_s">1. 和市面大部分鱿鱼丝不是一个口感，是非常清晰的肉质、韧劲；不含淀粉配料等去增重，吃下去就是肉的质感<br>2. 还原海鲜原本滋味，不做长保质期的东西就是为了吃上新鲜好味道，回购率超级高，全部是默默下单然后回购的老顾客！<br>3. 新调味！<span class="more" onclick="tog('p13')"> ▼ 展开</span></div>
+        <div class="dl" id="p13_l">1. 和市面大部分鱿鱼丝不是一个口感，是非常清晰的肉质、韧劲；不含淀粉配料等去增重，吃下去就是肉的质感<br>2. 还原海鲜原本滋味，不做长保质期的东西就是为了吃上新鲜好味道，回购率超级高，全部是默默下单然后回购的老顾客！<br>3. 新调味！<br>4. 鱿鱼肉感十足，弹牙可口<br>5. 无漂白剂，不添加淀粉<br>6. 采用真的鱿鱼，不添加淀粉杏鲍菇等，还原鱿鱼本色本味更健康<br>7. 适用人群：各大人群皆可食用<span class="more" onclick="tog('p13')"> ▲ 收起</span></div></div>
+<div class="hc"><div class="hc-t">📋 产品手卡</div><div class="hc-s"><img src="./images/image25.jpg" loading="lazy" onclick="z(this.src)"></div></div>
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/6a603758e9f0b1000100818b?t=1785227835470&amp;xsec_token=ABKO3d3EGGAW5JpaQQ5Mjyak3QJ-pLw1ixRwH0rLOmETI%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div><div class="card">
+<div class="ci" onclick="z(this.querySelector('img').src)"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o0320s45glon4005naiplr5kjm7umumrgo?imageView2/2/w/1440/q/80/format/webp" alt="臻味富硒鲍鱼果仁" loading="lazy"></div>
+<div class="cb">
+<div class="ch"><span class="cn">14</span><span class="sn">臻味ZENWELL</span></div>
+<h3>臻味富硒鲍鱼果仁</h3>
+<div class="tags"><span class="tag">亚马逊雨林野生</span><span class="tag">天然富硒</span><span class="tag">补硒坚果</span></div>
+<div class="desc"><div class="ds" id="p14_s">1. 巴西坚果（也叫鲍鱼果仁），产自亚马逊雨林深处，那里的土壤天生就富硒，树根扎进地下几十米，把硒一点一点浓缩进果仁里，野生采收，生长周期长，市面上很少见<span class="more" onclick="tog('p14')"> ▼ 展开</span></div>
+        <div class="dl" id="p14_l">1. 巴西坚果（也叫鲍鱼果仁），产自亚马逊雨林深处，那里的土壤天生就富硒，树根扎进地下几十米，把硒一点一点浓缩进果仁里，野生采收，生长周期长，市面上很少见<br>2. 更重要的是，这款鲍鱼果仁提供的是天然有机硒——相比于无机硒（如亚硒酸钠），有机硒的吸收率和生物利用度更高，更容易被人体储存和利用<br>3. 所以，以食补硒，巴西坚果是天然又高效的选择<br>4. 小蝴蝶（甲状腺）最爱的零食：巴西坚果（鲍鱼果仁）<br>5. 补充硒元素，巴西坚果是以食补硒的天然方式<br>6. 每天两颗巴西坚果，给甲状腺打下一个稳当的基础<br>7. 原味，无盐，无糖，配料表只有它自己：鲍鱼果仁<br>8. 有机硒的吸收率和生物利用度更高，更容易被人体储存和利用<br>9. 甲状腺是人体内硒浓度最高的部位。硒直接参与甲状腺激素的合成与代谢，缺了它，        甲状腺就像少了“稳定器”，功能容易紊乱。每天吃几颗巴西坚果，就是在为甲状腺打下一个稳固的营养基础<br>10. 独立小包装方便食用，避光、密封、氮气保鲜，随时吃都新鲜，不容易有油哈味；                   8、两个提醒一定要记住：<br>11. 每天1-3颗足够，千万别贪多，否则可能引起硒过量<br>12. 买的时候选原味的，配料表越干净越好，避免额外摄入糖、盐或油脂<br>13. 巴西坚果不是“偏科生”——自带优质脂肪、维生素E、镁、锌，吃一颗顺便补一堆，不是单打独斗<br>14. 10、美国农业部的数据：1颗巴西坚果的硒含量，大约相当于96克金枪鱼，或者1500克瘦牛肉，或者17个鸡蛋<span class="more" onclick="tog('p14')"> ▲ 收起</span></div></div>
+
+<div class="cf"><a href="https://www.xiaohongshu.com/goods-detail/69b37fc59b4aae000112d497?t=1785295399303&amp;xsec_token=AB30SMNGiNQ7REqJKRVt3jryUwgRaQDgmi9Y9-UFKejrI%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a></div>
+</div></div></div></div>
+<div class="ft">休食KA行业新品提报 · 定向提报</div>
+<div class="ov" id="ov"><div class="x" onclick="x()">✕</div><img id="oi" src=""></div>
+<script>
+function tog(id){var s=document.getElementById(id+'_s'),l=document.getElementById(id+'_l');if(s.style.display==='none'){s.style.display='';l.style.display='none'}else{s.style.display='none';l.style.display='block'}}
+function z(src){document.getElementById('oi').src=src;document.getElementById('ov').classList.add('on');document.body.style.overflow='hidden'}
+function x(){document.getElementById('ov').classList.remove('on');document.body.style.overflow=''}
+document.getElementById('ov').addEventListener('click',function(e){if(e.target===this)x()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')x()});
+</script>
+</body></html>
