@@ -16,17 +16,35 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
   width: 100%;
 }
 .header h1 { font-size: 26px; font-weight: 700; letter-spacing: 4px; margin-bottom: 0; }
-.header .sub { font-size: 11px; opacity: 0.85; }
 
-.stats {
-  display: flex; justify-content: center; gap: 30px;
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   padding: 14px 20px;
   background: #fff;
   border-bottom: 1px solid #e8ede8;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
-.stats .stat { text-align: center; }
-.stats .num { font-size: 22px; font-weight: 700; color: #4a9e4e; }
-.stats .label { font-size: 10px; color: #999; margin-top: 2px; }
+.filter-btn {
+  padding: 6px 20px;
+  border-radius: 20px;
+  border: 1.5px solid #c8dcc8;
+  background: #fff;
+  color: #555;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover { border-color: #7bc67e; color: #4a9e4e; }
+.filter-btn.active {
+  background: linear-gradient(135deg, #5ab55e, #4a9e4e);
+  color: #fff;
+  border-color: transparent;
+}
 
 .grid {
   display: grid;
@@ -45,6 +63,7 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .card:hover { transform: translateY(-3px); box-shadow: 0 4px 16px rgba(74,158,78,0.12); }
+.card.hidden { display: none; }
 
 .img-wrapper {
   position: relative;
@@ -58,14 +77,6 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
   position: absolute; top: 0; left: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-}
-.card-num {
-  position: absolute; top: 8px; left: 8px;
-  background: #4a9e4e; color: #fff;
-  font-size: 10px; font-weight: 700;
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
 }
 .shop-badge {
   position: absolute; bottom: 8px; left: 8px;
@@ -120,7 +131,8 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
 
 @media (max-width: 600px) {
   .grid { grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 8px; }
-  .header h1 { font-size: 17px; }
+  .header h1 { font-size: 20px; }
+  .filter-btn { font-size: 11px; padding: 5px 14px; }
 }
 </style>
 </head>
@@ -130,14 +142,17 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
   <h1>卤味果干类新品推荐</h1>
 </div>
 
-
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterCards('all', this)">全部 (18)</button>
+  <button class="filter-btn" onclick="filterCards('卤味', this)">卤味 (12)</button>
+  <button class="filter-btn" onclick="filterCards('坚果果干', this)">坚果果干 (6)</button>
+</div>
 
 <div class="grid">
 
-    <div class="card">
+    <div class="card" data-cat="卤味">
       <div class="img-wrapper">
         <img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no321e9ap916u0g5pf55o1h99dq2l7ratg?imageView2/2/w/800/q/80/format/webp" alt="陈阿炳老卤鸭脖" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">1</span>
         <span class="shop-badge">陈阿炳食品旗舰店</span>
       </div>
       <div class="card-body">
@@ -152,10 +167,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/6a2fbc65cde0db0001987edb?t=1785199582567&amp;xsec_token=ABXJK0yDagwxm9BxXWK3fCaLJCajnYBn4Qq-iRsKcnetM%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="卤味">
       <div class="img-wrapper">
         <img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no3217r0pskmu0g5pf55o1h99dqpt5atf0?imageView2/2/w/800/q/80/format/webp" alt="陈阿炳老卤鸭舌" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">2</span>
         <span class="shop-badge">陈阿炳食品旗舰店</span>
       </div>
       <div class="card-body">
@@ -169,10 +183,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/6a292dac65e82f00012f506b?t=1785199582568&amp;xsec_token=ABi1v6FUbPEGpsBru9t7siGyLXA44reL7gomCbTr1I9Eo%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="坚果果干">
       <div class="img-wrapper">
         <img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o0322lqgin5n2005o8qvr9g8gq71t1dtvg?imageView2/2/w/800/q/80/format/webp" alt="桂圆抱莲子" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">3</span>
         <span class="shop-badge">春江月旗舰店</span>
       </div>
       <div class="card-body">
@@ -187,10 +200,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/6a58371f437d3400010349e0?t=1785204718146&amp;xsec_token=ABb2b4UWSGsDfhj95JFSuSexTVtNrWMtC4o3-LuPUfzLE%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="坚果果干">
       <div class="img-wrapper">
         <img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no3213kav0s700g5o9lq7m7vi6ee30au20?imageView2/2/w/800/q/80/format/webp" alt="柠檬蜜桃夹心西梅" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">4</span>
         <span class="shop-badge">和和堂旗舰店</span>
       </div>
       <div class="card-body">
@@ -205,10 +217,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/6a24cf5ffad5a400016f56bf?t=1785204363346&amp;xsec_token=AB2TsjyoKHBjQrJNEXS2EIiQvUmJokqw8Wi24d6ykxMpU%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="卤味">
       <div class="img-wrapper">
         <img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no3235d8ebrms0g5o4rs8t0912g3p63tf8?imageView2/2/w/1200/q/80/format/webp" alt="卤烤猪肝片" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">5</span>
         <span class="shop-badge">NOFUNSHOP无趣的店</span>
       </div>
       <div class="card-body">
@@ -219,7 +230,6 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
           <div class="full" style="display:none">1. 只取完整大块猪肝厚切而成，不用碎肝粘合、边角碎料。<br>2. 多种天然植物香辛料文火慢卤，中和肝腥 ，卤香浓郁<br>3. 先卤后熏，传统果木柴火低温熏制，带走残余腥气、锁住肉汁，猪肝表层淡淡的柴火焦香混着卤香，口感层次分明<br>4. 猪肝富含优质蛋白，每100g含45.6g高蛋白，浓缩满满营养，解馋、健身、加餐、日常小食优选。<br>5. 一罐两吃的新法，开罐即食1原味吃，尽享卤烟熏的本真醇香;2附赠秘制辣油，加入调味包拌着吃，辣香激发出另一层风味，解腻过瘾。<br>6. 鲜肝本味，无多余防腐添加，开封建议当日吃完，剩余密封冷藏存放，存放时长不超24小时，保留纯粹原生卤烟熏风味。</div>
           <span class="expand-btn" onclick="var s=this.parentElement;s.querySelector('.short').style.display=s.querySelector('.short').style.display==='none'?'block':'none';s.querySelector('.full').style.display=s.querySelector('.full').style.display==='none'?'block':'none';this.textContent=this.textContent==='▼ 展开'?'▲ 收起':'▼ 展开';">▼ 展开</span>
         </div>
-        
         <div class="hancard-section">
           <div class="hancard-label">📋 产品手卡</div>
           <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_5.jpg" alt="手卡" class="hancard-img" loading="lazy" onclick="window.open(this.src)">
@@ -227,10 +237,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/6a4486c988d1c100012b04f4?t=1785208732538&amp;xsec_token=ABDx0wxFAk032VUPQPPBHr8NsX0vrQQE7k8njcvfwhzvk%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="卤味">
       <div class="img-wrapper">
         <img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no322v9ioscn2005o4rs8t0912g4opg6vo?imageView2/2/w/1200/q/80/format/webp" alt="手工豆皮辣条" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">6</span>
         <span class="shop-badge">NOFUNSHOP无趣的店</span>
       </div>
       <div class="card-body">
@@ -248,10 +257,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/69ff0b0b721fd30001e2e0c4?t=1785208732544&amp;xsec_token=ABl0pR6YAsM7LPhi90EqNlx2ILBaUR9aHcPxEU-9Eqpqo%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="坚果果干">
       <div class="img-wrapper">
         <img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322v9ip3o720g5o4rs8t0912gjebftm0?imageView2/2/w/1200/q/80/format/webp" alt="原切无花果干" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">7</span>
         <span class="shop-badge">NOFUNSHOP无趣的店</span>
       </div>
       <div class="card-body">
@@ -269,10 +277,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/6a042e74213e27000134ca44?t=1785208732540&amp;xsec_token=ABqk8bYArYwX06-32yiFsTpQjRwhqBr-3UlicEBfZG-GA%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="卤味">
       <div class="img-wrapper">
         <img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o0322v9inrp74005o4rs8t0912g35k4gm8?imageView2/2/w/1200/q/80/format/webp" alt="卤烤豆腐干" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">8</span>
         <span class="shop-badge">NOFUNSHOP无趣的店</span>
       </div>
       <div class="card-body">
@@ -283,7 +290,6 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
           <div class="full" style="display:none">1. 只选完整优质大豆研磨成型不用碎豆、淀粉填充凑重;整块原浆制成，软嫩不发硬，豆香浓郁不寡淡。<br>2. 先卤后烤，多种天然植物香辛料文火慢<br>3. 卤，不依赖重辣掩盖豆本身清香，香浓入味越嚼越香。<br>4. 非油炸烤制起表面起泡，烤出蓬松焦香，慢烤带走豆腥，牢牢锁住卤汁，卤香渗透每一丝纤维，入口如卤肉般醇厚。<br>5. 独立密封罐装开罐即食，无需额外加工<br>6. 日常解馋、佐酒小食都适配。<br>7. 每100g含29.9g高蛋白，浓缩满满营养，解馋、健身、加餐、日常小食优选。<br>8. 豆干本味，没有多余防腐添加，拆封后不宜常温久放，剩余密封冷藏存放，建议了日内吃完，保留纯粹原生豆卤风味。</div>
           <span class="expand-btn" onclick="var s=this.parentElement;s.querySelector('.short').style.display=s.querySelector('.short').style.display==='none'?'block':'none';s.querySelector('.full').style.display=s.querySelector('.full').style.display==='none'?'block':'none';this.textContent=this.textContent==='▼ 展开'?'▲ 收起':'▼ 展开';">▼ 展开</span>
         </div>
-        
         <div class="hancard-section">
           <div class="hancard-label">📋 产品手卡</div>
           <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_8.jpg" alt="手卡" class="hancard-img" loading="lazy" onclick="window.open(this.src)">
@@ -291,10 +297,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/6a59ecd2f8b2fa00010b2d26?t=1785208732537&amp;xsec_token=ABcwS7Jf5-838Scn9np3rViPnuIywJrKLY4tQZTdPgTcQ%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="卤味">
       <div class="img-wrapper">
         <img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322jqmsm674f05pvq9uj2nsq5sc8q8m8?imageView2/2/w/1280/q/80/format/webp" alt="九成风干猪肉条" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">9</span>
         <span class="shop-badge">蜀西奇胜旗舰店</span>
       </div>
       <div class="card-body">
@@ -305,10 +310,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://xhslink.com/m/3xBkqssyKqK" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="卤味">
       <div class="img-wrapper">
         <img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322ksuq59n00g5pvq9uj2nsq5hbubjo8?imageView2/2/w/960/q/80/format/webp" alt="九成风干鸡肉干" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">10</span>
         <span class="shop-badge">蜀西奇胜旗舰店</span>
       </div>
       <div class="card-body">
@@ -319,10 +323,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://xhslink.com/m/9nziLoy7VTl" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="坚果果干">
       <div class="img-wrapper">
         <img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o03204qu5ea1ms04a5hisss9hmnc3lm9mo?imageView2/2/w/800/q/80/format/webp" alt="芝士脆多多" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">11</span>
         <span class="shop-badge">隐谷野</span>
       </div>
       <div class="card-body">
@@ -340,10 +343,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/6a058255213e270001550fc9?t=1785225828419&amp;xsec_token=ABA4taujVdhvVNteu3o9-MHIjltyIwY5HZye2GNCe2Nrc%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="坚果果干">
       <div class="img-wrapper">
         <img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no31vt6p7g8561g4a5hisss9hmnvmafen0?imageView2/2/w/800/q/80/format/webp" alt="鲜蒸铁棍山药" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">12</span>
         <span class="shop-badge">隐谷野</span>
       </div>
       <div class="card-body">
@@ -361,10 +363,9 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/69fd78168c2c2300016cb9c6?t=1785225828430&amp;xsec_token=ABRrJbE0IPd_H8wFIperIsxXCh82JjzTQOADSZnpo9XDk%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="卤味">
       <div class="img-wrapper">
         <img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322tkq3b9mu005ne03oc096id6s3d1s8?imageView2/2/w/1440/q/80/format/webp" alt="烤鱿鱼条" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">13</span>
         <span class="shop-badge">水一方</span>
       </div>
       <div class="card-body">
@@ -376,14 +377,12 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
           <span class="expand-btn" onclick="var s=this.parentElement;s.querySelector('.short').style.display=s.querySelector('.short').style.display==='none'?'block':'none';s.querySelector('.full').style.display=s.querySelector('.full').style.display==='none'?'block':'none';this.textContent=this.textContent==='▼ 展开'?'▲ 收起':'▼ 展开';">▼ 展开</span>
         </div>
         
-        
         <a href="https://www.xiaohongshu.com/goods-detail/6a603758e9f0b1000100818b?t=1785227835470&amp;xsec_token=ABKO3d3EGGAW5JpaQQ5Mjyak3QJ-pLw1ixRwH0rLOmETI%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
-    <div class="card">
+    <div class="card" data-cat="坚果果干">
       <div class="img-wrapper">
         <img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o0320s45glon4005naiplr5kjm7umumrgo?imageView2/2/w/1440/q/80/format/webp" alt="臻味富硒鲍鱼果仁" loading="lazy" onclick="window.open(this.src)">
-        <span class="card-num">14</span>
         <span class="shop-badge">臻味ZENWELL</span>
       </div>
       <div class="card-body">
@@ -401,9 +400,91 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
         <a href="https://www.xiaohongshu.com/goods-detail/69b37fc59b4aae000112d497?t=1785295399303&amp;xsec_token=AB30SMNGiNQ7REqJKRVt3jryUwgRaQDgmi9Y9-UFKejrI%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
       </div>
     </div>
+    <div class="card" data-cat="卤味">
+      <div class="img-wrapper">
+        <img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no31vpcdkop3m0g5o8m15go5j92f7ucga0?imageView2/2/w/800/q/80/format/webp" alt="老醋蚕豆" loading="lazy" onclick="window.open(this.src)">
+        <span class="shop-badge">三关六码头</span>
+      </div>
+      <div class="card-body">
+        <h3>老醋蚕豆</h3>
+        <div class="tags"><span class="tag">配料干净</span><span class="tag">豆香浓郁</span><span class="tag">老醋</span></div>
+        <div class="diff-text">
+          <div class="short">1. 传统酿造老醋精心调配卤汁，充分浸泡入味，酸香柔和不呛口，酸甜咸平衡，解腻开胃，越嚼越香；<br>2. 严选重庆优质大颗粒蚕豆，颗粒均匀、肉质厚实，豆香浓郁，剔除空壳碎瓣，只留大粒好蚕豆；<br>3. 蚕豆外...</div>
+          <div class="full" style="display:none">1. 传统酿造老醋精心调配卤汁，充分浸泡入味，酸香柔和不呛口，酸甜咸平衡，解腻开胃，越嚼越香；<br>2. 严选重庆优质大颗粒蚕豆，颗粒均匀、肉质厚实，豆香浓郁，剔除空壳碎瓣，只留大粒好蚕豆；<br>3. 蚕豆外脆里酥，不硬不柴、不噎口，口感层次鲜明，老人小孩都好嚼；<br>4. 少油少盐配方，不重油重糖，无多余香精、色素，配料干净，日常解馋、佐餐都放心。</div>
+          <span class="expand-btn" onclick="var s=this.parentElement;s.querySelector('.short').style.display=s.querySelector('.short').style.display==='none'?'block':'none';s.querySelector('.full').style.display=s.querySelector('.full').style.display==='none'?'block':'none';this.textContent=this.textContent==='▼ 展开'?'▲ 收起':'▼ 展开';">▼ 展开</span>
+        </div>
+        
+        <a href="https://www.xiaohongshu.com/goods-detail/69f98be5213e270001c43a23?t=1785382411745&amp;xsec_token=ABbFdemtuN70QfPjYp3UW5wH6wHt3_H87lTctM40Iy7og%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+      </div>
+    </div>
+    <div class="card" data-cat="卤味">
+      <div class="img-wrapper">
+        <img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o031vpcinv1kc005o8m15go5j922211n30?imageView2/2/w/800/q/80/format/webp" alt="老醋花生" loading="lazy" onclick="window.open(this.src)">
+        <span class="shop-badge">三关六码头</span>
+      </div>
+      <div class="card-body">
+        <h3>老醋花生</h3>
+        <div class="tags"><span class="tag">酥脆</span><span class="tag">老醋</span><span class="tag">传统酿造</span></div>
+        <div class="diff-text">
+          <div class="short">1. 采用传统酿造老醋精心调配卤汁，慢浸入味，酸香柔和醇厚，不刺鼻、不寡淡，咸甜酸比例均衡，解腻又开胃，越吃越上瘾；<br>2. 严选当季新鲜大颗粒花生，颗粒均匀饱满，无坏籽、无空壳，经低温焙烤工艺，香酥不...</div>
+          <div class="full" style="display:none">1. 采用传统酿造老醋精心调配卤汁，慢浸入味，酸香柔和醇厚，不刺鼻、不寡淡，咸甜酸比例均衡，解腻又开胃，越吃越上瘾；<br>2. 严选当季新鲜大颗粒花生，颗粒均匀饱满，无坏籽、无空壳，经低温焙烤工艺，香酥不油、不发苦，入口酥脆无渣，口感层次远超普通花生；<br>3. 少油轻卤工艺，不重油重糖，外皮裹着香辛料，入口是老醋的卤香，微脆不软塌，内里花生香酥浓郁，一口下去先酸脆、再醇香，口感层次鲜明，吃起来停不下来；<br>4. 既是地道下酒硬菜，也是配粥、下饭、办公室解馋、追剧休闲、露营野餐的人气零食，方便好吃、老少皆宜，居家必备。</div>
+          <span class="expand-btn" onclick="var s=this.parentElement;s.querySelector('.short').style.display=s.querySelector('.short').style.display==='none'?'block':'none';s.querySelector('.full').style.display=s.querySelector('.full').style.display==='none'?'block':'none';this.textContent=this.textContent==='▼ 展开'?'▲ 收起':'▼ 展开';">▼ 展开</span>
+        </div>
+        
+        <a href="https://www.xiaohongshu.com/goods-detail/69f98cb764eb410001d05666?t=1785382411743&amp;xsec_token=AB80AoiIveXUZzjPFe7KtXNQjJKI1v-IlXWwMRrGJPl2c%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+      </div>
+    </div>
+    <div class="card" data-cat="卤味">
+      <div class="img-wrapper">
+        <img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o03226jcabgn40g5o8m15go5j92nn2odhg?imageView2/2/w/800/q/80/format/webp" alt="椰浆虎皮蛋卷" loading="lazy" onclick="window.open(this.src)">
+        <span class="shop-badge">三关六码头</span>
+      </div>
+      <div class="card-body">
+        <h3>椰浆虎皮蛋卷</h3>
+        <div class="tags"><span class="tag">独立包装</span><span class="tag">控温烘烤</span><span class="tag">酥脆</span></div>
+        <div class="diff-text">
+          <div class="short">1. 拒绝廉价椰粉勾兑，29%真椰入料，外层蛋皮自带醇厚鲜蛋香气，入口先是浓浓椰香，再是鲜鸡蛋的醇正蛋香，最后是慢火烘焙的酥脆焦香，3重香气直击味蕾；<br>2. 精准控温烘烤形成标志性虎皮斑纹，蛋卷分层轻...</div>
+          <div class="full" style="display:none">1. 拒绝廉价椰粉勾兑，29%真椰入料，外层蛋皮自带醇厚鲜蛋香气，入口先是浓浓椰香，再是鲜鸡蛋的醇正蛋香，最后是慢火烘焙的酥脆焦香，3重香气直击味蕾；<br>2. 精准控温烘烤形成标志性虎皮斑纹，蛋卷分层轻薄蓬松，咬下咔嚓酥脆、酥松化渣不硬芯；中空注心结构让椰浆夹心均匀裹附，口感轻薄不厚重，椰香与蛋香浓郁交织；<br>3. 选用新鲜鸡蛋搭配优质小麦粉，严控油脂配比，少人工香精、无多余防腐剂，配方简单纯粹，老人、小孩、办公室女生都能安心日常解馋，独立包装隔绝空气不易受潮变软，干净不粘手，囤货储存不易变质。</div>
+          <span class="expand-btn" onclick="var s=this.parentElement;s.querySelector('.short').style.display=s.querySelector('.short').style.display==='none'?'block':'none';s.querySelector('.full').style.display=s.querySelector('.full').style.display==='none'?'block':'none';this.textContent=this.textContent==='▼ 展开'?'▲ 收起':'▼ 展开';">▼ 展开</span>
+        </div>
+        
+        <a href="https://www.xiaohongshu.com/goods-detail/6a489d90c4c16c000188681c?t=1785382437003&amp;xsec_token=AB4J4uLE6TUrLgFQfw8wL3bW-ZzJlz_fl5YS1XrureArk%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+      </div>
+    </div>
+    <div class="card" data-cat="卤味">
+      <div class="img-wrapper">
+        <img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no322jijb5dms0g4a2slevktmbndnsaa18?imageView2/2/w/750/q/80/format/webp" alt="开运小方（无蔗糖茶糖）" loading="lazy" onclick="window.open(this.src)">
+        <span class="shop-badge">玄小食</span>
+      </div>
+      <div class="card-body">
+        <h3>开运小方（无蔗糖茶糖）</h3>
+        <div class="tags"><span class="tag">独立包装</span><span class="tag">口气清新</span><span class="tag">新品推荐</span></div>
+        <div class="diff-text">
+          <div class="short">1. 即是解馋零食，也是口气清新剂，抽烟人士看过来！烟后一颗糖，有效缓解餐后油腻感和烟酒异味<br>2. 坚守健康初心，都是茶粉本真颜色，0色素，0添加剂<br>3. 选安佳黄油，采用天然代糖，1颗仅20大卡，没...</div>
+          <div class="full" style="display:none">1. 即是解馋零食，也是口气清新剂，抽烟人士看过来！烟后一颗糖，有效缓解餐后油腻感和烟酒异味<br>2. 坚守健康初心，都是茶粉本真颜色，0色素，0添加剂<br>3. 选安佳黄油，采用天然代糖，1颗仅20大卡，没有添加任何白砂糖或者蔗糖，可以放心吃<br>4. 拒绝香精勾兑，均采用真实茶粉，保留原有的茶香<br>5. 每一颗都是独立包装，小巧便携，不齁甜，不腻口</div>
+          <span class="expand-btn" onclick="var s=this.parentElement;s.querySelector('.short').style.display=s.querySelector('.short').style.display==='none'?'block':'none';s.querySelector('.full').style.display=s.querySelector('.full').style.display==='none'?'block':'none';this.textContent=this.textContent==='▼ 展开'?'▲ 收起':'▼ 展开';">▼ 展开</span>
+        </div>
+        
+        <a href="https://www.xiaohongshu.com/goods-detail/6a4e16f04382e20001bd30cd?t=1785381891513&amp;xsec_token=ABAHPsS0mUHJhLyTj8v5ojFa7WqzK9O8NdlcLtmZHfdP0%3D&amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+      </div>
+    </div>
 </div>
 
 <div class="footer">卤味果干类新品推荐</div>
+
+<script>
+function filterCards(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+</script>
 
 </body>
 </html>
