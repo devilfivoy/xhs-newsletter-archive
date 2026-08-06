@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>这个秋天，卤味果干值得重新被看见</title>
+<title>追剧囤货季，卤味果干先备上</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",sans-serif;color:#2e3c2f;background:#f8fdf5}
@@ -74,7 +74,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
 .fbtn.active{background:linear-gradient(135deg,#7cb342,#558b2f);color:#fff;border-color:transparent}
 
 /* ===== SHOP GROUPS ===== */
-.shop-group{background:#fff;border:1px solid #d5e8c5;border-radius:14px;padding:22px;margin-bottom:22px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+#shop-container{display:flex;flex-wrap:wrap;gap:18px}
+.shop-group{background:#fff;border:1px solid #d5e8c5;border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.04);flex:1 1 auto;min-width:300px}
+.shop-group[data-count="1"]{max-width:48%;min-width:250px}
+.shop-group[data-count="1"] .prod-grid{grid-template-columns:1fr}
+
 .shop-group.hidden{display:none}
 .shop-hdr{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .shop-letter{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;flex-shrink:0}
@@ -94,7 +98,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
 .tag{background:#e8f5e9;color:#2e7d32;font-size:9px;padding:1px 5px;border-radius:3px;font-weight:500}
 .diff-wrap{margin-bottom:8px}
-.diff-short,.diff-text,.diff-full{font-size:11px;color:#666;line-height:1.55}
+.diff-short{font-size:11px;color:#666;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.diff-text,.diff-full{font-size:11px;color:#666;line-height:1.55}
 .expand-btn{display:inline-block;margin-top:4px;font-size:11px;color:#7cb342;cursor:pointer;background:none;border:none;padding:0;font-family:inherit}
 .expand-btn:hover{text-decoration:underline}
 .hancard-toggle{display:block;width:100%;text-align:left;font-size:11px;color:#8B6914;background:#FFF8DC;border:1px solid #ffe082;padding:5px 10px;border-radius:5px;cursor:pointer;margin-bottom:2px;font-family:inherit}
@@ -110,7 +115,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
 .top-tab:hover:not(.active){background:#f0f7ea}
 
 /* ===== TOP15 CARDS ===== */
-.top15-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.top15-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .top-card{background:#fff;border:1px solid #e0eecc;border-radius:12px;overflow:hidden;position:relative;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:all .2s}
 .top-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.09)}
 .top-rank{position:absolute;top:8px;left:8px;border-radius:12px;font-size:11px;font-weight:800;padding:3px 10px;z-index:2;letter-spacing:1px;color:#fff}
@@ -141,7 +146,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
   .metric-num{font-size:30px}
   .trend-grid{grid-template-columns:1fr}
   .prod-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .top15-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .top15-grid{grid-template-columns:repeat(3,1fr);gap:10px}
   .section{padding:36px 14px}
   .verdict{padding:20px 20px 20px 34px}
   .shop-group{padding:16px}
@@ -163,8 +168,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
 <!-- ===== HERO ===== -->
 <div class="hero">
   <span class="hero-leaf">🌱</span>
-  <div class="hero-title">这个秋天，卤味果干值得重新被看见</div>
-  <div class="hero-sub">卤味果干类新品推荐 · 近30天品类趋势</div>
+  <div class="hero-title">追剧囤货季，卤味果干先备上</div>
+  <div class="hero-sub">卤味果干类新品推荐</div>
   </div>
 </div>
 
@@ -174,7 +179,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
   <div class="sec-hdr">
     <div class="sec-tag">01 / 趋势</div>
     <h2 class="sec-title">趋势洞察</h2>
-    <p class="sec-sub">基于小红书休食赛道近30天500款热销商品数据</p>
+    <p class="sec-sub">近30天休食赛道品类走势</p>
   </div>
 
   <div class="verdict">
@@ -187,34 +192,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
       <div class="trend-icon">🥩</div>
       <div class="trend-name">卤味赛道</div>
       <div class="trend-hl">牛肉制品领跑赛道</div>
-      </div>
-        <div class="bar-row"><div class="bar-meta"><span>猪肉类</span><span>16.4%</span></div><div class="bar-track"><div class="bar-fill" style="width:16.4%"></div></div></div>
-        <div class="bar-row"><div class="bar-meta"><span>鸡肉类</span><span>14.2%</span></div><div class="bar-track"><div class="bar-fill" style="width:14.2%"></div></div></div>
-        <div class="bar-row"><div class="bar-meta"><span>豆制品</span><span>11.1%</span></div><div class="bar-track"><div class="bar-fill" style="width:11.1%"></div></div></div>
-      </div>
-      <div class="trend-desc">牛脆片和牛胸口脆是8月增速最快的细分品类，多个新品牌在近30天内快速涌现。卤味赛道整体竞争格局分散，新入局者仍有明确的突围机会。</div>
+      <div class="trend-desc">牛脆片和牛胸口脆是8月增速最快的细分品类，多个新品牌在近30天内快速涌现。卤味赛道整体竞争格局分散，新入局者仍有明确的突围机会。立秋后高蛋白肉类零食需求进一步上升，卤味进入全年销售黄金期。</div>
     </div>
     <div class="trend-card">
       <div class="trend-icon">🍑</div>
       <div class="trend-name">果干赛道</div>
       <div class="trend-hl">梅类与薯类双轮驱动</div>
-      </div>
-        <div class="bar-row"><div class="bar-meta"><span>薯类制品</span><span>18.0%</span></div><div class="bar-track"><div class="bar-fill" style="width:18.0%"></div></div></div>
-        <div class="bar-row"><div class="bar-meta"><span>无花果干</span><span>14.6%</span></div><div class="bar-track"><div class="bar-fill" style="width:14.6%"></div></div></div>
-        <div class="bar-row"><div class="bar-meta"><span>杏干/杏脯</span><span>13.8%</span></div><div class="bar-track"><div class="bar-fill" style="width:13.8%"></div></div></div>
-      </div>
-      <div class="trend-desc">潮汕话梅和陈皮梅在夏季消暑场景中持续走强，甘梅红薯片等健康化零食正在崛起。产地直供模式受消费者青睐，无花果干进入应季高峰期。</div>
+      <div class="trend-desc">潮汕话梅和陈皮梅在夏季消暑场景中持续走强，甘梅红薯片等健康化零食正在崛起。产地直供模式受消费者青睐，无花果干进入应季高峰期。9月开学季小包装果干适合学生群体，增长潜力明确。</div>
     </div>
     <div class="trend-card">
       <div class="trend-icon">🥜</div>
       <div class="trend-name">坚果赛道</div>
       <div class="trend-hl">腰果与混合坚果领跑</div>
-      </div>
-        <div class="bar-row"><div class="bar-meta"><span>混合坚果</span><span>19.5%</span></div><div class="bar-track"><div class="bar-fill" style="width:19.5%"></div></div></div>
-        <div class="bar-row"><div class="bar-meta"><span>花生</span><span>16.2%</span></div><div class="bar-track"><div class="bar-fill" style="width:16.2%"></div></div></div>
-        <div class="bar-row"><div class="bar-meta"><span>豆类制品</span><span>12.4%</span></div><div class="bar-track"><div class="bar-fill" style="width:12.4%"></div></div></div>
-      </div>
-      <div class="trend-desc">现烤和炭烤腰果凭借工艺差异化快速起量，每日坚果和种子循环等组合装持续走俏。坚果赛道品牌集中度较高，中秋礼赠需求即将全面启动。</div>
+      <div class="trend-desc">现烤和炭烤腰果凭借工艺差异化快速起量，每日坚果和种子循环等组合装持续走俏。坚果赛道品牌集中度较高，中秋礼赠需求即将全面启动，礼盒装坚果是9月的核心增长点。</div>
     </div>
   </div>
 
@@ -234,7 +224,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
   <div class="sec-hdr">
     <div class="sec-tag">02 / 新品</div>
     <h2 class="sec-title">新品推荐</h2>
-    <p class="sec-sub">精选 24 款新品 · 按店铺分组展示</p>
+    <p class="sec-sub">按店铺分组展示</p>
   </div>
 
   <div class="filter-bar">
@@ -244,7 +234,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
   </div>
 
   <div id="shop-container">
-<div class="shop-group" data-cats="卤味">
+<div class="shop-group" data-count="2" data-cats="卤味">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#7cb342">陈</span>
           <span class="shop-name">陈阿炳食品旗舰店</span>
@@ -282,7 +272,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="坚果果干零食">
+<div class="shop-group" data-count="1" data-cats="坚果果干零食">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#558b2f">春</span>
           <span class="shop-name">春江月旗舰店</span>
@@ -304,7 +294,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="坚果果干零食">
+<div class="shop-group" data-count="1" data-cats="坚果果干零食">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#33691e">和</span>
           <span class="shop-name">和和堂旗舰店</span>
@@ -326,7 +316,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="坚果果干零食,卤味">
+<div class="shop-group" data-count="4" data-cats="坚果果干零食,卤味">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#689f38">N</span>
           <span class="shop-name">NOFUNSHOP无趣的店</span>
@@ -402,7 +392,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="卤味">
+<div class="shop-group" data-count="2" data-cats="卤味">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#8bc34a">蜀</span>
           <span class="shop-name">蜀西奇胜旗舰店</span>
@@ -430,7 +420,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="坚果果干零食">
+<div class="shop-group" data-count="2" data-cats="坚果果干零食">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#7cb342">隐</span>
           <span class="shop-name">隐谷野</span>
@@ -472,7 +462,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="卤味">
+<div class="shop-group" data-count="1" data-cats="卤味">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#558b2f">水</span>
           <span class="shop-name">水一方</span>
@@ -494,7 +484,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="坚果果干零食">
+<div class="shop-group" data-count="1" data-cats="坚果果干零食">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#33691e">臻</span>
           <span class="shop-name">臻味ZENWELL</span>
@@ -519,7 +509,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="坚果果干零食,卤味">
+<div class="shop-group" data-count="3" data-cats="坚果果干零食,卤味">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#689f38">三</span>
           <span class="shop-name">三关六码头</span>
@@ -578,7 +568,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="坚果果干零食">
+<div class="shop-group" data-count="1" data-cats="坚果果干零食">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#8bc34a">玄</span>
           <span class="shop-name">玄小食</span>
@@ -603,7 +593,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="卤味">
+<div class="shop-group" data-count="2" data-cats="卤味">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#7cb342">失</span>
           <span class="shop-name">失重森林旗舰店</span>
@@ -645,7 +635,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
         </div>
         </div>
       </div>
-<div class="shop-group" data-cats="坚果果干零食,卤味">
+<div class="shop-group" data-count="6" data-cats="坚果果干零食,卤味">
         <div class="shop-hdr">
           <span class="shop-letter" style="background:#558b2f">食</span>
           <span class="shop-name">食味的初相旗舰店</span>
