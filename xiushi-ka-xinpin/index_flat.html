@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>追剧囤货季，卤味果干先备上</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB",sans-serif;color:#2e3c2f;background:#f8fdf5}
+
+/* ===== HERO ===== */
+.hero{
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(174,213,129,0.25) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 80%, rgba(174,213,129,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 0%,  rgba(220,237,200,0.35) 0%, transparent 60%),
+    linear-gradient(150deg, #558b2f 0%, #7cb342 45%, #33691e 100%);
+  padding:56px 24px 50px;
+  text-align:center;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{content:"🌿";position:absolute;top:24px;left:36px;font-size:30px;opacity:.25;transform:rotate(-20deg)}
+.hero::after{content:"🍃";position:absolute;bottom:24px;right:44px;font-size:26px;opacity:.25;transform:rotate(15deg)}
+.hero-leaf{position:absolute;top:50%;left:20px;font-size:20px;opacity:.15;transform:translateY(-50%)}
+.hero-title{font-size:30px;font-weight:800;letter-spacing:2px;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,.15)}
+.hero-sub{font-size:15px;opacity:.92;letter-spacing:1px;margin-bottom:32px}
+.metrics{display:flex;justify-content:center;gap:36px;flex-wrap:wrap}
+.metric{text-align:center}
+.metric-num{display:block;font-size:38px;font-weight:800;line-height:1;text-shadow:0 2px 8px rgba(0,0,0,.15)}
+.metric-lbl{font-size:12px;opacity:.88;margin-top:5px;letter-spacing:1px}
+
+/* ===== SECTIONS ===== */
+.section{padding:52px 20px}
+.section:nth-child(odd){background:#fff;border-top:1px solid #e8f5e9}
+.section:nth-child(even){background:#fafff8;border-top:1px solid #e8f5e9}
+.sec-inner{max-width:1180px;margin:0 auto}
+.sec-tag{display:inline-block;padding:5px 16px;border:2px solid #a5d6a7;border-radius:20px;font-size:12px;font-weight:700;color:#66bb6a;letter-spacing:2px;flex-shrink:0}
+.sec-title{font-size:26px;font-weight:800;color:#2e7d32;margin-bottom:6px;letter-spacing:2px}
+.sec-sub{font-size:13px;color:#8ca18e}
+.sec-hdr{margin-bottom:32px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.sec-hdr .sec-sub{width:100%;margin-top:-4px}
+
+/* ===== VERDICT ===== */
+.verdict{background:linear-gradient(135deg,#3e7c44,#5a9e60);color:#fff;border-radius:14px;padding:26px 30px 26px 40px;margin-bottom:32px;position:relative;box-shadow:0 4px 20px rgba(27,58,30,.2)}
+.verdict::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#aed581,#7cb342,#558b2f);border-radius:14px 0 0 14px}
+.verdict p{font-size:16px;line-height:1.85;font-weight:500}
+.verdict-icon{font-size:20px;margin-bottom:10px}
+
+/* ===== OPP TAGS ===== */
+.opp-tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.opp-tag{font-size:11px;color:#2e7d32;background:#e8f5e9;padding:4px 10px;border-radius:12px;border:1px solid #c8e6c9;font-weight:500}
+.trend-desc p{margin:8px 0;font-size:12.5px;color:#5a6e5c;line-height:1.7}
+.trend-desc p b{color:#2e7d32;font-weight:600;margin-right:4px}
+
+/* ===== TREND CARDS ===== */
+.trend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+.trend-card{background:#fff;border:1px solid #d5e8c5;border-radius:14px;padding:26px 22px;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:all .25s}
+.trend-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(124,179,66,.14)}
+.trend-icon{font-size:30px;margin-bottom:10px}
+.trend-name{font-size:17px;font-weight:700;color:#43a047;margin-bottom:6px}
+.trend-hl{display:inline-block;font-size:13px;font-weight:600;color:#43a047;background:#e8f5e9;padding:4px 14px;border-radius:14px;margin-bottom:14px;border:1px solid #c8e6c9}
+
+
+
+
+
+.trend-desc{font-size:12.5px;color:#5a6e5c;line-height:1.75;margin-top:12px}
+
+/* ===== TIMING ===== */
+.timing-box{background:#eef7e8;border-radius:12px;padding:20px 24px;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.timing-title{font-size:14px;font-weight:600;color:#33691e;margin-right:6px}
+.timing-advice-tag{color:#5a8a5e!important;border-color:#d5e8c5!important;font-weight:400!important}
+.timing-tag{font-size:13px;color:#558b2f;background:#fff;padding:6px 14px;border-radius:16px;border:1px solid #c5e1a5;font-weight:500}
+
+/* ===== FILTER ===== */
+.filter-bar{display:flex;justify-content:center;gap:10px;margin-bottom:28px;flex-wrap:wrap}
+.fbtn{padding:8px 22px;border-radius:22px;border:2px solid #c5e1a5;background:#fff;color:#558b2f;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit}
+.fbtn:hover{background:#f0f7ea;border-color:#7cb342}
+.fbtn.active{background:linear-gradient(135deg,#9ccc65,#7cb342);color:#fff;border-color:transparent}
+
+/* ===== SHOP GROUPS ===== */
+#shop-container{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.shop-group{background:#fff;border:1px solid #d5e8c5;border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+
+
+.shop-group.hidden{display:none}
+.shop-hdr{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.shop-letter{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;flex-shrink:0}
+.shop-name{font-size:17px;font-weight:700;color:#2e7d32;flex:1}
+.shop-count{font-size:12px;color:#aaa;background:#f5f5f5;padding:3px 10px;border-radius:12px}
+
+/* ===== PRODUCT CARDS ===== */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.prod-card{background:#fafff6;border:1px solid #e0eecc;border-radius:10px;overflow:hidden;transition:all .2s;display:flex;flex-direction:column}
+.prod-card:hover{transform:translateY(-3px);box-shadow:0 5px 18px rgba(124,179,66,.12)}
+.prod-card.hidden{display:none}
+.prod-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:#f0f0f0}
+.prod-img-wrap img{width:100%;height:100%;object-fit:cover;cursor:pointer;transition:transform .3s}
+.prod-card:hover .prod-img-wrap img{transform:scale(1.05)}
+.prod-body{padding:8px 10px 10px}
+.prod-body h3{font-size:12px;font-weight:600;color:#2e3c2f;margin-bottom:5px;line-height:1.35}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.tag{background:#e8f5e9;color:#2e7d32;font-size:9px;padding:1px 5px;border-radius:3px;font-weight:500}
+.diff-wrap{margin-bottom:8px}
+.diff-short{font-size:11px;color:#666;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.diff-text,.diff-full{font-size:11px;color:#666;line-height:1.55}
+.expand-btn{display:inline-block;margin-top:4px;font-size:11px;color:#7cb342;cursor:pointer;background:none;border:none;padding:0;font-family:inherit}
+.expand-btn:hover{text-decoration:underline}
+.hancard-toggle{display:block;width:100%;text-align:left;font-size:11px;color:#8B6914;background:#FFF8DC;border:1px solid #ffe082;padding:5px 10px;border-radius:5px;cursor:pointer;margin-bottom:2px;font-family:inherit}
+.hancard-toggle:hover{background:#fff3cd}
+.prod-body{display:flex;flex-direction:column;flex:1}
+.btn{display:block;text-align:center;padding:8px 0;background:linear-gradient(135deg,#9ccc65,#7cb342);color:#fff;text-decoration:none;border-radius:7px;font-size:12px;font-weight:600;transition:opacity .2s;margin-top:auto;flex-shrink:0}
+.btn:hover{opacity:.85}
+
+/* ===== TOP15 TABS ===== */
+.top15-tabs{display:flex;justify-content:center;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+.top-tab{padding:10px 26px;border:2px solid #c5e1a5;border-radius:24px;background:#fff;cursor:pointer;font-size:14px;font-weight:700;color:#558b2f;transition:all .2s;font-family:inherit}
+.top-tab.active{background:linear-gradient(135deg,#9ccc65,#7cb342);color:#fff;border-color:transparent}
+.top-tab:hover:not(.active){background:#f0f7ea}
+
+/* ===== TOP15 CARDS ===== */
+.top15-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.top-card{background:#fff;border:1px solid #e0eecc;border-radius:12px;overflow:hidden;position:relative;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:all .2s}
+.top-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.09)}
+.top-rank{position:absolute;top:8px;left:8px;border-radius:12px;font-size:11px;font-weight:800;padding:3px 10px;z-index:2;letter-spacing:1px;color:#fff}
+.rank-1{background:linear-gradient(135deg,#ffd700,#f59f00)}
+.rank-2{background:linear-gradient(135deg,#cdd5df,#868e96)}
+.rank-3{background:linear-gradient(135deg,#d4a96a,#a07850)}
+.rank-4{background:linear-gradient(135deg,#a8a8a8,#888)}
+.top-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:#f5f5f5}
+.top-img-wrap img{width:100%;height:100%;object-fit:cover;cursor:pointer;transition:transform .3s}
+.top-card:hover .top-img-wrap img{transform:scale(1.05)}
+.top-body{padding:12px 14px}
+.top-body h4{font-size:12.5px;font-weight:600;color:#2e3c2f;margin:0 0 8px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:34px}
+.top-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.top-shop{font-size:11px;color:#8ca18e;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:58%}
+.top-price{font-size:14px;font-weight:700;color:#d32f2f}
+.top-dgmv{font-size:11px;color:#7cb342;font-weight:600;background:#f0f7ea;display:inline-block;padding:2px 9px;border-radius:8px;margin-bottom:9px}
+.top-btn{display:block;text-align:center;padding:7px 0;background:linear-gradient(135deg,#81c784,#66bb6a);color:#fff;text-decoration:none;border-radius:7px;font-size:12px;font-weight:500;transition:background .2s}
+.top-btn:hover{background:linear-gradient(135deg,#66bb6a,#4caf50)}
+
+/* ===== FOOTER ===== */
+.footer{background:linear-gradient(135deg,#4a7c50,#5a9e60);color:rgba(255,255,255,.75);text-align:center;padding:32px 20px;font-size:12px;line-height:2}
+.footer .leaf{font-size:18px;display:block;margin-bottom:8px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .hero-title{font-size:22px}
+  .metrics{gap:20px}
+  .metric-num{font-size:30px}
+  .trend-grid{grid-template-columns:1fr}
+  .prod-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  #shop-container{grid-template-columns:1fr}
+  .top15-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+  .section{padding:36px 14px}
+  .verdict{padding:20px 20px 20px 34px}
+  .shop-group{padding:16px}
+}
+@media(max-width:480px){
+  .hero{padding:44px 16px 40px}
+  .hero-title{font-size:19px;letter-spacing:1px}
+  .metrics{gap:14px}
+  .metric-num{font-size:26px}
+  .prod-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .top15-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .sec-title{font-size:20px}
+  .verdict p{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <span class="hero-leaf">🌱</span>
+  <div class="hero-title">追剧囤货季，卤味果干先备上</div>
+  <div class="hero-sub">卤味果干类新品推荐</div>
+  </div>
+</div>
+
+<!-- ===== S01 趋势洞察 ===== -->
+<div class="section">
+<div class="sec-inner">
+  <div class="sec-hdr">
+    <div class="sec-tag">01 / 趋势</div>
+    <h2 class="sec-title">趋势洞察</h2>
+    <p class="sec-sub">近30天休食赛道品类走势</p>
+  </div>
+
+  
+    <div class="trend-card">
+      <div class="trend-icon">🍑</div>
+      <div class="trend-name">果干赛道</div>
+      <div class="trend-hl">梅类与薯类双轮驱动</div>
+      <div class="opp-tags"><span class="opp-tag">🍑 无花果干应季高峰</span><span class="opp-tag">🎒 开学季小包装果干需求上升</span><span class="opp-tag">🌿 0添加健康化趋势明确</span></div>
+      <div class="trend-desc">
+        <p><b>赛道现状</b>　梅类制品（话梅、陈皮梅）在消暑场景中持续走强，甘梅红薯片等健康化零食正在快速崛起，产地直供模式受消费者青睐</p>
+        <p><b>营销机会</b>　8月无花果干进入应季高峰，9月开学季小包装果干适合学生群体。0添加、配料表干净是核心转化卖点</p>
+        <p><b>建议货盘</b>　重点布局话梅、无花果干、杏干等应季果干，搭配红薯片等健康化品类，强调产地溯源和天然配方</p>
+      </div>
+    </div>
+    <div class="trend-card">
+      <div class="trend-icon">🥜</div>
+      <div class="trend-name">坚果赛道</div>
+      <div class="trend-hl">腰果与混合坚果领跑</div>
+      <div class="opp-tags"><span class="opp-tag">🏮 中秋礼盒需求即将启动</span><span class="opp-tag">🥜 现烤工艺差异化突围</span><span class="opp-tag">📦 每日坚果组合装走俏</span></div>
+      <div class="trend-desc">
+        <p><b>赛道现状</b>　现烤和炭烤腰果凭借工艺差异化快速起量，每日坚果和种子循环等组合装持续走俏，赛道品牌集中度较高</p>
+        <p><b>营销机会</b>　中秋（9月中旬）礼赠需求即将全面启动，礼盒装坚果是9月核心增长点。工艺故事和原料溯源是种草内容的有效切入点</p>
+        <p><b>建议货盘</b>　布局炭烤腰果、混合坚果礼盒、每日坚果等品类，提前准备中秋礼盒装，强调现烤工艺和原产地优势</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="timing-box">
+    <span class="timing-title">📅 近期节点</span>
+    <span class="timing-tag">🌾 立秋养生</span>
+    <span class="timing-tag">💝 七夕礼赠</span>
+    <span class="timing-tag">🎒 开学季</span>
+    <span class="timing-tag">🏮 中秋备货</span>
+      <span class="timing-tag timing-advice-tag">建议商家围绕以上节点提前备货和内容种草，抢占8-9月休食赛道的流量高峰窗口</span>
+</div>
+</div>
+</div>
+
+<!-- ===== S02 新品推荐 ===== -->
+<div class="section">
+<div class="sec-inner">
+  <div class="sec-hdr">
+    <div class="sec-tag">02 / 新品</div>
+    <h2 class="sec-title">新品推荐</h2>
+    <p class="sec-sub">按店铺分组展示</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="fbtn active" onclick="filterShops('all',this)">全部（24款）</button>
+    <button class="fbtn" onclick="filterShops('卤味',this)">🥩 卤味（13款）</button>
+    <button class="fbtn" onclick="filterShops('坚果果干零食',this)">🌰 坚果果干零食（11款）</button>
+  </div>
+
+  <div id="shop-container">
+<div class="prod-grid">
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no321e9ap916u0g5pf55o1h99dq2l7ratg?imageView2/2/w/800/q/80/format/webp" alt="陈阿炳老卤鸭脖" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>陈阿炳老卤鸭脖</h3>
+            <div class="tags"><span class="tag">老汤慢卤</span><span class="tag">卤香浓郁</span><span class="tag">新品推荐</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 老汤慢卤，层层入味，卤香浓郁，每一口都啃得超过瘾。<br>2. 个大饱满，肉质超紧实，筋道超过瘾，嚼劲十足。<br>3. 精选优质鸭脖，严选香辛料，口感层次丰富，好吃不腻。<br>4. 解馋利器，追剧夜宵下午茶，...</div>
+              <div class="diff-full" style="display:none">1. 老汤慢卤，层层入味，卤香浓郁，每一口都啃得超过瘾。<br>2. 个大饱满，肉质超紧实，筋道超过瘾，嚼劲十足。<br>3. 精选优质鸭脖，严选香辛料，口感层次丰富，好吃不腻。<br>4. 解馋利器，追剧夜宵下午茶，居家出游聚会都能随时享，用美味。</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_1.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a2fbc65cde0db0001987edb?t=1785199582567&amp;amp;xsec_token=ABXJK0yDagwxm9BxXWK3fCaLJCajnYBn4Qq-iRsKcnetM%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no3217r0pskmu0g5pf55o1h99dqpt5atf0?imageView2/2/w/800/q/80/format/webp" alt="陈阿炳老卤鸭舌" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>陈阿炳老卤鸭舌</h3>
+            <div class="tags"><span class="tag">文火慢炖</span><span class="tag">老卤慢煮</span><span class="tag">新品推荐</span></div>
+            <div class="diff-wrap"><div class="diff-text">1. 醇香入味，弹嫩爽口;根根入味，酱香浓郁<br>2. 老卤慢煮，舌尖留香，越嚼越有味;<br>3. 精选优质鸭舌，每一口都是卤香好味道;，酱香诱人<br>4. 多种草本卤料，天然香辛料文火慢炖，肉质肥美，酱香诱人</div></div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_2.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a292dac65e82f00012f506b?t=1785199582568&amp;amp;xsec_token=ABi1v6FUbPEGpsBru9t7siGyLXA44reL7gomCbTr1I9Eo%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o0322lqgin5n2005o8qvr9g8gq71t1dtvg?imageView2/2/w/800/q/80/format/webp" alt="桂圆抱莲子" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>桂圆抱莲子</h3>
+            <div class="tags"><span class="tag">低温慢烘</span><span class="tag">无添加</span><span class="tag">手工</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 主要成分：0添加剂配方，配料表只有桂圆、莲子、植物油，产品核心竞争力<br>2. 正宗湘潭核心产区寸三莲，自然成熟，粉糯回甘、莲香纯正<br>3. 人工精筛严选，颗粒均匀饱满，无空心、无虫蛀、无碎粒<br>4. ...</div>
+              <div class="diff-full" style="display:none">1. 主要成分：0添加剂配方，配料表只有桂圆、莲子、植物油，产品核心竞争力<br>2. 正宗湘潭核心产区寸三莲，自然成熟，粉糯回甘、莲香纯正<br>3. 人工精筛严选，颗粒均匀饱满，无空心、无虫蛀、无碎粒<br>4. 三重手工九道工序，低温慢烘，桂圆莲子双香深度融合<br>5. 极简干净配料，无硫无添加，保留食材本味，吃着安心<br>6. 全流程品控检测，可溯源，口感粉绵不硬芯、清甜不腻，适合人群<br>7. 经常熬夜、气血偏弱、日常需要温和食补的上班族<br>8. 爱吃零食怕上火、追求清甜不腻、拒绝重糖重油的女生<br>9. 嘴馋爱吃小零食，想要健康无添加、干净配料的人群<br>10. 老人、小孩、全家日常解馋，想吃温和滋养小食<br>11. 秋冬干燥、口干烦躁，需要润润口、清淡食补的人群</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            
+            <a href="https://www.xiaohongshu.com/goods-detail/6a58371f437d3400010349e0?t=1785204718146&amp;amp;xsec_token=ABb2b4UWSGsDfhj95JFSuSexTVtNrWMtC4o3-LuPUfzLE%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no3213kav0s700g5o9lq7m7vi6ee30au20?imageView2/2/w/800/q/80/format/webp" alt="柠檬蜜桃夹心西梅" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>柠檬蜜桃夹心西梅</h3>
+            <div class="tags"><span class="tag">独立包装</span><span class="tag">药食同源</span><span class="tag">膳食纤维</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 药食同源，女性食养滋补轻负担<br>2. 富含膳食纤维和钾元素，温和润肠、补充能量，每日3-5颗吃起来无负担<br>3. 夏日开胃解馋，补充盐分糖分。夏天天热没胃口、胃口寡淡时候的开胃前点，暴汗水分流失时候...</div>
+              <div class="diff-full" style="display:none">1. 药食同源，女性食养滋补轻负担<br>2. 富含膳食纤维和钾元素，温和润肠、补充能量，每日3-5颗吃起来无负担<br>3. 夏日开胃解馋，补充盐分糖分。夏天天热没胃口、胃口寡淡时候的开胃前点，暴汗水分流失时候的糖分及能量补充好助手，酸甜口感适合大量出汗后的口味需求<br>4. 三重夹心，告别西梅苦涩<br>5. 小小一颗，藏着三种水果的夏日味道！甄选加州西梅，融入清新柠檬与香甜蜜桃，改善了传统西梅干发苦、带药味、口感差、有核等短板。拿起先是柠檬清香，一口咬下，西梅的软糯酸甜&amp;蜜桃的甘甜&amp;柠檬的清爽，三重真果风味碰撞，酸甜均衡不腻口！，独立包装，方便携带<br>6. 小巧精致的独立形态，告别传统西梅干不便分享、场景受限等弊端。办公室、露营、出行时候随手一块轻松获取亲友赞赏和惊讶！适合作为下午茶、追剧、办公室、露营小零食，随手一颗方便又解馋～<br>7. 双认证工厂，配料干净放心吃<br>8. 工厂拥有 HACCP&amp;ISO 双食品认证，全流程精细化消杀生产，品质放心！<br>9. 配料精简，无多余添加，配料表「西梅干、白桃干、柠檬皮丁、食用盐（海盐）」，女生、宝妈吃着安心</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            
+            <a href="https://www.xiaohongshu.com/goods-detail/6a24cf5ffad5a400016f56bf?t=1785204363346&amp;amp;xsec_token=AB2TsjyoKHBjQrJNEXS2EIiQvUmJokqw8Wi24d6ykxMpU%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no3235d8ebrms0g5o4rs8t0912g3p63tf8?imageView2/2/w/1200/q/80/format/webp" alt="卤烤猪肝片" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>卤烤猪肝片</h3>
+            <div class="tags"><span class="tag">高蛋白</span><span class="tag">文火慢卤</span><span class="tag">先卤后熏</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 只取完整大块猪肝厚切而成，不用碎肝粘合、边角碎料。<br>2. 多种天然植物香辛料文火慢卤，中和肝腥 ，卤香浓郁<br>3. 先卤后熏，传统果木柴火低温熏制，带走残余腥气、锁住肉汁，猪肝表层淡淡的柴火焦香混...</div>
+              <div class="diff-full" style="display:none">1. 只取完整大块猪肝厚切而成，不用碎肝粘合、边角碎料。<br>2. 多种天然植物香辛料文火慢卤，中和肝腥 ，卤香浓郁<br>3. 先卤后熏，传统果木柴火低温熏制，带走残余腥气、锁住肉汁，猪肝表层淡淡的柴火焦香混着卤香，口感层次分明<br>4. 猪肝富含优质蛋白，每100g含45.6g高蛋白，浓缩满满营养，解馋、健身、加餐、日常小食优选。<br>5. 一罐两吃的新法，开罐即食1原味吃，尽享卤烟熏的本真醇香;2附赠秘制辣油，加入调味包拌着吃，辣香激发出另一层风味，解腻过瘾。<br>6. 鲜肝本味，无多余防腐添加，开封建议当日吃完，剩余密封冷藏存放，存放时长不超24小时，保留纯粹原生卤烟熏风味。</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_5.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a4486c988d1c100012b04f4?t=1785208732538&amp;amp;xsec_token=ABDx0wxFAk032VUPQPPBHr8NsX0vrQQE7k8njcvfwhzvk%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no322v9ioscn2005o4rs8t0912g4opg6vo?imageView2/2/w/1200/q/80/format/webp" alt="手工豆皮辣条" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>手工豆皮辣条</h3>
+            <div class="tags"><span class="tag">非转基因</span><span class="tag">非油炸</span><span class="tag">无防腐剂</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 原料硬实力：选用非转基因大豆，优质植物蛋白来源<br>2. 遵循传统农法种植，从源头确保原料的纯净与可追溯性<br>3. 非转基因大豆营养结构更稳定，每100g含24.4g蛋白质、19.8g膳食纤维<br>4. ...</div>
+              <div class="diff-full" style="display:none">1. 原料硬实力：选用非转基因大豆，优质植物蛋白来源<br>2. 遵循传统农法种植，从源头确保原料的纯净与可追溯性<br>3. 非转基因大豆营养结构更稳定，每100g含24.4g蛋白质、19.8g膳食纤维<br>4. 油脂比例天然，豆香更浓郁，豆皮韧性足<br>5. 配料极简主义：看得懂，才敢放心吃<br>6. 无人工色素、无防腐剂<br>7. 配料表短而清晰，回归食材本味<br>8. 用天然酵母抽取物代替味精，提鲜不口干<br>9. 工艺讲究：非油炸，却有地道香辣味<br>10. 非油炸，不油腻，减轻身体负担<br>11. 0反式脂肪酸，对健康更加友好<br>12. 45天短保，从生产到入口都在新鲜窗口期<br>13. 口感特点：薄切入味，有韧劲，越嚼越香<br>14. 十一道标准工序层层把关，豆皮薄而不断<br>15. 豆香醇厚，咸、香、爽、辣层次分明<br>16. 入口不软烂，有韧性，回味持久</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_6.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69ff0b0b721fd30001e2e0c4?t=1785208732544&amp;amp;xsec_token=ABl0pR6YAsM7LPhi90EqNlx2ILBaUR9aHcPxEU-9Eqpqo%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322v9ip3o720g5o4rs8t0912gjebftm0?imageView2/2/w/1200/q/80/format/webp" alt="原切无花果干" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>原切无花果干</h3>
+            <div class="tags"><span class="tag">0脂肪</span><span class="tag">低温慢烘</span><span class="tag">无添加</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 优选自然成熟的无花果鲜果制作，果肉饱满，口感细腻清甜<br>2. 无花果是女性的宝藏果，含有天然黄体酮<br>3. 配料只有无花果，鲜果原切制作，7~8斤新鲜无花果才能制作出1斤无花果干<br>4. 低温慢烘工艺...</div>
+              <div class="diff-full" style="display:none">1. 优选自然成熟的无花果鲜果制作，果肉饱满，口感细腻清甜<br>2. 无花果是女性的宝藏果，含有天然黄体酮<br>3. 配料只有无花果，鲜果原切制作，7~8斤新鲜无花果才能制作出1斤无花果干<br>4. 低温慢烘工艺，没有高糖腌制，果肉自然软糯,外皮略带嚼劲，最大程度保留无花果的原始风味<br>5. 0脂肪，不添加防腐剂，因此保质期只有4个月<br>6. 多种吃法，酸奶碗/泡水/煲汤均可<br>7. 本品原料选用波姬红紫皮无花果，鲜果自带深紫红色果皮，无硫磺熏染，低温烘干时紫皮慢慢转为黑褐色，是原生态无添加的标志性特征</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_7.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a042e74213e27000134ca44?t=1785208732540&amp;amp;xsec_token=ABqk8bYArYwX06-32yiFsTpQjRwhqBr-3UlicEBfZG-GA%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o0322v9inrp74005o4rs8t0912g35k4gm8?imageView2/2/w/1200/q/80/format/webp" alt="卤烤豆腐干" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>卤烤豆腐干</h3>
+            <div class="tags"><span class="tag">高蛋白</span><span class="tag">非油炸</span><span class="tag">先卤后烤</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 只选完整优质大豆研磨成型不用碎豆、淀粉填充凑重;整块原浆制成，软嫩不发硬，豆香浓郁不寡淡。<br>2. 先卤后烤，多种天然植物香辛料文火慢<br>3. 卤，不依赖重辣掩盖豆本身清香，香浓入味越嚼越香。<br>4....</div>
+              <div class="diff-full" style="display:none">1. 只选完整优质大豆研磨成型不用碎豆、淀粉填充凑重;整块原浆制成，软嫩不发硬，豆香浓郁不寡淡。<br>2. 先卤后烤，多种天然植物香辛料文火慢<br>3. 卤，不依赖重辣掩盖豆本身清香，香浓入味越嚼越香。<br>4. 非油炸烤制起表面起泡，烤出蓬松焦香，慢烤带走豆腥，牢牢锁住卤汁，卤香渗透每一丝纤维，入口如卤肉般醇厚。<br>5. 独立密封罐装开罐即食，无需额外加工<br>6. 日常解馋、佐酒小食都适配。<br>7. 每100g含29.9g高蛋白，浓缩满满营养，解馋、健身、加餐、日常小食优选。<br>8. 豆干本味，没有多余防腐添加，拆封后不宜常温久放，剩余密封冷藏存放，建议了日内吃完，保留纯粹原生豆卤风味。</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_8.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a59ecd2f8b2fa00010b2d26?t=1785208732537&amp;amp;xsec_token=ABcwS7Jf5-838Scn9np3rViPnuIywJrKLY4tQZTdPgTcQ%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322jqmsm674f05pvq9uj2nsq5sc8q8m8?imageView2/2/w/1280/q/80/format/webp" alt="九成风干猪肉条" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>九成风干猪肉条</h3>
+            <div class="tags"><span class="tag">风干猪肉</span><span class="tag">24h内</span><span class="tag">源头工厂</span></div>
+            <div class="diff-wrap"><div class="diff-text">1. 细条风干猪肉条9成风干，源头工厂，品质保障<br>2. 发货快24h内，免费试吃</div></div>
+            
+            <a href="https://xhslink.com/m/3xBkqssyKqK" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322ksuq59n00g5pvq9uj2nsq5hbubjo8?imageView2/2/w/960/q/80/format/webp" alt="九成风干鸡肉干" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>九成风干鸡肉干</h3>
+            <div class="tags"><span class="tag">高蛋白</span><span class="tag">风干鸡胸</span><span class="tag">24h内</span></div>
+            <div class="diff-wrap"><div class="diff-text">1. 风干鸡胸肉干，高蛋白，源头工厂，品质保障<br>2. 发货24h内，免费试吃</div></div>
+            
+            <a href="https://xhslink.com/m/9nziLoy7VTl" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o03204qu5ea1ms04a5hisss9hmnc3lm9mo?imageView2/2/w/800/q/80/format/webp" alt="芝士脆多多" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>芝士脆多多</h3>
+            <div class="tags"><span class="tag">三重芝士</span><span class="tag">控温烘烤</span><span class="tag">酥脆</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 三重芝士叠加 香味超浓郁<br>2. 实打实的高品质芝士配比，芝士总添加量≥13%<br>3. 马苏里拉奶酪≥6.7%<br>4. KIRI奶油芝士≥3.5%<br>5. 帕玛森芝士粉≥3.5%<br>6. 搭配严选进口黄油...</div>
+              <div class="diff-full" style="display:none">1. 三重芝士叠加 香味超浓郁<br>2. 实打实的高品质芝士配比，芝士总添加量≥13%<br>3. 马苏里拉奶酪≥6.7%<br>4. KIRI奶油芝士≥3.5%<br>5. 帕玛森芝士粉≥3.5%<br>6. 搭配严选进口黄油提香，咸香醇厚、奶香十足，完全不齁甜，越嚼越有味道。<br>7. 控温烘烤 三层口感超惊艳<br>8. 一层脆｜入口咔嚓酥脆，酥而不碎<br>9. 二层松｜内部肌理蓬松，不硬不硌牙<br>10. 三层香｜芝士香气层层渗透，吃完满嘴留香<br>11. 口感干爽不油腻，脆度刚刚好，追剧吃完全停不下来。，配方干净 吃着放心<br>12. 配料表简洁清晰，无多余杂乱添加<br>13. 靠优质原料撑起本味，咸甜适中，老人小孩都能放心吃。<br>14. 独立分装 便携不浪费<br>15. 净含量100g（50g×2包，双托盘包装） 贴心分装，方便分享或独享，追剧/办公零食首选</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_11.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a058255213e270001550fc9?t=1785225828419&amp;amp;xsec_token=ABA4taujVdhvVNteu3o9-MHIjltyIwY5HZye2GNCe2Nrc%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no31vt6p7g8561g4a5hisss9hmnvmafen0?imageView2/2/w/800/q/80/format/webp" alt="鲜蒸铁棍山药" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>鲜蒸铁棍山药</h3>
+            <div class="tags"><span class="tag">0脂肪</span><span class="tag">0蔗糖</span><span class="tag">药食同源</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 优质原料<br>2. 甄选河南焦作正宗垆土铁棍山药，人工采挖，去头掐尾取中间段，营养远高于普通山药（粘多糖高出8.16倍、总氮量高出4倍），药食同源，食补价值高，干净配方<br>3. 原味：配料表只有山药，...</div>
+              <div class="diff-full" style="display:none">1. 优质原料<br>2. 甄选河南焦作正宗垆土铁棍山药，人工采挖，去头掐尾取中间段，营养远高于普通山药（粘多糖高出8.16倍、总氮量高出4倍），药食同源，食补价值高，干净配方<br>3. 原味：配料表只有山药，0脂肪、0蔗糖、低钠，无多余添加，原汁原味，吃着安心，工艺锁鲜<br>4. 鲜蒸工艺锁住原生营养，10斤鲜山药仅产出7斤成品，营养浓缩，口感与吸收<br>5. 入口清甜软糯，口感绵密，好消化、好吸收，温润护脾胃，轻食健康<br>6. 0糖0脂肪轻负担，适配控卡、轻养、健康饮食需求，食用便捷<br>7. 独立真空锁鲜小袋，开袋即食，不用蒸煮，随身携带、随时随地加餐都方便，多场景多吃法<br>8. 原味、红枣多种口味可选；可直接即食、入菜烹饪、DIY甜品，适配早餐、下午茶、办公加餐、日常代餐等全场景，受众广泛<br>9. 温和滋养不刺激，孕妈、宝妈、老人、控重人群、日常养生人群都能放心吃</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_12.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69fd78168c2c2300016cb9c6?t=1785225828430&amp;amp;xsec_token=ABRrJbE0IPd_H8wFIperIsxXCh82JjzTQOADSZnpo9XDk%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322tkq3b9mu005ne03oc096id6s3d1s8?imageView2/2/w/1440/q/80/format/webp" alt="烤鱿鱼条" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>烤鱿鱼条</h3>
+            <div class="tags"><span class="tag">鱿鱼</span><span class="tag">海鲜原本滋味</span><span class="tag">新品推荐</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 和市面大部分鱿鱼丝不是一个口感，是非常清晰的肉质、韧劲；不含淀粉配料等去增重，吃下去就是肉的质感<br>2. 还原海鲜原本滋味，不做长保质期的东西就是为了吃上新鲜好味道，回购率超级高，全部是默默下单然...</div>
+              <div class="diff-full" style="display:none">1. 和市面大部分鱿鱼丝不是一个口感，是非常清晰的肉质、韧劲；不含淀粉配料等去增重，吃下去就是肉的质感<br>2. 还原海鲜原本滋味，不做长保质期的东西就是为了吃上新鲜好味道，回购率超级高，全部是默默下单然后回购的老顾客！，新调味！<br>3. 鱿鱼肉感十足，弹牙可口。<br>4. 无漂白剂，不添加淀粉<br>5. 采用真的鱿鱼，不添加淀粉杏鲍菇等，还原鱿鱼本色本味更健康<br>6. 适用人群：各大人群皆可食用</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            
+            <a href="https://www.xiaohongshu.com/goods-detail/6a603758e9f0b1000100818b?t=1785227835470&amp;amp;xsec_token=ABKO3d3EGGAW5JpaQQ5Mjyak3QJ-pLw1ixRwH0rLOmETI%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o0320s45glon4005naiplr5kjm7umumrgo?imageView2/2/w/1440/q/80/format/webp" alt="臻味富硒鲍鱼果仁" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>臻味富硒鲍鱼果仁</h3>
+            <div class="tags"><span class="tag">独立小包</span><span class="tag">富硒</span><span class="tag">天然有机硒</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 产品介绍：<br>2. 巴西坚果（也叫鲍鱼果仁），产自亚马逊雨林深处，那里的土壤天生就富硒，树根扎进地下几十米，把硒一点一点浓缩进果仁里，野生采收，生长周期长，市面上很少见。     更重要的是，这款...</div>
+              <div class="diff-full" style="display:none">1. 产品介绍：<br>2. 巴西坚果（也叫鲍鱼果仁），产自亚马逊雨林深处，那里的土壤天生就富硒，树根扎进地下几十米，把硒一点一点浓缩进果仁里，野生采收，生长周期长，市面上很少见。     更重要的是，这款鲍鱼果仁提供的是天然有机硒——相比于无机硒（如亚硒酸钠），有机硒的吸收率和生物利用度更高，更容易被人体储存和利用。所以，以食补硒，巴西坚果是天然又高效的选择。，产品卖点：<br>3. 小蝴蝶（甲状腺）最爱的零食：巴西坚果（鲍鱼果仁）；<br>4. 补充硒元素，巴西坚果是以食补硒的天然方式；<br>5. 每天两颗巴西坚果，给甲状腺打下一个稳当的基础；<br>6. 原味，无盐，无糖，配料表只有它自己：鲍鱼果仁；<br>7. 有机硒的吸收率和生物利用度更高，更容易被人体储存和利用；<br>8. 甲状腺是人体内硒浓度最高的部位。硒直接参与甲状腺激素的合成与代谢，缺了它，        甲状腺就像少了“稳定器”，功能容易紊乱。每天吃几颗巴西坚果，就是在为甲状腺打下一个稳固的营养基础。<br>9. 独立小包装方便食用，避光、密封、氮气保鲜，随时吃都新鲜，不容易有油哈味；                   8、两个提醒一定要记住：<br>10. 每天1-3颗足够，千万别贪多，否则可能引起硒过量。<br>11. 买的时候选原味的，配料表越干净越好，避免额外摄入糖、盐或油脂。<br>12. 巴西坚果不是“偏科生”——自带优质脂肪、维生素E、镁、锌，吃一颗顺便补一堆，不是单打独斗。                                                                 10、美国农业部的数据：1颗巴西坚果的硒含量，大约相当于96克金枪鱼，或者1500克瘦牛肉，或者17个鸡蛋。</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_14.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69b37fc59b4aae000112d497?t=1785295399303&amp;amp;xsec_token=AB30SMNGiNQ7REqJKRVt3jryUwgRaQDgmi9Y9-UFKejrI%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no31vpcdkop3m0g5o8m15go5j92f7ucga0?imageView2/2/w/800/q/80/format/webp" alt="老醋蚕豆" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>老醋蚕豆</h3>
+            <div class="tags"><span class="tag">配料干净</span><span class="tag">豆香浓郁</span><span class="tag">老醋</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 传统酿造老醋精心调配卤汁，充分浸泡入味，酸香柔和不呛口，酸甜咸平衡，解腻开胃，越嚼越香；<br>2. 严选重庆优质大颗粒蚕豆，颗粒均匀、肉质厚实，豆香浓郁，剔除空壳碎瓣，只留大粒好蚕豆；<br>3. 蚕豆外...</div>
+              <div class="diff-full" style="display:none">1. 传统酿造老醋精心调配卤汁，充分浸泡入味，酸香柔和不呛口，酸甜咸平衡，解腻开胃，越嚼越香；<br>2. 严选重庆优质大颗粒蚕豆，颗粒均匀、肉质厚实，豆香浓郁，剔除空壳碎瓣，只留大粒好蚕豆；<br>3. 蚕豆外脆里酥，不硬不柴、不噎口，口感层次鲜明，老人小孩都好嚼；<br>4. 少油少盐配方，不重油重糖，无多余香精、色素，配料干净，日常解馋、佐餐都放心。</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_15.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69f98be5213e270001c43a23?t=1785382411745&amp;amp;xsec_token=ABbFdemtuN70QfPjYp3UW5wH6wHt3_H87lTctM40Iy7og%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o031vpcinv1kc005o8m15go5j922211n30?imageView2/2/w/800/q/80/format/webp" alt="老醋花生" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>老醋花生</h3>
+            <div class="tags"><span class="tag">酥脆</span><span class="tag">老醋</span><span class="tag">传统酿造</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 采用传统酿造老醋精心调配卤汁，慢浸入味，酸香柔和醇厚，不刺鼻、不寡淡，咸甜酸比例均衡，解腻又开胃，越吃越上瘾；<br>2. 严选当季新鲜大颗粒花生，颗粒均匀饱满，无坏籽、无空壳，经低温焙烤工艺，香酥不...</div>
+              <div class="diff-full" style="display:none">1. 采用传统酿造老醋精心调配卤汁，慢浸入味，酸香柔和醇厚，不刺鼻、不寡淡，咸甜酸比例均衡，解腻又开胃，越吃越上瘾；<br>2. 严选当季新鲜大颗粒花生，颗粒均匀饱满，无坏籽、无空壳，经低温焙烤工艺，香酥不油、不发苦，入口酥脆无渣，口感层次远超普通花生；<br>3. 少油轻卤工艺，不重油重糖，外皮裹着香辛料，入口是老醋的卤香，微脆不软塌，内里花生香酥浓郁，一口下去先酸脆、再醇香，口感层次鲜明，吃起来停不下来；<br>4. 既是地道下酒硬菜，也是配粥、下饭、办公室解馋、追剧休闲、露营野餐的人气零食，方便好吃、老少皆宜，居家必备。</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_16.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69f98cb764eb410001d05666?t=1785382411743&amp;amp;xsec_token=AB80AoiIveXUZzjPFe7KtXNQjJKI1v-IlXWwMRrGJPl2c%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o03226jcabgn40g5o8m15go5j92nn2odhg?imageView2/2/w/800/q/80/format/webp" alt="椰浆虎皮蛋卷" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>椰浆虎皮蛋卷</h3>
+            <div class="tags"><span class="tag">独立包装</span><span class="tag">控温烘烤</span><span class="tag">酥脆</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 拒绝廉价椰粉勾兑，29%真椰入料，外层蛋皮自带醇厚鲜蛋香气，入口先是浓浓椰香，再是鲜鸡蛋的醇正蛋香，最后是慢火烘焙的酥脆焦香，3重香气直击味蕾；<br>2. 精准控温烘烤形成标志性虎皮斑纹，蛋卷分层轻...</div>
+              <div class="diff-full" style="display:none">1. 拒绝廉价椰粉勾兑，29%真椰入料，外层蛋皮自带醇厚鲜蛋香气，入口先是浓浓椰香，再是鲜鸡蛋的醇正蛋香，最后是慢火烘焙的酥脆焦香，3重香气直击味蕾；<br>2. 精准控温烘烤形成标志性虎皮斑纹，蛋卷分层轻薄蓬松，咬下咔嚓酥脆、酥松化渣不硬芯；中空注心结构让椰浆夹心均匀裹附，口感轻薄不厚重，椰香与蛋香浓郁交织；<br>3. 选用新鲜鸡蛋搭配优质小麦粉，严控油脂配比，少人工香精、无多余防腐剂，配方简单纯粹，老人、小孩、办公室女生都能安心日常解馋，独立包装隔绝空气不易受潮变软，干净不粘手，囤货储存不易变质。</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_17.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a489d90c4c16c000188681c?t=1785382437003&amp;amp;xsec_token=AB4J4uLE6TUrLgFQfw8wL3bW-ZzJlz_fl5YS1XrureArk%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no322jijb5dms0g4a2slevktmbndnsaa18?imageView2/2/w/750/q/80/format/webp" alt="开运小方（无蔗糖茶糖）" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>开运小方（无蔗糖茶糖）</h3>
+            <div class="tags"><span class="tag">独立包装</span><span class="tag">口气清新</span><span class="tag">天然代糖</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 即是解馋零食，也是口气清新剂，抽烟人士看过来！烟后一颗糖，有效缓解餐后油腻感和烟酒异味<br>2. 坚守健康初心，都是茶粉本真颜色，0色素，0添加剂<br>3. 选安佳黄油，采用天然代糖，1颗仅20大卡，没...</div>
+              <div class="diff-full" style="display:none">1. 即是解馋零食，也是口气清新剂，抽烟人士看过来！烟后一颗糖，有效缓解餐后油腻感和烟酒异味<br>2. 坚守健康初心，都是茶粉本真颜色，0色素，0添加剂<br>3. 选安佳黄油，采用天然代糖，1颗仅20大卡，没有添加任何白砂糖或者蔗糖，可以放心吃<br>4. 拒绝香精勾兑，均采用真实茶粉，保留原有的茶香<br>5. 每一颗都是独立包装，小巧便携，不齁甜，不腻口</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_18.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a4e16f04382e20001bd30cd?t=1785381891513&amp;amp;xsec_token=ABAHPsS0mUHJhLyTj8v5ojFa7WqzK9O8NdlcLtmZHfdP0%3D&amp;amp;xsec_source=pc_arkselfshare" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o031vukq7j21m005oci0a58cfidnck8qf0?imageView2/2/w/800/q/80/format/webp" alt="牛胸口脆片（番茄味）" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>牛胸口脆片（番茄味）</h3>
+            <div class="tags"><span class="tag">黄金胸口部位</span><span class="tag">低温慢烤</span><span class="tag">酸甜可口</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 番茄口味中和了油边吃起来酸甜可口<br>2. 选用整头牛仅含2%的黄金胸口部位，肥瘦均衡无多余筋膜，是牛肉唯一能吃出脆中带韧，油脂香气的部位<br>3. 12小时低温慢烤，富含优质蛋白与不饱和脂肪酸...</div>
+              <div class="diff-full" style="display:none">1. 番茄口味中和了油边吃起来酸甜可口<br>2. 选用整头牛仅含2%的黄金胸口部位，肥瘦均衡无多余筋膜，是牛肉唯一能吃出脆中带韧，油脂香气的部位<br>3. 12小时低温慢烤，富含优质蛋白与不饱和脂肪酸<br>4. 无香精，防腐剂，色素<br>5. 最佳食用方法：微波炉加热30秒口感更佳</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_19.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69d4a7f998fb930001d71633" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o031vuke0g756705oci0a58cfidk7srm08?imageView2/2/w/800/q/80/format/webp" alt="和牛脆片（番茄味）" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>和牛脆片（番茄味）</h3>
+            <div class="tags"><span class="tag">西餐厅级别</span><span class="tag">低温变频烘烤</span><span class="tag">薄如蝉翼</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 西餐厅级别大理石花纹均匀分布，肉眼可见的品质质感<br>2. 配料简单只有和牛肉＋盐/调味料，不额外添加香精色素防腐剂，保留和牛奶香味<br>3. 低温变频烘烤12小时，避免高温油炸...</div>
+              <div class="diff-full" style="display:none">1. 西餐厅级别大理石花纹均匀分布，肉眼可见的品质质感<br>2. 配料简单只有和牛肉＋盐/调味料，不额外添加香精色素防腐剂，保留和牛奶香味<br>3. 低温变频烘烤12小时，避免高温油炸的营养流失和油腻感，每一片浓缩和牛精华<br>4. 1.5mm厚度薄如蝉翼，无传统肉干硬嚼感，咀嚼不费力更不怕塞牙</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_24.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/67a6f647b23f7c0001ca4694" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o03239chfslms0043kt0uv25nt9tgebq3g?imageView2/2/w/800/q/80/format/webp" alt="凤梨干" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>凤梨干</h3>
+            <div class="tags"><span class="tag">海南金钻凤梨</span><span class="tag">0添加</span><span class="tag">酸甜平衡</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 精选海南金钻凤梨，树熟后才制作的凤梨干，熟度高，做出的凤梨干不干硬，果肉厚实甜度高，更好嚼<br>2. 完美的酸甜平衡，7分甜3分酸，好吃不腻<br>3. 0添加，配料表只有凤梨...</div>
+              <div class="diff-full" style="display:none">1. 精选海南金钻凤梨，树熟后才制作的凤梨干，熟度高，做出的凤梨干不干硬，果肉厚实甜度高，更好嚼<br>2. 完美的酸甜平衡，7分甜3分酸，好吃不腻<br>3. 0添加，配料表只有凤梨，其他什么都不加，不加糖不加添加剂不加防腐剂<br>4. 百搭吃法，可直接吃、泡茶、做甜品、烘焙，随时随地享受凤梨的酸甜果味</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_20.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a6c3f1a7350260001e9b5fd" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no31t8ep9pkme0g43kt0uv25nt94e5khrg?imageView2/2/w/800/q/80/format/webp" alt="绿豆冰糕" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>绿豆冰糕</h3>
+            <div class="tags"><span class="tag">配料干净</span><span class="tag">不加防腐剂</span><span class="tag">冰爽细腻</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 配料表干净，配料仅有脱皮绿豆、水、海藻糖、黄油，不加防腐剂，有检测报告<br>2. 原料双A级毛绿豆脱皮自制豆沙，非市面上采购成品豆沙，豆香更浓郁，不加白砂糖，不太甜...</div>
+              <div class="diff-full" style="display:none">1. 配料表干净，配料仅有脱皮绿豆、水、海藻糖、黄油，不加防腐剂，有检测报告<br>2. 原料双A级毛绿豆脱皮自制豆沙，非市面上采购成品豆沙，豆香更浓郁，不加白砂糖，不太甜。搭配适量少许黄油和适量海藻糖，奶香浓郁，甜度更低，微甜不腻<br>3. 吃完之后不会像普通绿豆糕一样嘴巴里很腻粘牙不舒服，吃完嘴巴里只有豆香，特别清爽，完全不甜腻<br>4. 口感冰爽细腻润滑，绿豆的清热解毒帮助缓解内热以及预防便秘</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_21.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69e091346e46160001cb6ad1" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="坚果果干零食">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no3236uhg28ms0g43kt0uv25nt9t06qmfo?imageView2/2/w/800/q/80/format/webp" alt="无核杏肉（酸甜版）" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>无核杏肉（酸甜版）</h3>
+            <div class="tags"><span class="tag">配料干净</span><span class="tag">益生元代糖</span><span class="tag">酸甜软糯</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 糖渍工艺，配料干净，没有其他额外的添加，考验原料的质量，吃到的都是杏子本身的味道，口味自然<br>2. 选用山西金太阳杏，用益生元低聚异麦芽糖替代蔗糖，热量比蔗糖低...</div>
+              <div class="diff-full" style="display:none">1. 糖渍工艺，配料干净，没有其他额外的添加，考验原料的质量，吃到的都是杏子本身的味道，口味自然<br>2. 选用山西金太阳杏，用益生元低聚异麦芽糖替代蔗糖，热量比蔗糖低，也不易升血糖，酸甜软糯、果肉肥厚<br>3. 个个肉厚饱满、甜中带酸，恰到好处，吃起来很爽口又有嚼劲</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_22.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a6c494267db570001bf825b" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="prod-card" data-cat="卤味">
+          <div class="prod-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322rb2l9e721043kt0uv25nt90tbdv7o?imageView2/2/w/800/q/80/format/webp" alt="山珍腐皮卷" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="prod-body">
+            <h3>山珍腐皮卷</h3>
+            <div class="tags"><span class="tag">严选山珍</span><span class="tag">干净配方</span><span class="tag">独立包装</span></div>
+            <div class="diff-wrap">
+              <div class="diff-short">1. 严选好原料：东坞山头层腐皮、椴木香菇、临安春笋、东北木耳，打造好口感<br>2. 用健康油，芥花油替代植物油，高温下不易产生有害物质<br>3. 干净配方：不加香精、人工色素...</div>
+              <div class="diff-full" style="display:none">1. 严选好原料：东坞山头层腐皮、椴木香菇、临安春笋、东北木耳，打造好口感<br>2. 用健康油，芥花油替代植物油，高温下不易产生有害物质<br>3. 干净配方：不加香精、人工色素、防腐剂、磷酸盐，只用天然淀粉粘合食材<br>4. 干净调味：不用味精、人工香精香料等，只用芥花油、红糖、酱油、香辛料四种干净调味<br>5. 每一块都是独立包装的，随身携带，随时都能享受山珍。个头非常大，饱腹又满足</div>
+              <button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+            </div>
+            <div class="hancard-wrap" style="margin-bottom:10px">
+              <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
+              <img src="https://devilfivoy.github.io/xhs-newsletter-archive/xiushi-ka-xinpin/hancard/hancard_23.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
+            </div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a67228d6cbefa0001a57187" target="_blank" class="btn">查看商品 →</a>
+          </div>
+        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ===== S03 TOP15 ===== -->
+<div class="section">
+<div class="sec-inner">
+  <div class="sec-hdr">
+    <div class="sec-tag">03 / 爆款</div>
+    <h2 class="sec-title">近30天 TOP 15 爆款</h2>
+    <p class="sec-sub">DGMV 排序 · 销量模糊化处理</p>
+  </div>
+
+  <div class="top15-tabs">
+    <button class="top-tab active" onclick="switchTab('luwei',this)">🥩 卤味 TOP15</button>
+    <button class="top-tab" onclick="switchTab('guogan',this)">🍑 果干 TOP15</button>
+    <button class="top-tab" onclick="switchTab('jianguo',this)">🥜 坚果 TOP15</button>
+  </div>
+
+  <div id="top15-wrap">
+    <div id="tab-luwei" class="top15-grid">
+<div class="top-card">
+          <div class="top-rank rank-1">1</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no321mtut73n00g4atrhrc9ncd1ao7d8c0?imageView2/2/w/800/q/80/format/webp" alt="袋鼠先生 即食牛肉健身代餐轻卤牛腱子肉饱腹高蛋白质主轻熟速食健康零食 原味轻卤牛" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>袋鼠先生 即食牛肉健身代餐轻卤牛腱子肉饱腹高蛋白质主轻熟速食健康零食 原味轻卤牛</h4>
+            <div class="top-meta"><span class="top-shop">袋鼠先生旗舰店</span><span class="top-price">¥99.8</span></div>
+            <div class="top-dgmv">🌿 DGMV 29w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/668e371c42add60001c5ccbd" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-2">2</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o031v12onpqis005p0qog84cektvlpd11o?imageView2/2/w/800/q/80/format/webp" alt="新品牛爆脆！川式牛脆片酥脆可口川味糖醋麻辣爆辣椒盐 糖醋麻辣 1罐" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>新品牛爆脆！川式牛脆片酥脆可口川味糖醋麻辣爆辣椒盐 糖醋麻辣 1罐</h4>
+            <div class="top-meta"><span class="top-shop">松口SoundsCool的店</span><span class="top-price">¥68</span></div>
+            <div class="top-dgmv">🌿 DGMV 24w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69e0afc6cfc3750001892105" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-3">3</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/104100ao31us87bor2q16drkvenhg0000000000bad8912?imageView2/2/w/3072/q/80/format/webp" alt="温小张 卤金钱腱小张热卤卤味卤牛腱子" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>温小张 卤金钱腱小张热卤卤味卤牛腱子</h4>
+            <div class="top-meta"><span class="top-shop">温小张的店</span><span class="top-price">¥158</span></div>
+            <div class="top-dgmv">🌿 DGMV 20w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69d8754098fb93000158efe1" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">4</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/104103ng320lmobbe6206a31jpli0000000000082lmm1g?imageView2/2/w/1280/q/80/format/webp" alt="札萨 一根猪肉干！磨牙解馋！不支持无理由！s 炭烧甜辣(盒子破损不售后）120g" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>札萨 一根猪肉干！磨牙解馋！不支持无理由！s 炭烧甜辣(盒子破损不售后）120g</h4>
+            <div class="top-meta"><span class="top-shop">札萨旗舰店</span><span class="top-price">¥43.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 15w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69293d9b14b5260001914c70" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">5</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no31kjgv5umig0g5nlo8fp08alg1o8qfqo?imageView2/2/w/800/q/80/format/webp" alt="札萨 芥末口味新鲜上市！ 酥脆奶香不冲鼻！桶装不易碎s 1袋" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>札萨 芥末口味新鲜上市！ 酥脆奶香不冲鼻！桶装不易碎s 1袋</h4>
+            <div class="top-meta"><span class="top-shop">札萨旗舰店</span><span class="top-price">¥189</span></div>
+            <div class="top-dgmv">🌿 DGMV 15w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/688b18c299631f0001b82c19" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">6</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no31upc8enhjm0g5nlo8fp08alg9gn31n0?imageView2/2/w/800/q/80/format/webp" alt="札萨 一点鸡超干小粒鸡，低温慢烤不加大豆蛋白磨牙追剧小零食s 糖醋1袋（微辣）" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>札萨 一点鸡超干小粒鸡，低温慢烤不加大豆蛋白磨牙追剧小零食s 糖醋1袋（微辣）</h4>
+            <div class="top-meta"><span class="top-shop">札萨旗舰店</span><span class="top-price">¥21.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 15w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a62e5ed74bf000001eabaa2" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">7</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o03231eg6m7n4005qe7klecjfjilubc64g?imageView2/2/w/1086/q/80/format/webp" alt="乳子牛 草原风味牛爆脆内蒙原切超薄麻辣小吃酥脆爆香 糖醋+糖醋麻辣 *1" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>乳子牛 草原风味牛爆脆内蒙原切超薄麻辣小吃酥脆爆香 糖醋+糖醋麻辣 *1</h4>
+            <div class="top-meta"><span class="top-shop">臻鲜肉记的店</span><span class="top-price">¥68.8</span></div>
+            <div class="top-dgmv">🌿 DGMV 14w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a642b1874bf00000107c7cc" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">8</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/104103ng31r20j75gg076bq1cjfh00000000000estrado?imageView2/2/w/1308/q/80/format/webp" alt="牛胸口脆脆 吃一次就爱上 8包囤货装！ （默认原香孜番四个口味各2）" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>牛胸口脆脆 吃一次就爱上 8包囤货装！ （默认原香孜番四个口味各2）</h4>
+            <div class="top-meta"><span class="top-shop">奶沃NAIWO的店</span><span class="top-price">¥233.2</span></div>
+            <div class="top-dgmv">🌿 DGMV 13w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/694a47c5e935e90001b3108e" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">9</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no321beddh7700g5p34uubah6muh2enqg0?imageView2/2/w/750/q/80/format/webp" alt="三餐爸爸精选谷饲金钱腱每日现做·卤牛腱子 鲜·金钱腱 5小袋" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>三餐爸爸精选谷饲金钱腱每日现做·卤牛腱子 鲜·金钱腱 5小袋</h4>
+            <div class="top-meta"><span class="top-shop">三餐爸爸的店</span><span class="top-price">¥189</span></div>
+            <div class="top-dgmv">🌿 DGMV 10w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a0009b1f3ef83000100b2db" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">10</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/104103ng323ga538q7k7mei0ond700000000000eej0c0o?imageView2/2/w/1280/q/80/format/webp" alt="冷藏或短时冷冻让它冷静一下！ 糖醋辣" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>冷藏或短时冷冻让它冷静一下！ 糖醋辣</h4>
+            <div class="top-meta"><span class="top-shop">内蒙老赵的店</span><span class="top-price">¥38.8</span></div>
+            <div class="top-dgmv">🌿 DGMV 10w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a63036a74bf000001ee2ed6" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">11</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/104100ao31tbvbis9ls16ei0ond700000000000d2lbik2?imageView2/2/w/1080/q/80/format/webp" alt="牛胸口脆！风靡小红书！累计已售25万盒！全部升级新包装 1盒番茄味" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>牛胸口脆！风靡小红书！累计已售25万盒！全部升级新包装 1盒番茄味</h4>
+            <div class="top-meta"><span class="top-shop">内蒙老赵的店</span><span class="top-price">¥68</span></div>
+            <div class="top-dgmv">🌿 DGMV 10w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/693175c7b577840001075d40" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">12</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o031u4j4st3hu005q1o3od7aq7tmmvonj0?imageView2/2/w/831/q/80/format/webp" alt="厨娘小何椒麻鸡整只手撕卤味熟食川渝特色 1000g*1只装（不吃辣慎拍）" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>厨娘小何椒麻鸡整只手撕卤味熟食川渝特色 1000g*1只装（不吃辣慎拍）</h4>
+            <div class="top-meta"><span class="top-shop">何椒椒商贸的店</span><span class="top-price">¥69.8</span></div>
+            <div class="top-dgmv">🌿 DGMV 10w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a40c5928879a00001ac708e" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">13</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o031v12onpqis005p0qog84cektvlpd11o?imageView2/2/w/800/q/80/format/webp" alt="牛爆脆！川式牛脆片酥脆可口川味糖醋麻辣爆辣椒盐 糖醋麻辣 1罐" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>牛爆脆！川式牛脆片酥脆可口川味糖醋麻辣爆辣椒盐 糖醋麻辣 1罐</h4>
+            <div class="top-meta"><span class="top-shop">松口SoundsCool的店</span><span class="top-price">¥68</span></div>
+            <div class="top-dgmv">🌿 DGMV 97,210</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69e0afc6cfc3750001892105" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">14</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/material_space/45b671e6-41da-413a-ad1c-0c69b35d0a6a?imageView2/2/w/800/q/80/format/webp" alt="牛蹄筋牛筋香辣卤味软糯嚼劲麻辣解馋追剧小零食 混合味 牛筋5g*40包(厂长补贴" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>牛蹄筋牛筋香辣卤味软糯嚼劲麻辣解馋追剧小零食 混合味 牛筋5g*40包(厂长补贴</h4>
+            <div class="top-meta"><span class="top-shop">摸鱼小食仓的店</span><span class="top-price">¥9.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 93,832</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a29261f1b226800157c28b2" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">15</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o031v12onpqis005p0qog84cektvlpd11o?imageView2/2/w/800/q/80/format/webp" alt="牛爆脆达人专属川式牛脆片酥脆可口川味糖醋麻辣爆辣椒盐 糖醋麻辣 1罐" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>牛爆脆达人专属川式牛脆片酥脆可口川味糖醋麻辣爆辣椒盐 糖醋麻辣 1罐</h4>
+            <div class="top-meta"><span class="top-shop">松口SoundsCool的店</span><span class="top-price">¥68</span></div>
+            <div class="top-dgmv">🌿 DGMV 93,210</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69f3115a0511b5000125c1c2" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+    </div>
+    <div id="tab-guogan" class="top15-grid" style="display:none">
+<div class="top-card">
+          <div class="top-rank rank-1">1</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no322kvdc736u0g5o8qvr9g8gq7e9qn3n8?imageView2/2/w/800/q/80/format/webp" alt="春江月 青皮无花果干26年新果即食威海特产孕妇零食 无花果干128g*3罐" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>春江月 青皮无花果干26年新果即食威海特产孕妇零食 无花果干128g*3罐</h4>
+            <div class="top-meta"><span class="top-shop">春江月旗舰店</span><span class="top-price">¥119.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 30w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a5890f38cb63f00012c2052" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-2">2</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no320ppjen05i0g5qeibjcsjevanjn991o?imageView2/2/w/800/q/80/format/webp" alt="外婆的话 红薯片甘梅青瓜原味香酥脆厚切地瓜干办公室追剧零食 甘梅味306g*1袋" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>外婆的话 红薯片甘梅青瓜原味香酥脆厚切地瓜干办公室追剧零食 甘梅味306g*1袋</h4>
+            <div class="top-meta"><span class="top-shop">低卡优选社.的店</span><span class="top-price">¥13.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 19w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a1abd03c4095100010fe5a6" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-3">3</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g3no31v3pv3hbjm0g4aug32qmtrt3jcrb2og?imageView2/2/w/1500/q/80/format/webp" alt="潮汕特产陈皮半干半湿话梅甘草酸甜开胃果脯蜜饯泡水休闲好吃零食 250G" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>潮汕特产陈皮半干半湿话梅甘草酸甜开胃果脯蜜饯泡水休闲好吃零食 250G</h4>
+            <div class="top-meta"><span class="top-shop">潮汕话梅研究所的店</span><span class="top-price">¥59.6</span></div>
+            <div class="top-dgmv">🌿 DGMV 15w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69e87cf89dea2d00014105b7" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">4</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/material_space/a6387e19-edd7-46e9-962c-15aeac1c1225?imageView2/2/w/800/q/80/format/webp" alt="甘梅味红薯片 非高温油炸厚切地瓜片 甘梅味2袋*98g（到手3袋）" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>甘梅味红薯片 非高温油炸厚切地瓜片 甘梅味2袋*98g（到手3袋）</h4>
+            <div class="top-meta"><span class="top-shop">有点is哎的店</span><span class="top-price">¥25.8</span></div>
+            <div class="top-dgmv">🌿 DGMV 14w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a1e88cd9a18cb0015fe6b22" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">5</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/104103ng31tkvj7cv7276hkh8n86r4000000000akrhfhm?imageView2/2/w/2000/q/80/format/webp" alt="原味冻干苹果片厚切苹果圈老人儿童水果干无添加孕妇休闲零食 四拼苹果草莓芒果香蕉 " loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>原味冻干苹果片厚切苹果圈老人儿童水果干无添加孕妇休闲零食 四拼苹果草莓芒果香蕉 </h4>
+            <div class="top-meta"><span class="top-shop">冻干三姐妹的店</span><span class="top-price">¥19.99</span></div>
+            <div class="top-dgmv">🌿 DGMV 12w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a3df8dbdad3610001fb235d" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">6</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o0322s79i9cmu005q433upnao6cearoqso?imageView2/2/w/1254/q/80/format/webp" alt="仓鼠行动 桂圆抱莲子果干健康零食桂圆龙眼肉夹莲子脆开袋即食休闲解馋零食 60g*" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>仓鼠行动 桂圆抱莲子果干健康零食桂圆龙眼肉夹莲子脆开袋即食休闲解馋零食 60g*</h4>
+            <div class="top-meta"><span class="top-shop">仓鼠行动专卖店</span><span class="top-price">¥59.7</span></div>
+            <div class="top-dgmv">🌿 DGMV 11w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a4d9b39b5de6c00014d90ff" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">7</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o03217rt1pv72005nvqk840bvslbavvq60?imageView2/2/w/1440/q/80/format/webp" alt="潮味说 青梅露 只用青梅和黄冰糖古法手作潮汕梅子露无酒精夏日百搭调饮 原味梅露" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>潮味说 青梅露 只用青梅和黄冰糖古法手作潮汕梅子露无酒精夏日百搭调饮 原味梅露</h4>
+            <div class="top-meta"><span class="top-shop">潮味说旗舰店</span><span class="top-price">¥62.3</span></div>
+            <div class="top-dgmv">🌿 DGMV 11w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6645cd4354f4dc0001b4bc02" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">8</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no31p2g6utki4005oggqmb8cd89artr5ug?imageView2/2/w/800/q/80/format/webp" alt="揭西特产话梅大颗话梅干九制话梅微咸酸甜梅即食零食 250g/1瓶" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>揭西特产话梅大颗话梅干九制话梅微咸酸甜梅即食零食 250g/1瓶</h4>
+            <div class="top-meta"><span class="top-shop">膳研工坊的店</span><span class="top-price">¥59.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 97,684</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/691d819301312b0001d93695" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">9</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o03239b6nf8ms005q650uq6ai9fj6rg2n0?imageView2/2/w/800/q/80/format/webp" alt="土耳其无花果干大果软糯香甜即食孕妇儿童零食泡水煲汤 1袋" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>土耳其无花果干大果软糯香甜即食孕妇儿童零食泡水煲汤 1袋</h4>
+            <div class="top-meta"><span class="top-shop">寰宇食纪的店</span><span class="top-price">¥109</span></div>
+            <div class="top-dgmv">🌿 DGMV 95,191</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a685b9324f0440001620dad" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">10</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o031trbqqgg6q005o8qvr9g8gq793qarsg?imageView2/2/w/800/q/80/format/webp" alt="春江月 天然无添加金杏干果干不加糖酸甜孕妇零食杏脯果干果脯 无添加金杏干118g" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>春江月 天然无添加金杏干果干不加糖酸甜孕妇零食杏脯果干果脯 无添加金杏干118g</h4>
+            <div class="top-meta"><span class="top-shop">春江月旗舰店</span><span class="top-price">¥29.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 93,041</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69af88081aad90000181708f" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">11</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/104100ao31inck944ha06gbh1ng2es000000000ei8ar5a?imageView2/2/w/4096/q/80/format/webp" alt="无添加酸杏干酸杏脯红杏干果干杏肉休闲小零食 250g*2袋" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>无添加酸杏干酸杏脯红杏干果干杏肉休闲小零食 250g*2袋</h4>
+            <div class="top-meta"><span class="top-shop">康婶果铺的店</span><span class="top-price">¥29.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 88,926</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/684029599111390001f4f6c4" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">12</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o031rr9r87ci4005o9lq7m7vi6epanabho?imageView2/2/w/800/q/80/format/webp" alt="和和堂 黄油柿饼巧克力奶酪蓝莓山楂夹心柿 零食下午茶甜点 0添加剂 冷藏 黄油夹" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>和和堂 黄油柿饼巧克力奶酪蓝莓山楂夹心柿 零食下午茶甜点 0添加剂 冷藏 黄油夹</h4>
+            <div class="top-meta"><span class="top-shop">和和堂旗舰店</span><span class="top-price">¥39.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 77,899</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/68c80386bf5d360001dadccd" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">13</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o031tnovag06i005po2l767c44ct2beprg?imageView2/2/w/1082/q/80/format/webp" alt="手工原味红薯干不加糖倒蒸地瓜干香甜软糯有嚼劲孕妇儿童健康零食 原味红薯干500g" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>手工原味红薯干不加糖倒蒸地瓜干香甜软糯有嚼劲孕妇儿童健康零食 原味红薯干500g</h4>
+            <div class="top-meta"><span class="top-shop">super品的店</span><span class="top-price">¥16.8</span></div>
+            <div class="top-dgmv">🌿 DGMV 70,732</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69b65dc05e5f0500017497a7" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">14</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no31rki2lrji21g5o3c84009agog5o72a8?imageView2/2/w/750/q/80/format/webp" alt="苏农科JAAS 农科院的酸甜金杏干 孕妇零食杏脯果干果脯 2包 农科院的酸甜杏干" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>苏农科JAAS 农科院的酸甜金杏干 孕妇零食杏脯果干果脯 2包 农科院的酸甜杏干</h4>
+            <div class="top-meta"><span class="top-shop">苏农科JAAS的店</span><span class="top-price">¥69.8</span></div>
+            <div class="top-dgmv">🌿 DGMV 67,641</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/669c675d13a21f0001830a30" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">15</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no320ppjen05i0g5qeibjcsjevanjn991o?imageView2/2/w/800/q/80/format/webp" alt="红薯片甘梅青瓜原味香酥脆厚切地瓜干办公室追剧零食 甘梅味306g*1袋(大包装)" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>红薯片甘梅青瓜原味香酥脆厚切地瓜干办公室追剧零食 甘梅味306g*1袋(大包装)</h4>
+            <div class="top-meta"><span class="top-shop">低卡优选社.的店</span><span class="top-price">¥13.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 66,214</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a1abd03c4095100010fe5a6" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+    </div>
+    <div id="tab-jianguo" class="top15-grid" style="display:none">
+<div class="top-card">
+          <div class="top-rank rank-1">1</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o0322433dp6n4005oiefv040n0d6bprhao?imageView2/2/w/800/q/80/format/webp" alt="OH MyFood 哦唛福 种子循环周期组合天然营养坚果南瓜籽亚麻籽葵花籽芝麻T" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>OH MyFood 哦唛福 种子循环周期组合天然营养坚果南瓜籽亚麻籽葵花籽芝麻T</h4>
+            <div class="top-meta"><span class="top-shop">OH MyFood 哦唛福旗舰</span><span class="top-price">¥89.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 28w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69df34ff5258fb00015fb952" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-2">2</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no31m99t9b34q0g5nfo2etg82c7b2qr9ug?imageView2/2/w/3328/q/80/format/webp" alt="韩要强 现烤混合坚果仁300g非油炸 1袋*500克" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>韩要强 现烤混合坚果仁300g非油炸 1袋*500克</h4>
+            <div class="top-meta"><span class="top-shop">韩要强现烤坚果的店</span><span class="top-price">¥62.8</span></div>
+            <div class="top-dgmv">🌿 DGMV 18w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/675cfb14b9eb7500010b2abf" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-3">3</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no31po0p1sb500g5q99evbtua2gckk4i0g?imageView2/2/w/1000/q/80/format/webp" alt="大份手工切糕！解馋料足健康坚果零食 手工大份量切糕 一斤推荐买料足" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>大份手工切糕！解馋料足健康坚果零食 手工大份量切糕 一斤推荐买料足</h4>
+            <div class="top-meta"><span class="top-shop">阿婆手工切糕的店</span><span class="top-price">¥25.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 18w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6933909c6bc9860001877582" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">4</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no322tsj80k6s0g5q433upnao6c3rcrih8?imageView2/2/w/1254/q/80/format/webp" alt="仓鼠行动 五香烤花生咸香酥脆脱油下酒菜解馋办公室休闲零食追剧解馋小包装 15g*" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>仓鼠行动 五香烤花生咸香酥脆脱油下酒菜解馋办公室休闲零食追剧解馋小包装 15g*</h4>
+            <div class="top-meta"><span class="top-shop">仓鼠行动专卖店</span><span class="top-price">¥39.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 16w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a0d4c32475cc60001de6cd6" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">5</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g3no321bp5hkmmu0g5nvj16ag8gti7ev2ejo?imageView2/2/w/800/q/80/format/webp" alt="尚恰 炭烤腰果新货A170大颗粒带皮紫衣盐焗腰果休闲坚果干果零食 500g*1罐" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>尚恰 炭烤腰果新货A170大颗粒带皮紫衣盐焗腰果休闲坚果干果零食 500g*1罐</h4>
+            <div class="top-meta"><span class="top-shop">尚恰旗舰店</span><span class="top-price">¥59.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 13w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69dddcf898fb930001d1e762" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">6</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o0320s45glon4005naiplr5kjm7umumrgo?imageView2/2/w/1440/q/80/format/webp" alt="臻味 富硒鲍鱼果仁 280g（20g*14袋） 坚果零食 独立小袋 1盒" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>臻味 富硒鲍鱼果仁 280g（20g*14袋） 坚果零食 独立小袋 1盒</h4>
+            <div class="top-meta"><span class="top-shop">臻味ZENWELL旗舰店</span><span class="top-price">¥69.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 12w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69b37fc59b4aae000112d497" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">7</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/arkgoods/1040g0o0317hboj5vgm005nfo2etg82c7u9nol20?imageView2/2/w/3024/q/80/format/webp" alt="2026年新现烤不加盐原味大腰果仁 800克" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>2026年新现烤不加盐原味大腰果仁 800克</h4>
+            <div class="top-meta"><span class="top-shop">韩要强现烤坚果的店</span><span class="top-price">¥89.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 10w+</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/66ebd9cc4679060001b1a65a" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">8</div>
+          <div class="top-img-wrap"><img src="https://mall-i2.xhscdn.com/material_space/c665a2f7-9c71-4856-9911-6036421f2800?imageView2/2/w/800/q/80/format/webp" alt="鹰嘴豆500g*1罐/2罐非油炸酥脆解馋休闲零食 鹰嘴豆500g*1罐" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>鹰嘴豆500g*1罐/2罐非油炸酥脆解馋休闲零食 鹰嘴豆500g*1罐</h4>
+            <div class="top-meta"><span class="top-shop">梦梦零食屋的店</span><span class="top-price">¥13.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 92,458</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a178af1e3af990015206e21" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">9</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o03222pe03k740g5p8m34jgibvq07frbf8?imageView2/2/w/800/q/80/format/webp" alt="椒盐瓜子仁大颗粒熟葵瓜子仁配料干净休闲零食 椒盐葵花子仁500g*1罐" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>椒盐瓜子仁大颗粒熟葵瓜子仁配料干净休闲零食 椒盐葵花子仁500g*1罐</h4>
+            <div class="top-meta"><span class="top-shop">有人买食品的店</span><span class="top-price">¥69</span></div>
+            <div class="top-dgmv">🌿 DGMV 72,608</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a44b73a72cfc70001a8b9df" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">10</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o0322bftvr46u705naiplr5kjm7rlm6thg?imageView2/2/w/1440/q/80/format/webp" alt="臻味 罐装鲍鱼果仁、富硒巴西坚果330g" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>臻味 罐装鲍鱼果仁、富硒巴西坚果330g</h4>
+            <div class="top-meta"><span class="top-shop">臻味ZENWELL旗舰店</span><span class="top-price">¥79.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 59,214</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69436aca4423c300016fc9d3" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">11</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o031vs4ob9ul4005nfo2etg82c7m69cu6g?imageView2/2/w/2229/q/80/format/webp" alt="2026年新下树鲍鱼果原味烘烤非油炸1罐*250g 1罐*250克" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>2026年新下树鲍鱼果原味烘烤非油炸1罐*250g 1罐*250克</h4>
+            <div class="top-meta"><span class="top-shop">韩要强现烤坚果的店</span><span class="top-price">¥54.8</span></div>
+            <div class="top-dgmv">🌿 DGMV 55,766</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/69fc5fb998ac430001f642f6" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">12</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/material_space/9d72c890-03c9-4944-852e-b4781025709e?imageView2/2/w/956/q/80/format/webp" alt="2026年新A180带皮碳烤熟腰果500克休闲零食酥脆烘焙干果 2袋" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>2026年新A180带皮碳烤熟腰果500克休闲零食酥脆烘焙干果 2袋</h4>
+            <div class="top-meta"><span class="top-shop">韩要强现烤坚果的店</span><span class="top-price">¥85.5</span></div>
+            <div class="top-dgmv">🌿 DGMV 52,597</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/67bda37af2389c0001a60e94" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">13</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/104103ng31mk9ohcpl8bm662thj2u44o005hqc1e3sj43o?imageView2/2/w/2000/q/80/format/webp" alt="新货临安山核桃仁小核桃仁·少糖少盐·免剥孕妇坚果零食净含量 少少糖味（少糖少盐、" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>新货临安山核桃仁小核桃仁·少糖少盐·免剥孕妇坚果零食净含量 少少糖味（少糖少盐、</h4>
+            <div class="top-meta"><span class="top-shop">临安山野集的店</span><span class="top-price">¥86.4</span></div>
+            <div class="top-dgmv">🌿 DGMV 47,371</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/68b8745b7675b40001f27869" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">14</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/material_space/73cf69ff-3044-4412-99c3-9a9395822ddd?imageView2/2/w/800/q/80/format/webp" alt="良一 烘烤芸豆瓣非油炸盐味豆子低脂蛋白即食酥脆芸豆罐装168g 芸豆瓣168g*" loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>良一 烘烤芸豆瓣非油炸盐味豆子低脂蛋白即食酥脆芸豆罐装168g 芸豆瓣168g*</h4>
+            <div class="top-meta"><span class="top-shop">瘦瘦液断日记的店</span><span class="top-price">¥14.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 47,232</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/6a059bf68a78380015a08890" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+<div class="top-card">
+          <div class="top-rank rank-4">15</div>
+          <div class="top-img-wrap"><img src="https://mall-i1.xhscdn.com/arkgoods/1040g0o032102v6bqn0705p8ub7i92n6hqp4fm0o?imageView2/2/w/800/q/80/format/webp" alt="西域美农 鹰嘴豆非油炸香酥味/慢烤味400g /450g 罐装袋装月卡休闲零食 " loading="lazy" onclick="window.open(this.src)"></div>
+          <div class="top-body">
+            <h4>西域美农 鹰嘴豆非油炸香酥味/慢烤味400g /450g 罐装袋装月卡休闲零食 </h4>
+            <div class="top-meta"><span class="top-shop">西域美农休闲零食旗舰店</span><span class="top-price">¥26.9</span></div>
+            <div class="top-dgmv">🌿 DGMV 46,215</div>
+            <a href="https://www.xiaohongshu.com/goods-detail/66c707ec73cb1e0001425550" target="_blank" class="top-btn">查看商品 →</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <span class="leaf">🌿</span>
+  <div>数据来源：小红书鹰眼平台 · 统计周期：近30天 · DGMV为模糊化处理</div>
+  <div>本页面仅供内部参考，商品信息以实际详情页为准</div>
+</div>
+
+<script>
+function filterShops(cat, btn) {
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.shop-group').forEach(grp=>{
+    if(cat==='all'){grp.classList.remove('hidden');return;}
+    const cats = grp.dataset.cats||'';
+    const visible = grp.querySelectorAll('.prod-card[data-cat="'+cat+'"]');
+    if(visible.length===0){grp.classList.add('hidden');}
+    else{grp.classList.remove('hidden');}
+    grp.querySelectorAll('.prod-card').forEach(c=>{
+      c.classList.toggle('hidden', c.dataset.cat!==cat);
+    });
+  });
+}
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.top-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#top15-wrap .top15-grid').forEach(g=>g.style.display='none');
+  document.getElementById('tab-'+name).style.display='grid';
+}
+
+function toggleDiff(btn) {
+  const wrap = btn.closest('.diff-wrap');
+  const s = wrap.querySelector('.diff-short');
+  const f = wrap.querySelector('.diff-full');
+  const open = f.style.display!=='none';
+  f.style.display = open?'none':'block';
+  s.style.display = open?'block':'none';
+  btn.textContent = open?'▼ 展开差异点':'▲ 收起';
+}
+
+function toggleHancard(btn) {
+  const img = btn.nextElementSibling;
+  const open = img.style.display!=='none';
+  img.style.display = open?'none':'block';
+  btn.textContent = open?'📋 查看产品手卡':'📋 收起手卡';
+}
+</script>
+</body>
+</html>
