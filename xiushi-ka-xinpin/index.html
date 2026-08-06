@@ -129,10 +129,36 @@ body { background:#f5f7f5; font-family:-apple-system,BlinkMacSystemFont,"Segoe U
   font-size: 10px; color: #bbb;
 }
 
-@media (max-width: 600px) {
-  .grid { grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 8px; }
-  .header h1 { font-size: 20px; }
-  .filter-btn { font-size: 11px; padding: 5px 14px; }
+@media (max-width: 768px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; }
+  .header h1 { font-size: 20px; letter-spacing: 2px; }
+  .header { padding: 28px 16px 20px; }
+  .filter-bar { gap: 6px; padding: 12px 10px; }
+  .filter-btn { font-size: 12px; padding: 6px 14px; }
+  .card-body h3 { font-size: 12px; }
+  .tags .tag { font-size: 10px; padding: 2px 6px; }
+  .diff-text { font-size: 11px; }
+  .btn { font-size: 11px; padding: 6px 0; }
+  .hancard-section { margin-top: 8px; }
+  .hancard-img { max-height: 180px; }
+}
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr 1fr; gap: 8px; padding: 6px; }
+  .header h1 { font-size: 18px; }
+  .img-wrapper { aspect-ratio: 1/1; }
+  .card-body { padding: 8px 10px; }
+  .card-body h3 { font-size: 11px; min-height: auto; }
+  .tags { gap: 3px; }
+  .tags .tag { font-size: 9px; }
+  .top15-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .top-card-body h4 { font-size: 11px; min-height: 30px; }
+  .top-price { font-size: 13px; }
+  .trends-overview { gap: 10px; }
+  .trend-card { padding: 16px 14px; }
+  .trend-desc { font-size: 11px; }
+  .section-title { font-size: 18px; }
+  .top15-tabs { gap: 6px; }
+  .top-tab { padding: 8px 16px; font-size: 12px; }
 }
 
 .trends-section{max-width:1200px;margin:40px auto;padding:0 16px}
