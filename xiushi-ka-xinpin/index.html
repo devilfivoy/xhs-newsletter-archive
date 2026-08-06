@@ -95,7 +95,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
 .shop-count{font-size:12px;color:#aaa;background:#f5f5f5;padding:3px 10px;border-radius:12px}
 
 /* ===== PRODUCT CARDS ===== */
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;grid-auto-rows:1fr}
 .prod-card{height:100%;display:flex;flex-direction:column;background:#fafff6;border:1px solid #e0eecc;border-radius:10px;overflow:hidden;transition:all .2s;display:flex;flex-direction:column}
 .prod-card:hover{transform:translateY(-3px);box-shadow:0 5px 18px rgba(124,179,66,.12)}
 .prod-card.hidden{display:none}
@@ -114,7 +114,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
 .hancard-toggle{display:block;width:100%;text-align:left;font-size:11px;color:#8B6914;background:#FFF8DC;border:1px solid #ffe082;padding:5px 10px;border-radius:5px;cursor:pointer;margin-bottom:2px;font-family:inherit}
 .hancard-toggle:hover{background:#fff3cd}
 .prod-body{display:flex;flex-direction:column;flex:1}
-.btn{display:block;text-align:center;padding:8px 0;background:linear-gradient(135deg,#9ccc65,#7cb342);color:#fff;text-decoration:none;border-radius:7px;font-size:12px;font-weight:600;transition:opacity .2s;margin-top:6px;flex-shrink:0}
+.btn{display:block;text-align:center;padding:8px 0;background:linear-gradient(135deg,#9ccc65,#7cb342);color:#fff;text-decoration:none;border-radius:7px;font-size:12px;font-weight:600;transition:opacity .2s;margin-top:auto;flex-shrink:0}
 .btn:hover{opacity:.85}
 
 /* ===== TOP15 TABS ===== */
@@ -201,8 +201,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
       <div class="trend-name">卤味赛道</div>
       <div class="opp-tags"><span class="opp-tag">🔥 牛脆片品类持续爆发</span><span class="opp-tag">🌾 立秋后高蛋白零食走强</span><span class="opp-tag">📺 追剧场景需求旺盛</span></div>
       <div class="trend-desc">
-        <p><b>选品方向</b>牛肉类新形态是当前最值得押的方向，<u><b>牛脆片</b></u>、<u><b>牛胸口脆</b></u>这类薄脆产品分享率和复购表现好，<u><b>鸭脖鸭舌</b></u>作为基本盘保证稳定转化</p>
-        <p><b>卖点抓手</b><u><b>低温慢烤</b></u>、<u><b>干净配料表</b></u>、<u><b>高蛋白</b></u>这三点在直播和笔记里最好讲，<u><b>追剧解馋</b></u>场景容易带出连带购买</p>
+        <p><b>选品方向</b>牛肉类新形态是当前最值得押的方向，<b>牛脆片</b>、<b>牛胸口脆</b>这类薄脆产品分享率和复购表现好，<b>鸭脖鸭舌</b>作为基本盘保证稳定转化</p>
+        <p><b>卖点抓手</b><b>低温慢烤</b>、<b>干净配料表</b>、<b>高蛋白</b>这三点在直播和笔记里最好讲，<b>追剧解馋</b>场景容易带出连带购买</p>
       </div>
     </div>
     <div class="trend-card">
@@ -210,8 +210,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
       <div class="trend-name">果干赛道</div>
       <div class="opp-tags"><span class="opp-tag">🍑 无花果干应季高峰</span><span class="opp-tag">🎒 开学季小包装果干需求上升</span><span class="opp-tag">🌿 0添加健康化趋势明确</span></div>
       <div class="trend-desc">
-        <p><b>选品方向</b>应季果干优先看，<u><b>无花果干</b></u>、<u><b>杏干</b></u>、<u><b>话梅</b></u>在8月热度集中，<u><b>甘梅红薯片</b></u>这类健康化产品适合补清爽口感</p>
-        <p><b>卖点抓手</b><u><b>0添加</b></u>和<u><b>产地直供</b></u>最能说服人，<u><b>独立小包装</b></u>在<u><b>开学季</b></u>的学生和办公室场景转化更好</p>
+        <p><b>选品方向</b>应季果干优先看，<b>无花果干</b>、<b>杏干</b>、<b>话梅</b>在8月热度集中，<b>甘梅红薯片</b>这类健康化产品适合补清爽口感</p>
+        <p><b>卖点抓手</b><b>0添加</b>和<b>产地直供</b>最能说服人，<b>独立小包装</b>在<b>开学季</b>的学生和办公室场景转化更好</p>
       </div>
     </div>
     <div class="trend-card">
@@ -219,8 +219,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
       <div class="trend-name">坚果赛道</div>
       <div class="opp-tags"><span class="opp-tag">🏮 中秋礼盒需求即将启动</span><span class="opp-tag">🥜 现烤工艺差异化突围</span><span class="opp-tag">📦 每日坚果组合装走俏</span></div>
       <div class="trend-desc">
-        <p><b>选品方向</b><u><b>现烤</b></u>和<u><b>炭烤腰果</b></u>工艺差异清晰，<u><b>混合坚果</b></u>和<u><b>每日坚果</b></u>组合装适合提前做<u><b>中秋礼盒</b></u>预热</p>
-        <p><b>卖点抓手</b><u><b>现烤</b></u>工艺和<u><b>原产地故事</b></u>是内容切入点，<u><b>礼赠属性</b></u>能撑起客单价</p>
+        <p><b>选品方向</b><b>现烤</b>和<b>炭烤腰果</b>工艺差异清晰，<b>混合坚果</b>和<b>每日坚果</b>组合装适合提前做<b>中秋礼盒</b>预热</p>
+        <p><b>卖点抓手</b><b>现烤</b>工艺和<b>原产地故事</b>是内容切入点，<b>礼赠属性</b>能撑起客单价</p>
       </div>
     </div>
   </div>
@@ -275,7 +275,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
           <div class="prod-body">
             <h3>陈阿炳老卤鸭舌</h3>
             <div class="tags"><span class="tag">文火慢炖</span><span class="tag">老卤慢煮</span><span class="tag">新品推荐</span></div>
-            <div class="diff-wrap"><div class="diff-text">1. 醇香入味，弹嫩爽口;根根入味，酱香浓郁<br>2. 老卤慢煮，舌尖留香，越嚼越有味;<br>3. 精选优质鸭舌，每一口都是卤香好味道;，酱香诱人<br>4. 多种草本卤料，天然香辛料文火慢炖，肉质肥美，酱香诱人</div></div>
+            <div class="diff-wrap">
+<div class="diff-short">1. 醇香入味，弹嫩爽口;根根入味，酱香浓郁<br>2. 老卤慢煮，舌尖留香，越嚼越有味;...</div>
+<div class="diff-full" style="display:none">1. 醇香入味，弹嫩爽口;根根入味，酱香浓郁<br>2. 老卤慢煮，舌尖留香，越嚼越有味;<br>3. 精选优质鸭舌，每一口都是卤香好味道;，酱香诱人<br>4. 多种草本卤料，天然香辛料文火慢炖，肉质肥美，酱香诱人</div>
+<button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+</div>
             <div class="hancard-wrap" style="margin-bottom:10px">
               <button class="hancard-toggle" onclick="toggleHancard(this)">📋 查看产品手卡</button>
               <img src="https://picasso-private-1251524319.cos.ap-shanghai.myqcloud.com/dibp/xiushi-hancard/hancard_2.jpg" alt="手卡" class="hancard-img" loading="lazy" style="display:none;width:100%;border-radius:6px;margin-top:6px;cursor:pointer" onclick="window.open(this.src)">
@@ -384,7 +388,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
           <div class="prod-body">
             <h3>九成风干猪肉条</h3>
             <div class="tags"><span class="tag">风干猪肉</span><span class="tag">24h内</span><span class="tag">源头工厂</span></div>
-            <div class="diff-wrap"><div class="diff-text">1. 细条风干猪肉条9成风干，源头工厂，品质保障<br>2. 发货快24h内，免费试吃</div></div>
+            <div class="diff-wrap">
+<div class="diff-short">1. 细条风干猪肉条9成风干，源头工厂，品质保障<br>2. 发货快24h内，免费试吃</div>
+<div class="diff-full" style="display:none">1. 细条风干猪肉条9成风干，源头工厂，品质保障<br>2. 发货快24h内，免费试吃</div>
+<button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+</div>
             
             <a href="https://xhslink.com/m/3xBkqssyKqK" target="_blank" class="btn">查看商品 →</a>
           </div>
@@ -394,7 +402,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
           <div class="prod-body">
             <h3>九成风干鸡肉干</h3>
             <div class="tags"><span class="tag">高蛋白</span><span class="tag">风干鸡胸</span><span class="tag">24h内</span></div>
-            <div class="diff-wrap"><div class="diff-text">1. 风干鸡胸肉干，高蛋白，源头工厂，品质保障<br>2. 发货24h内，免费试吃</div></div>
+            <div class="diff-wrap">
+<div class="diff-short">1. 风干鸡胸肉干，高蛋白，源头工厂，品质保障<br>2. 发货24h内，免费试吃</div>
+<div class="diff-full" style="display:none">1. 风干鸡胸肉干，高蛋白，源头工厂，品质保障<br>2. 发货24h内，免费试吃</div>
+<button class="expand-btn" onclick="toggleDiff(this)">▼ 展开差异点</button>
+</div>
             
             <a href="https://xhslink.com/m/9nziLoy7VTl" target="_blank" class="btn">查看商品 →</a>
           </div>
