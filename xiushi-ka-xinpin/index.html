@@ -92,8 +92,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
 .shop-count{font-size:12px;color:#aaa;background:#f5f5f5;padding:3px 10px;border-radius:12px}
 
 /* ===== PRODUCT CARDS ===== */
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
-.prod-card{background:#fafff6;border:1px solid #e0eecc;border-radius:10px;overflow:hidden;transition:all .2s;display:flex;flex-direction:column}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;grid-auto-rows:1fr}
+.prod-card{height:100%;display:flex;flex-direction:column;background:#fafff6;border:1px solid #e0eecc;border-radius:10px;overflow:hidden;transition:all .2s;display:flex;flex-direction:column}
 .prod-card:hover{transform:translateY(-3px);box-shadow:0 5px 18px rgba(124,179,66,.12)}
 .prod-card.hidden{display:none}
 .prod-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:#f0f0f0}
@@ -169,6 +169,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
   .trend-grid{grid-template-columns:1fr}
   .verdict p{font-size:14px}
 }
+.prod-desc .short{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 </style>
 </head>
 <body>
@@ -195,34 +196,28 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
     <div class="trend-card">
       <div class="trend-icon">🥩</div>
       <div class="trend-name">卤味赛道</div>
-      <div class="trend-hl">牛肉制品引领新风口</div>
       <div class="opp-tags"><span class="opp-tag">🔥 牛脆片品类持续爆发</span><span class="opp-tag">🌾 立秋后高蛋白零食走强</span><span class="opp-tag">📺 追剧场景需求旺盛</span></div>
       <div class="trend-desc">
-        <p><b>赛道现状</b>牛肉类制品在卤味赛道占据主导地位，牛脆片、牛胸口脆等新形态产品快速起量，传统鸭货保持稳定基本盘</p>
-        <p><b>营销机会</b>立秋之后高蛋白肉类零食进入需求上升期，追剧、办公室解馋是核心消费场景，工艺和原料故事是种草切入点</p>
-        <p><b>建议货盘</b>重点布局牛脆片、牛胸口脆等新形态肉干，搭配鸭脖鸭舌等经典卤味，强调低温慢烤工艺和干净配料表</p>
+        <p><b>选品方向</b>牛肉类新形态是当前最值得押的方向，牛脆片、牛胸口脆这类薄脆产品分享率和复购表现好，鸭脖鸭舌作为基本盘保证稳定转化</p>
+        <p><b>卖点抓手</b>低温慢烤、干净配料表、高蛋白这三点在直播和笔记里最好讲，追剧解馋场景容易带出连带购买</p>
       </div>
     </div>
     <div class="trend-card">
       <div class="trend-icon">🍑</div>
       <div class="trend-name">果干赛道</div>
-      <div class="trend-hl">梅类与薯类双轮驱动</div>
       <div class="opp-tags"><span class="opp-tag">🍑 无花果干应季高峰</span><span class="opp-tag">🎒 开学季小包装果干需求上升</span><span class="opp-tag">🌿 0添加健康化趋势明确</span></div>
       <div class="trend-desc">
-        <p><b>赛道现状</b>　梅类制品（话梅、陈皮梅）在消暑场景中持续走强，甘梅红薯片等健康化零食正在快速崛起，产地直供模式受消费者青睐</p>
-        <p><b>营销机会</b>　8月无花果干进入应季高峰，9月开学季小包装果干适合学生群体。0添加、配料表干净是核心转化卖点</p>
-        <p><b>建议货盘</b>　重点布局话梅、无花果干、杏干等应季果干，搭配红薯片等健康化品类，强调产地溯源和天然配方</p>
+        <p><b>选品方向</b>应季果干优先看，无花果干、杏干、话梅在8月热度集中，甘梅红薯片这类健康化产品适合补清爽口感</p>
+        <p><b>卖点抓手</b>0添加和产地直供最能说服人，独立小包装在开学季的学生和办公室场景转化更好</p>
       </div>
     </div>
     <div class="trend-card">
       <div class="trend-icon">🥜</div>
       <div class="trend-name">坚果赛道</div>
-      <div class="trend-hl">腰果与混合坚果领跑</div>
       <div class="opp-tags"><span class="opp-tag">🏮 中秋礼盒需求即将启动</span><span class="opp-tag">🥜 现烤工艺差异化突围</span><span class="opp-tag">📦 每日坚果组合装走俏</span></div>
       <div class="trend-desc">
-        <p><b>赛道现状</b>　现烤和炭烤腰果凭借工艺差异化快速起量，每日坚果和种子循环等组合装持续走俏，赛道品牌集中度较高</p>
-        <p><b>营销机会</b>　中秋（9月中旬）礼赠需求即将全面启动，礼盒装坚果是9月核心增长点。工艺故事和原料溯源是种草内容的有效切入点</p>
-        <p><b>建议货盘</b>　布局炭烤腰果、混合坚果礼盒、每日坚果等品类，提前准备中秋礼盒装，强调现烤工艺和原产地优势</p>
+        <p><b>选品方向</b>现烤和炭烤腰果工艺差异清晰，混合坚果和每日坚果组合装适合提前做中秋礼盒预热</p>
+        <p><b>卖点抓手</b>现烤工艺和原产地故事是内容切入点，礼赠属性能撑起客单价</p>
       </div>
     </div>
   </div>
@@ -234,7 +229,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
     <span class="timing-tag">💝 七夕礼赠</span>
     <span class="timing-tag">🎒 开学季</span>
     <span class="timing-tag">🏮 中秋备货</span>
-      <span class="timing-tag timing-advice-tag">建议商家围绕以上节点提前备货和内容种草，抢占8-9月休食赛道的流量高峰窗口</span>
+      <span class="timing-tag timing-advice-tag">建议围绕以上节点提前锁定货盘和排期，抢占8-9月休食赛道的流量窗口</span>
 </div>
 </div>
 </div>
@@ -245,7 +240,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
   <div class="sec-hdr">
     <div class="sec-tag">02 / 新品</div>
     <h2 class="sec-title">新品推荐</h2>
-    <p class="sec-sub">按店铺分组展示</p>
   </div>
 
   <div class="filter-bar">
@@ -648,7 +642,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
   <div class="sec-hdr">
     <div class="sec-tag">03 / 爆款</div>
     <h2 class="sec-title">近30天 TOP 15 爆款</h2>
-    <p class="sec-sub">DGMV 排序 · 销量模糊化处理</p>
   </div>
 
   <div class="top15-tabs">
