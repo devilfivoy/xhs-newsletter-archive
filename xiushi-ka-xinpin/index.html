@@ -18,7 +18,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
     radial-gradient(ellipse at 85% 80%, rgba(174,213,129,0.18) 0%, transparent 55%),
     radial-gradient(ellipse at 50% 0%,  rgba(220,237,200,0.35) 0%, transparent 60%),
     linear-gradient(150deg, #558b2f 0%, #7cb342 45%, #33691e 100%);
-  padding:30px 24px 26px;
+  padding:0 24px;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;
   color:#fff;
   position:relative;
@@ -162,7 +162,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
   .shop-group{padding:16px}
 }
 @media(max-width:480px){
-  .hero{padding:24px 16px 22px}
+  .hero{padding:0 16px;min-height:120px}
   .hero-title{font-size:19px;letter-spacing:1px}
   .metrics{gap:14px}
   .metric-num{font-size:26px}
@@ -179,6 +179,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans G
 .trend-tag{font-size:11px!important;padding:2px 8px!important;margin:0 4px 4px 0!important}
 .sec-head{margin-bottom:10px!important}
 .node-bar{padding:10px 14px!important}
+.hero-title{margin:0!important}
+.hero-sub{margin:6px 0 0!important}
+.trend-card{padding:12px 13px!important}
+.trend-card .trend-icon{font-size:18px!important;margin-bottom:2px!important}
+.trend-name,.trend-card h3{font-size:14px!important;margin:0 0 5px!important}
+.trend-tag{font-size:10.5px!important;padding:2px 7px!important;margin:0 3px 3px 0!important}
+.trend-desc{font-size:11.5px!important;line-height:1.5!important;margin-top:5px!important}
+.trend-desc p{margin:4px 0!important}
+.trend-grid{gap:12px!important;margin-bottom:12px!important}
+.sec-hdr{margin-bottom:8px!important}
+.sec-sub{margin:4px 0 0!important;font-size:12px!important}
+.node-bar{padding:8px 12px!important}
+.section:has(.trend-grid) .sec-inner{padding-top:16px!important;padding-bottom:16px!important}
 </style>
 </head>
 <body>
